@@ -1,0 +1,43 @@
+.content__slogan {
+  color: @dark-blue2;
+  text-align: center;
+  font-size: 24px;
+  line-height: normal;
+  font-family: "OpenSansLight";
+  padding: 35px 30px;
+}
+.content__information {
+  background-color: @grey;
+  color: @dark-blue2;
+  text-align: center;
+  font-size: 14px;
+  line-height: normal;
+  padding: 35px 20px 0;
+  font-family: "OpenSansLight";
+  position: relative;
+  transform: scaleY(100px);
+  &:after {
+    position: absolute;
+    content: "";
+    width: 120%;
+    left: 0;
+    top: -30px;
+    height: 50px;
+    background-color: @grey;
+    transform: rotate(-6deg);
+    z-index: 1;
+  }
+  p {
+    margin: 0;
+    z-index: 5;
+  }
+  &--strong {
+    z-index: 5;
+    font-size: 18px;
+    font-family: "OpenSansBold";
+    padding: 1em 0 0.5em;
+  }
+  img {
+    margin-top: 45px;
+  }
+}

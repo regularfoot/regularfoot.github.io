@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title>PINK</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header>
+      <div class="header__background">
+        <nav class="nav-bar">
+          <a href="index.html" class="header__logo">
+            <img src="img/Pink-logo-1.png" alt="Pink logo" width="74" height="24">
+          </a>
+          <a href="#" class="gamburger"><img src="img/menu-burger.svg" alt=""/></a>
+          <ul class="close">
+            <li><a href="#">Информация</a></li>
+            <li><a href="#">Возможности</a></li>
+            <li><a href="#">Отзывы</a></li>
+            <li><a href="#">Стоимость</a></li>
+          </ul>
+        </nav>
+        <p class="header__slogan">Взгляните на жизнь иначе!</p>
+      </div>
+      <div class="header__download">
+        <a href="">Cкачать приложение</a>
+      </div>
+      <div class="versions">
+        <a href="" class="versions__icon-1"><img src="img/apple-logo.svg" alt="apple"></a>
+        <a href="" class="versions__icon-2"><img src="img/android-logo.svg" alt="android" ></a>
+        <a href="" class="versions__icon-3"><img src="img/microsoft-logo.svg" alt="microsoft"></a>
+      </div>
+      <p class="versions__text">Доступно для iPhone, iPad, Android, Windows phone, Mac OS, Windows 8</p>
+    </header>
+    <div class="content">
+      <div class="content__slogan">
+        <p>Устали от серости мегаполиса?</p>
+        <p>Нам есть, что вам  предложить!</p>
+      </div>
+      <div class="content__information">
+        <div class="content__information--strong">Поднимает настроение</div>
+        <p>Приложение позволит вам победить осеннюю хандру и деперессию буквально в несколько кликов!</p>
+        <div class="content__information--strong">Меняет мир вокруг</div>
+        <p>Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
+        <div class="content__information--strong">Заводит новых друзей</div>
+        <p>Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых</p>
+        <img src="img/screen-1-3.png" alt=""/>
+      </div>
+
+      <div class="paralax-slider">
+
+      </div>
+    </div>
+    <div class="slider">
+
+
+      <div class="slide block">
+        <div class="slider__text--strong">Николай Петров</div>
+        <div class="slider__text">«Это приложение перевернуло мой мир и позволило по-новому взглянуть
+          на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к
+          выложенной фотографии!»</div>
+      </div>
+      <div class="slide">
+        <div class="slider__text--strong">Петров Николай</div>
+        <div class="slider__text">«1Это приложение перевернуло мой мир и позволило по-новому взглянуть
+          на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к
+          выложенной фотографии!»</div>
+      </div>
+      <div class="slide">
+        <div class="slider__text--strong">2Петров Николай</div>
+        <div class="slider__text">«2Это приложение перевернуло мой мир и позволило по-новому взглянуть
+          на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к
+          выложенной фотографии!»</div>
+      </div>
+
+
+      <input type="radio" id="btn-1" name="toggle" checked/>
+      <input type="radio" id="btn-2" name="toggle"/>
+      <input type="radio" id="btn-3" name="toggle"/>
+
+      <div class="slider-controls">
+        <label for="btn-1"></label>
+        <label for="btn-2"></label>
+        <label for="btn-3"></label>
+      </div>
+    </div>
+    <footer>
+      <a href="" class="questions">Остались вопросы?<wbr> Свяжитесь с нами!</a>
+    
+      <p>Звоните:</p>
+    
+      <p class="contacts">8(800)1000900</p>
+    
+      <p>Пишите:</p>
+    
+      <p class="contacts">hello@pinkapp.ru</p>
+    
+      <p>Приезжайте в гости:</p>
+    
+      <p class="contacts">Санкт-Петербург,  Невский проспект, д. 20</p>
+    </footer>
+    <div class="map"><a href=""></a></div>
+    <script>
+      var hamburger = document.querySelector("header .gamburger");
+      var nav_menu = document.querySelector(".nav-bar");
+      var nav_ul = document.querySelector(".nav-bar ul");
+      hamburger.addEventListener("click", function(event){
+        event.preventDefault();
+//        if (nav_menu.classList.contains("memu-open")) {
+//          nav_menu.classList.remove("memu-open")
+//        }
+//        else {
+//          nav_ul.classList.add(close);
+//        }
+        if (nav_ul.classList.contains("close")) {
+          nav_ul.classList.remove("close")
+          nav_menu.classList.add("memu-open")
+        }
+        else {
+          nav_ul.classList.add("close");
+          nav_menu.classList.remove("memu-open");
+        }
+      })
+    </script>
+  </body>
+</html>

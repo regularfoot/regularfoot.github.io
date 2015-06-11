@@ -1,0 +1,126 @@
+header {
+  background-color: @black-blue;
+  margin-bottom: 0;
+  .nav-bar {
+    box-sizing: border-box;
+    background-color: @dark-blue;
+    min-width: 350px;
+    padding: 20px;
+    margin: 0;
+    position: relative;
+    .gamburger {
+      float: right;
+    }
+  }
+  ul {
+    margin: 0;
+    margin-top: 20px;
+    display: block;
+    position: absolute;
+    padding: 0;
+    left: 0;
+    z-index: 5;
+    min-width: 100%;
+    li {
+      box-sizing: border-box;
+      border: 1px solid black;
+      min-width: 350px;
+      list-style: none;
+      text-align: center;
+      background-color: @dark-blue2;
+      padding: 0px;
+      &:nth-child(n+1) {
+        border-top: 1px solid #495361;
+      }
+      a {
+        display: block;
+        box-sizing: border-box;
+        min-width: 350px;
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 18px;
+        line-height: 32px;
+        font-family: "OpenSansBold";
+        height: 60px;
+        padding-top: 13px;
+      }
+    }
+  }
+  .close {
+    display: none;
+  }
+  .memu-open {
+    padding-bottom: 19px;
+    border-bottom: 1px solid black;
+    background-color: @dark-blue2;
+  }
+  .header {
+    &__background {
+      display: block;
+      background: #2a3948 url(../img/background-1@1x.jpg) no-repeat center;
+      min-height: 460px;
+      position: relative;
+      &:after{
+        content:"";
+        position: absolute;
+        display: block;
+        margin: 0 50%;
+        left: -144px;
+        width: 258px;
+        height: 286px;
+        background-image: url(../img/iphone-hand-1.png);
+        bottom: 0;
+      }
+    }
+    &__slogan {
+      text-align: center;
+      margin: 20px 50px;
+      font-size: 24px;
+      line-height: normal;
+      color: #fff;
+      font-family: "OpenSansLight";
+    }
+    &__download{
+      height: 100px;
+      a{
+        display: block;
+        width: 280px;
+        .mixin1;
+        margin: 15px auto;
+      }
+
+    }
+
+  }
+
+  .versions {
+    display: block;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    width: 210px;
+    height: 65px;
+    & a{
+      vertical-align: middle;
+    }
+    &__icon-1{
+      float: left;
+      margin-right: 35px;
+    }
+    &__icon-2{
+      margin-top: 10px;
+      float: left;
+    }
+    &__icon-3{
+      float: right;
+      margin-top: 10px;
+    }
+
+  }
+  .versions__text{
+    padding: 0 45px;
+    padding-bottom: 30px;
+    .mixin2(14px, 24px);
+  }
+}

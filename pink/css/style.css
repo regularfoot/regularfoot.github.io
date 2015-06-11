@@ -1,0 +1,259 @@
+html {
+  min-width: 350px;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+.mixin1 {
+  box-sizing: border-box;
+  border: 5px solid #fff;
+  padding: 20px 34px;
+  border-radius: 40px;
+  font-family: "OpenSansBold";
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  line-height: 18px;
+}
+header {
+  background-color: #1d2631;
+  margin-bottom: 0;
+}
+header .nav-bar {
+  box-sizing: border-box;
+  background-color: rgba(40, 54, 69, 0.6);
+  min-width: 350px;
+  padding: 20px;
+  margin: 0;
+  position: relative;
+}
+header .nav-bar .gamburger {
+  float: right;
+}
+header ul {
+  margin: 0;
+  margin-top: 20px;
+  display: block;
+  position: absolute;
+  padding: 0;
+  left: 0;
+  z-index: 5;
+  min-width: 100%;
+}
+header ul li {
+  box-sizing: border-box;
+  border: 1px solid black;
+  min-width: 350px;
+  list-style: none;
+  text-align: center;
+  background-color: #283645;
+  padding: 0px;
+}
+header ul li:nth-child(n+1) {
+  border-top: 1px solid #495361;
+}
+header ul li a {
+  display: block;
+  box-sizing: border-box;
+  min-width: 350px;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 32px;
+  font-family: "OpenSansBold";
+  height: 60px;
+  padding-top: 13px;
+}
+header .close {
+  display: none;
+}
+header .memu-open {
+  padding-bottom: 19px;
+  border-bottom: 1px solid black;
+  background-color: #283645;
+}
+header .header__background {
+  display: block;
+  background: #2a3948 url(../img/background-1@1x.jpg) no-repeat center;
+  min-height: 460px;
+  position: relative;
+}
+header .header__background:after {
+  content: "";
+  position: absolute;
+  display: block;
+  margin: 0 50%;
+  left: -144px;
+  width: 258px;
+  height: 286px;
+  background-image: url(../img/iphone-hand-1.png);
+  bottom: 0;
+}
+header .header__slogan {
+  text-align: center;
+  margin: 20px 50px;
+  font-size: 24px;
+  line-height: normal;
+  color: #fff;
+  font-family: "OpenSansLight";
+}
+header .header__download {
+  height: 100px;
+}
+header .header__download a {
+  display: block;
+  width: 280px;
+  box-sizing: border-box;
+  border: 5px solid #fff;
+  padding: 20px 34px;
+  border-radius: 40px;
+  font-family: "OpenSansBold";
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  line-height: 18px;
+  margin: 15px auto;
+}
+header .versions {
+  display: block;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 210px;
+  height: 65px;
+}
+header .versions a {
+  vertical-align: middle;
+}
+header .versions__icon-1 {
+  float: left;
+  margin-right: 35px;
+}
+header .versions__icon-2 {
+  margin-top: 10px;
+  float: left;
+}
+header .versions__icon-3 {
+  float: right;
+  margin-top: 10px;
+}
+header .versions__text {
+  padding: 0 45px;
+  padding-bottom: 30px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 24px;
+  color: #fff;
+  font-family: "OpenSansLight";
+}
+.content__slogan {
+  color: #283645;
+  text-align: center;
+  font-size: 24px;
+  line-height: normal;
+  font-family: "OpenSansLight";
+  padding: 35px 30px;
+}
+.content__information {
+  background-color: #f2f2f2;
+  color: #283645;
+  text-align: center;
+  font-size: 14px;
+  line-height: normal;
+  padding: 35px 20px 0;
+  font-family: "OpenSansLight";
+  position: relative;
+  transform: scaley(100px);
+}
+.content__information:after {
+  position: absolute;
+  content: "";
+  width: 120%;
+  left: 0;
+  top: -30px;
+  height: 50px;
+  background-color: #f2f2f2;
+  transform: rotate(-6deg);
+  z-index: 1;
+}
+.content__information p {
+  margin: 0;
+  z-index: 5;
+}
+.content__information--strong {
+  z-index: 5;
+  font-size: 18px;
+  font-family: "OpenSansBold";
+  padding: 1em 0 0.5em;
+}
+.content__information img {
+  margin-top: 45px;
+}
+footer {
+  text-align: center;
+}
+footer .questions {
+  display: block;
+  font-family: "Times-new-roman";
+  font-size: 24px;
+  text-decoration: none;
+  color: #283645;
+  margin: 1em 40px;
+}
+footer p {
+  font-family: "OpenSansBold";
+  font-size: 18px;
+  padding: 0 20px 0.5em;
+  margin: 0 0;
+}
+footer p.contacts {
+  font-family: "OpenSansLight";
+  font-size: 24px;
+  color: #d22856;
+  padding-bottom: 1em;
+  margin: 0 0;
+}
+.slider {
+  text-align: center;
+}
+.slider__text {
+  color: #283645;
+  font-size: 14px;
+  line-height: 30px;
+  font-family: "OpenSansRegular";
+  margin: 0 20px;
+}
+.slider__text--strong {
+  font-size: 18px;
+  font-family: "OpenSansBold";
+  padding: 1em 0 0.5em;
+  margin-top: 30px;
+}
+.slider .slide {
+  display: none;
+}
+.slider .block {
+  display: block;
+}
+@font-face {
+  font-family: "OpenSansRegular";
+  src: url("../fonts/OpenSansRegular/OpenSansRegular.eot");
+  src: url("../fonts/OpenSansRegular/OpenSansRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSansRegular/OpenSansRegular.woff") format("woff"), url("../fonts/OpenSansRegular/OpenSansRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "OpenSansLight";
+  src: url("../fonts/OpenSansLight/OpenSansLight.eot");
+  src: url("../fonts/OpenSansLight/OpenSansLight.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSansLight/OpenSansLight.woff") format("woff"), url("../fonts/OpenSansLight/OpenSansLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "OpenSansBold";
+  src: url("../fonts/OpenSansBold/OpenSansBold.eot");
+  src: url("../fonts/OpenSansBold/OpenSansBold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSansBold/OpenSansBold.woff") format("woff"), url("../fonts/OpenSansBold/OpenSansBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}

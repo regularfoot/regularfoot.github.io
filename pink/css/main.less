@@ -1,0 +1,25 @@
+html {
+  min-width: 350px;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+.mixin1 {
+  box-sizing: border-box;
+  border: 5px solid #fff;
+  padding: 20px 34px;
+  border-radius: 40px;
+  font-family: "OpenSansBold";
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  line-height: 18px;
+}
+.mixin2(@font-size: 14px, @line-heigh: normal) {
+  text-align: center;
+  font-size: @font-size;
+  line-height: @line-heigh;
+  color: #fff;
+  font-family: "OpenSansLight";
+}
