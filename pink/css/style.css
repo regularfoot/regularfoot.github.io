@@ -34,6 +34,7 @@ header .nav-bar {
   margin: 0;
   position: relative;
 }
+header .nav-bar:after {
 header .nav-bar .gamburger {
   float: right;
 }
@@ -157,7 +158,7 @@ header .versions__text {
   color: #fff;
   font-family: "OpenSansLight";
 }
-@media (min-width: 700px) and (max-width: 1200px) {
+@media (min-width: 700px) {
   header .header__background {
     background-image: url(../img/background-2@1x.jpg);
     min-height: 730px;
@@ -231,7 +232,7 @@ footer p.contacts {
   padding-bottom: 1em;
   margin: 0 0;
 }
-@media (min-width: 700px) and (max-width: 1200px) {
+@media (min-width: 700px) {
   
 }
 .slider {
@@ -283,7 +284,7 @@ footer p.contacts {
   border: 3px solid #283645;
   background: #fff;
 }
-@media (min-width: 700px) and (max-width: 1200px) {
+@media (min-width: 700px) {
   .slider {
     position: relative;
   }
@@ -354,7 +355,10 @@ footer p.contacts {
   height: 278px;
   background-image: url(../img/screen-1-3.png);
 }
-@media (min-width: 700px) and (max-width: 1200px) {
+.table__features {
+  display: none;
+}
+@media (min-width: 700px) {
   .content__slogan {
     display: block;
     font-size: 40px;
@@ -473,8 +477,9 @@ footer p.contacts {
     background-image: url(../img/background-2@1x.jpg);
   }
 }
-@media (min-width: 700px) and (max-width: 1200px) {
+@media (min-width: 700px) {
   .table__features {
+    display: block;
     background-color: #eee;
     padding: 40px 40px 70px;
   }
@@ -506,8 +511,8 @@ footer p.contacts {
   .table__features th.sign:before {
     content: "";
     position: absolute;
-    top: -35px;
-    left: -35px;
+    top: -45px;
+    left: -45px;
     transform: rotate(-45deg);
     border: 35px solid transparent;
     border-bottom: 35px solid #d22856;
@@ -518,10 +523,11 @@ footer p.contacts {
     display: block;
     content: "ХИТ";
     position: absolute;
-    top: 5px;
+    color: #fff;
+    top: 12px;
     left: 2px;
-    color: #00ca74;
     transform: rotate(-45deg);
+    font-family: "OpenSansLight";
   }
   .table__features td {
     width: 25%;
