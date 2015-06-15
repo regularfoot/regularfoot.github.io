@@ -1,16 +1,16 @@
 @import "main.less";
 @import "header.less";
 @import "vars/variables.less";
-@import "content.less";
 @import "footer.less";
 @import "slider.less";
+@import "content.less";
 @import "paralax-slider.less";
 @font-face {
   font-family: "OpenSansRegular";
   src: url("../fonts/OpenSansRegular/OpenSansRegular.eot");
   src: url("../fonts/OpenSansRegular/OpenSansRegular.eot?#iefix") format("embedded-opentype"),
-  url("../fonts/OpenSansRegular/OpenSansRegular.woff") format("woff"),
-  url("../fonts/OpenSansRegular/OpenSansRegular.ttf") format("truetype");
+url("../fonts/OpenSansRegular/OpenSansRegular.woff") format("woff"),
+url("../fonts/OpenSansRegular/OpenSansRegular.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
 }
@@ -18,8 +18,8 @@
   font-family: "OpenSansLight";
   src: url("../fonts/OpenSansLight/OpenSansLight.eot");
   src: url("../fonts/OpenSansLight/OpenSansLight.eot?#iefix")format("embedded-opentype"),
-  url("../fonts/OpenSansLight/OpenSansLight.woff") format("woff"),
-  url("../fonts/OpenSansLight/OpenSansLight.ttf") format("truetype");
+url("../fonts/OpenSansLight/OpenSansLight.woff") format("woff"),
+url("../fonts/OpenSansLight/OpenSansLight.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
 }
@@ -27,8 +27,16 @@
   font-family: "OpenSansBold";
   src: url("../fonts/OpenSansBold/OpenSansBold.eot");
   src: url("../fonts/OpenSansBold/OpenSansBold.eot?#iefix")format("embedded-opentype"),
-  url("../fonts/OpenSansBold/OpenSansBold.woff") format("woff"),
-  url("../fonts/OpenSansBold/OpenSansBold.ttf") format("truetype");
+url("../fonts/OpenSansBold/OpenSansBold.woff") format("woff"),
+url("../fonts/OpenSansBold/OpenSansBold.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
 }
+@media(max-width: 700px) {
+  .header {
+    &__background {
+      background-image: url(../img/background-2@1x.jpg);
+    }
+  }
+}
+@import "table.less";

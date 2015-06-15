@@ -10,7 +10,7 @@
       <div class="header__background">
         <nav class="nav-bar">
           <a href="index.html" class="header__logo">
-            <img src="img/Pink-logo-1.png" alt="Pink logo" width="74" height="24">
+            <a href="#" class="logo"></a>
           </a>
           <a href="#" class="gamburger"><img src="img/menu-burger.svg" alt=""/></a>
           <ul class="close">
@@ -20,33 +20,47 @@
             <li><a href="#">Стоимость</a></li>
           </ul>
         </nav>
+      </div>
+      <div class="header-700px">
         <p class="header__slogan">Взгляните на жизнь иначе!</p>
+
+        <div class="header__download">
+          <a href="">Cкачать приложение</a>
+        </div>
+        <div class="versions">
+          <a href="" class="versions__icon-1"><img src="img/apple-logo.svg" alt="apple"></a>
+          <a href="" class="versions__icon-2"><img src="img/android-logo.svg" alt="android"></a>
+          <a href="" class="versions__icon-3"><img src="img/microsoft-logo.svg" alt="microsoft"></a>
+        </div>
+        <p class="versions__text">Доступно для iPhone, iPad, Android, Windows phone, Mac OS, Windows 8</p>
       </div>
-      <div class="header__download">
-        <a href="">Cкачать приложение</a>
-      </div>
-      <div class="versions">
-        <a href="" class="versions__icon-1"><img src="img/apple-logo.svg" alt="apple"></a>
-        <a href="" class="versions__icon-2"><img src="img/android-logo.svg" alt="android" ></a>
-        <a href="" class="versions__icon-3"><img src="img/microsoft-logo.svg" alt="microsoft"></a>
-      </div>
-      <p class="versions__text">Доступно для iPhone, iPad, Android, Windows phone, Mac OS, Windows 8</p>
     </header>
     <div class="content">
       <div class="content__slogan">
-        <p>Устали от серости мегаполиса?</p>
-        <p>Нам есть, что вам  предложить!</p>
+        <div>Устали от серости мегаполиса?</div>
+
+        <div>Нам есть, что вам предложить!</div>
       </div>
       <div class="content__information">
         <div class="content__information--strong">Поднимает настроение</div>
         <p>Приложение позволит вам победить осеннюю хандру и деперессию буквально в несколько кликов!</p>
+
         <div class="content__information--strong">Меняет мир вокруг</div>
         <p>Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
+
         <div class="content__information--strong">Заводит новых друзей</div>
         <p>Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых</p>
-        <img src="img/screen-1-3.png" alt=""/>
+        <div class="content__img"></div>
+        <img src="" alt=""/>
       </div>
 
+      <div class="effect">
+        <div class="effect__img"></div>
+        <div class="effect__h1">Эффект на 24 часа!</div>
+        <div class="effect__text">Британские ученые провели исследования и доказали, что
+          положительный эффект от использования приложения длится целые сутки!</div>
+        <a href="">Узнать больше об исследовании</a>
+      </div>
       <div class="paralax-slider">
 
       </div>
@@ -56,71 +70,142 @@
 
       <div class="slide block">
         <div class="slider__text--strong">Николай Петров</div>
+        <div class="slider__text--strong--prof">25лет, водитель автобуса</div>
         <div class="slider__text">«Это приложение перевернуло мой мир и позволило по-новому взглянуть
           на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к
-          выложенной фотографии!»</div>
+          выложенной фотографии!»
+        </div>
       </div>
       <div class="slide">
         <div class="slider__text--strong">Петров Николай</div>
+        <div class="slider__text--strong--prof">22лет, водитель трамвая</div>
         <div class="slider__text">«1Это приложение перевернуло мой мир и позволило по-новому взглянуть
           на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к
-          выложенной фотографии!»</div>
+          выложенной фотографии!»
+        </div>
       </div>
       <div class="slide">
         <div class="slider__text--strong">2Петров Николай</div>
+        <div class="slider__text--strong--prof">28лет, водитель пылесоса</div>
         <div class="slider__text">«2Это приложение перевернуло мой мир и позволило по-новому взглянуть
           на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к
-          выложенной фотографии!»</div>
+          выложенной фотографии!»
+        </div>
       </div>
-
-
-      <input type="radio" id="btn-1" name="toggle" checked/>
-      <input type="radio" id="btn-2" name="toggle"/>
-      <input type="radio" id="btn-3" name="toggle"/>
 
       <div class="slider-controls">
-        <label for="btn-1"></label>
-        <label for="btn-2"></label>
-        <label for="btn-3"></label>
+        <i class="slider-controls--active"></i>
+        <i></i>
+        <i></i>
       </div>
     </div>
+    <div class="table__features">
+      <table>
+        <tr>
+          <th></th>
+          <th><strong>База</strong><br>1,99 USD</th>
+          <th class="hit sign"><strong>Стандарт</strong><br>3,99 USD</th>
+          <th><strong>Анлим</strong><br>9,99 USD</th>
+        </tr>
+        <tr>
+          <td>Розовый фильтр</td>
+          <td class="yes"></td>
+          <td class="yes"></td>
+          <td class="yes"></td>
+        </tr>
+        <tr>
+          <td>Смайлики</td>
+          <td class="no"></td>
+          <td class="no"></td>
+          <td class="yes"></td>
+        </tr>
+        <tr>
+          <td>Комментарии</td>
+          <td class="no"></td>
+          <td class="no"></td>
+          <td class="no"></td>
+        </tr>
+      </table>
+    </div>
     <footer>
-      <a href="" class="questions">Остались вопросы?<wbr> Свяжитесь с нами!</a>
-    
+      <a href="" class="questions">Остались вопросы?
+        <wbr>
+        Свяжитесь с нами!</a>
+
       <p>Звоните:</p>
-    
+
       <p class="contacts">8(800)1000900</p>
-    
+
       <p>Пишите:</p>
-    
+
       <p class="contacts">hello@pinkapp.ru</p>
-    
+
       <p>Приезжайте в гости:</p>
-    
-      <p class="contacts">Санкт-Петербург,  Невский проспект, д. 20</p>
+
+      <p class="contacts">Санкт-Петербург, Невский проспект, д. 20</p>
     </footer>
     <div class="map"><a href=""></a></div>
     <script>
-      var hamburger = document.querySelector("header .gamburger");
-      var nav_menu = document.querySelector(".nav-bar");
-      var nav_ul = document.querySelector(".nav-bar ul");
-      hamburger.addEventListener("click", function(event){
-        event.preventDefault();
-//        if (nav_menu.classList.contains("memu-open")) {
-//          nav_menu.classList.remove("memu-open")
-//        }
-//        else {
-//          nav_ul.classList.add(close);
-//        }
-        if (nav_ul.classList.contains("close")) {
-          nav_ul.classList.remove("close")
-          nav_menu.classList.add("memu-open")
-        }
-        else {
-          nav_ul.classList.add("close");
-          nav_menu.classList.remove("memu-open");
-        }
-      })
+      (function () {
+        var hamburger = document.querySelector("header .gamburger");
+        var nav_menu = document.querySelector(".nav-bar");
+        var nav_ul = document.querySelector(".nav-bar ul");
+        hamburger.addEventListener("click", function (event) {
+          event.preventDefault();
+
+          if (nav_ul.classList.contains("close")) {
+            nav_ul.classList.remove("close")
+            nav_menu.classList.add("memu-open")
+          }
+          else {
+            nav_ul.classList.add("close");
+            nav_menu.classList.remove("memu-open");
+          }
+        })
+      }());
+      (function () {
+        var btn1 = document.querySelector(".slider-controls i:nth-child(1)");
+        var btn2 = document.querySelector(".slider-controls i:nth-child(2)");
+        var btn3 = document.querySelector(".slider-controls i:nth-child(3)");
+        var slide1 = document.querySelector(".slider .slide:nth-child(1)");
+        var slide2 = document.querySelector(".slider .slide:nth-child(2)");
+        var slide3 = document.querySelector(".slider .slide:nth-child(3)");
+//        var nav_ul = document.querySelector(".nav-bar ul");
+        btn1.addEventListener("click", function (event) {
+          event.preventDefault();
+          if (!btn1.classList.contains("slider-controls--active")) {
+            btn1.classList.add("slider-controls--active");
+            btn2.classList.remove("slider-controls--active");
+            btn3.classList.remove("slider-controls--active");
+            slide1.classList.add("block");
+            slide2.classList.remove("block");
+            slide3.classList.remove("block");
+          }
+        });
+        btn2.addEventListener("click", function (event) {
+          event.preventDefault();
+          if (!btn2.classList.contains("slider-controls--active")) {
+            btn1.classList.remove("slider-controls--active");
+            btn2.classList.add("slider-controls--active");
+            btn3.classList.remove("slider-controls--active");
+            slide1.classList.remove("block");
+            slide2.classList.add("block");
+            slide3.classList.remove("block");
+          }
+        });
+        btn3.addEventListener("click", function (event) {
+          event.preventDefault();
+          if (!btn3.classList.contains("slider-controls--active")) {
+            btn1.classList.remove("slider-controls--active");
+            btn2.classList.remove("slider-controls--active");
+            btn3.classList.add("slider-controls--active");
+            slide1.classList.remove("block");
+            slide2.classList.remove("block");
+            slide3.classList.add("block");
+          }
+        });
+      }());
+
     </script>
   </body>
 </html>

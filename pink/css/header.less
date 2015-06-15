@@ -1,6 +1,12 @@
 header {
   background-color: @black-blue;
   margin-bottom: 0;
+  .logo {
+    display: inline-block;
+    width: 74px;
+    height: 24px;
+    background-image: url(../img/Pink-logo-1.png);
+  }
   .nav-bar {
     box-sizing: border-box;
     background-color: @dark-blue;
@@ -74,8 +80,12 @@ header {
       }
     }
     &__slogan {
+      position: absolute;
+      top: 95px;
       text-align: center;
-      margin: 20px 50px;
+      margin: 0 50px;
+      margin-left: 50%;
+      left: -140px;
       font-size: 24px;
       line-height: normal;
       color: #fff;
@@ -87,9 +97,8 @@ header {
         display: block;
         width: 280px;
         .mixin1;
-        margin: 15px auto;
+        margin: 30px auto 15px;
       }
-
     }
 
   }
@@ -124,3 +133,58 @@ header {
     .mixin2(14px, 24px);
   }
 }
+@media(min-width: 700px) and (max-width: 1200px) {
+  header {
+    .header {
+      &__background {
+        background-image: url(../img/background-2@1x.jpg);
+        min-height: 730px;
+        &:after {
+          left: -350px;
+          width: 700px;
+          height: 545px;
+          background-image: url(../img/iphone-hand-2@1x.png);
+        }
+      }
+      &__slogan {
+        position: relative;
+        top: 0px;
+        text-align: center;
+        margin: 0 40px;
+        left: 0px;
+        font-size: 40px;
+        line-height: normal;
+        color: #fff;
+        font-family: "OpenSansLight";
+      }
+
+    }
+    & .logo {
+      display: inline-block;
+      width: 145px;
+      height: 40px;
+      background-image: url(../img/Pink-logo-2@1x.png);
+    }
+    .nav-bar {
+      padding: 25px 40px 40px;
+      .gamburger {
+        padding-top: 10px;
+      }
+    }
+    .versions__text{
+      padding: 0;
+      padding-bottom: 30px;
+      .mixin2(18px, 24px);
+    }
+
+  }
+  .header-700px {
+    width: 300px;
+    position: absolute;
+    top: 210px;
+    left: 40px;
+  }
+
+
+}
+

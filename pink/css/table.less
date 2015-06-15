@@ -1,0 +1,70 @@
+@media (min-width: 700px) and (max-width: 1200px) {
+  .table__features {
+    background-color: #eee;
+    padding: 40px 40px 70px;
+    table {
+      border-collapse: collapse;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+    th {
+      &:nth-child(n+2) {
+        color: #fff;
+        border-radius: 4px;
+        border-right: 2px solid #e5e5e5;
+        text-transform: uppercase;
+        background-color: @dark-blue2;
+        font-family: "OpenSansLight";
+        font-weight: lighter;
+        font-size: 18px;
+        padding: 15px;
+        position: relative;
+        & strong {
+          font-family: "OpenSansBold";
+          font-size: 16px;
+        }
+      }
+      &:last-child {
+        border-right: none;
+      }
+      &.sign {
+        &:before {
+          content: "";
+          position: absolute;
+          top: -35px;
+          left: -35px;
+          transform: rotate(-45deg);
+          border: 35px solid transparent;
+          border-bottom: 35px solid @red;
+          width: 20px;
+          height: 20px;
+        }
+      }
+      &.hit:after {
+        display: block;
+        content: "ХИТ";
+        position: absolute;
+        top: 5px;
+        left: 2px;
+        color: #00ca74;
+        transform: rotate(-45deg);
+      }
+
+    }
+    td {
+      width: 25%;
+      background-color: #fff;
+      font-family: "OpenSansLight";
+      font-size: 16px;
+      padding: 15px 10px;
+      border: 2px solid #e5e5e5;
+      &.yes {
+        background: #fff url(../img/yes.svg) no-repeat center;
+      }
+      &.no {
+        background: #fff url(../img/no.svg) no-repeat center;
+      }
+    }
+  }
+}
