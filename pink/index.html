@@ -41,6 +41,8 @@
 
         <div>Нам есть, что вам предложить!</div>
       </div>
+
+      <div class="treangle"></div>
       <div class="content__information">
         <div class="content__information--strong">Поднимает настроение</div>
         <p>Приложение позволит вам победить осеннюю хандру и деперессию буквально в несколько кликов!</p>
@@ -50,6 +52,7 @@
 
         <div class="content__information--strong">Заводит новых друзей</div>
         <p>Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых</p>
+
         <div class="content__img"></div>
         <img src="" alt=""/>
       </div>
@@ -58,7 +61,8 @@
         <div class="effect__img"></div>
         <div class="effect__h1">Эффект на 24 часа!</div>
         <div class="effect__text">Британские ученые провели исследования и доказали, что
-          положительный эффект от использования приложения длится целые сутки!</div>
+          положительный эффект от использования приложения длится целые сутки!
+        </div>
         <a href="">Узнать больше об исследовании</a>
       </div>
       <div class="paralax-slider">
@@ -66,8 +70,6 @@
       </div>
     </div>
     <div class="slider">
-
-
       <div class="slide block">
         <div class="slider__text--strong">Николай Петров</div>
         <div class="slider__text--strong--prof">25лет, водитель автобуса</div>
@@ -99,6 +101,7 @@
         <i></i>
       </div>
     </div>
+    <div class="treangle"></div>
     <div class="table__features">
       <table>
         <tr>
@@ -126,6 +129,12 @@
           <td class="no"></td>
         </tr>
       </table>
+      <div class="table-controls">
+        <i class="table-controls--active"></i>
+        <i></i>
+        <i></i>
+      </div>
+
     </div>
     <footer>
       <a href="" class="questions">Остались вопросы?
@@ -143,69 +152,30 @@
       <p>Приезжайте в гости:</p>
 
       <p class="contacts">Санкт-Петербург, Невский проспект, д. 20</p>
+
+      <div class="footbar">
+        <div class="footbar__logo">
+          <img src="img/Pink-logo-footer-2@1x.png" alt="logo" width="145" height="40"/>
+        </div>
+        <div class="footbar__social">
+          <a href="#"><img src="img/twitter.svg" alt="twitter" width="18" height="15"/></a>
+          <a href="#"><img src="img/facebook.svg" alt="facebook" width="9" height="19"/></a>
+          <a href="#"><img src="img/youtube.svg" alt="youtube" width="15" height="14"/></a>
+        </div>
+        <div class="footbar__by">
+          <a href="#">
+            Website by
+            <img src="img/glukhanko.svg" alt="glukhanko" width="26" height="30"/>
+          </a>
+          <a href="#">
+            for
+            <img src="img/htmlacademy.svg" alt="htmlacademy" width="26" height="34"/>
+          </a>
+        </div>
+
+      </div>
     </footer>
     <div class="map"><a href=""></a></div>
-    <script>
-      (function () {
-        var hamburger = document.querySelector("header .gamburger");
-        var nav_menu = document.querySelector(".nav-bar");
-        var nav_ul = document.querySelector(".nav-bar ul");
-        hamburger.addEventListener("click", function (event) {
-          event.preventDefault();
-
-          if (nav_ul.classList.contains("close")) {
-            nav_ul.classList.remove("close")
-            nav_menu.classList.add("memu-open")
-          }
-          else {
-            nav_ul.classList.add("close");
-            nav_menu.classList.remove("memu-open");
-          }
-        })
-      }());
-      (function () {
-        var btn1 = document.querySelector(".slider-controls i:nth-child(1)");
-        var btn2 = document.querySelector(".slider-controls i:nth-child(2)");
-        var btn3 = document.querySelector(".slider-controls i:nth-child(3)");
-        var slide1 = document.querySelector(".slider .slide:nth-child(1)");
-        var slide2 = document.querySelector(".slider .slide:nth-child(2)");
-        var slide3 = document.querySelector(".slider .slide:nth-child(3)");
-//        var nav_ul = document.querySelector(".nav-bar ul");
-        btn1.addEventListener("click", function (event) {
-          event.preventDefault();
-          if (!btn1.classList.contains("slider-controls--active")) {
-            btn1.classList.add("slider-controls--active");
-            btn2.classList.remove("slider-controls--active");
-            btn3.classList.remove("slider-controls--active");
-            slide1.classList.add("block");
-            slide2.classList.remove("block");
-            slide3.classList.remove("block");
-          }
-        });
-        btn2.addEventListener("click", function (event) {
-          event.preventDefault();
-          if (!btn2.classList.contains("slider-controls--active")) {
-            btn1.classList.remove("slider-controls--active");
-            btn2.classList.add("slider-controls--active");
-            btn3.classList.remove("slider-controls--active");
-            slide1.classList.remove("block");
-            slide2.classList.add("block");
-            slide3.classList.remove("block");
-          }
-        });
-        btn3.addEventListener("click", function (event) {
-          event.preventDefault();
-          if (!btn3.classList.contains("slider-controls--active")) {
-            btn1.classList.remove("slider-controls--active");
-            btn2.classList.remove("slider-controls--active");
-            btn3.classList.add("slider-controls--active");
-            slide1.classList.remove("block");
-            slide2.classList.remove("block");
-            slide3.classList.add("block");
-          }
-        });
-      }());
-
-    </script>
+    <script src="js/script.js"></script>
   </body>
 </html>

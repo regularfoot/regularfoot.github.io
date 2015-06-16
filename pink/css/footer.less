@@ -21,9 +21,65 @@ footer {
       margin: 0 0;
     }
   }
+  .footbar {
+    display: none;
+  }
 }
 @media(min-width: 700px) and (max-width: 1200px) {
   footer {
-
+    .footbar {
+      padding: 36px 40px;
+      border-top: 1px solid black;
+      display: block;
+      &__logo {
+        float: left;
+        padding-right: 40px;
+      }
+      &__social {
+        width: 200px;
+        text-align: center;
+        display: inline-block;
+        & a {
+          box-sizing: border-box;
+          padding: 0 5px;
+          margin: 0 5px;
+          text-decoration: none;
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          border: 3px solid @light-grey;
+          border-radius: 50%;
+          vertical-align: middle;
+        }
+        & img {
+          margin: 12px;
+        }
+      }
+      &__by {
+        box-sizing: border-box;
+        max-width: 260px;
+        float: right;
+        vertical-align: middle;
+        text-align: center;
+        display: inline-block;
+        position: relative;
+        & a {
+          vertical-align: baseline;
+          width: auto;
+          padding: 0;
+          margin: 0;
+          font-family: "OpenSansRegular";
+          font-size: 14px;
+          color: @dark-blue2;
+          text-decoration: none;
+        }
+        & img {
+          position: relative;
+          display: inline-block;
+          top: 10px;
+          padding: 0 10px;
+        }
+      }
+    }
   }
 }
