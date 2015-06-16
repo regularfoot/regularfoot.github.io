@@ -25,12 +25,7 @@
   0% {right: @tr;}
   100% {right: @tl;}
 }
-//.key (@tl, @tc, leftcenter);
-//.key (@tc, @tr, rightcenter);
-//.key (@tc, @tl, centerleft);
-//.key (@tc, @tr, centerright);
-//.key (@tl, @tr, leftright);
-//.key (@tr, @tl, rightleft);
+
 
 .lc {
   -webkit-animation: left-center 1s  ease-out forwards;
@@ -46,11 +41,11 @@
 }
 .cr {
   -webkit-animation: centerright 1s  ease-out forwards;
-  animation: left-center 1s ease-out forwards;
+  animation: centerright 1s ease-out forwards;
 }
 .lr {
   -webkit-animation: left-right 1s  ease-out forwards ;
-  animation: left-center 1s ease-out forwards;
+  animation: left-right 1s ease-out forwards;
 }
 .rl {
   -webkit-animation: right-left 1s  ease-out forwards ;
@@ -154,9 +149,37 @@
       }
     }
     tr {
-    .mixin3("Розовый фильтр", 2);
-    .mixin3("Смайлики", 3);
-    .mixin3("Комментарии", 4);
+      .mixin3(@text) {
+        position: relative;
+        content: @text;
+        text-align: left;
+        font-family: "OpenSansLight";
+        font-size: 16px;
+      }
+      &:nth-child(2) td {
+        &:nth-child(n+2) {
+          position: relative;
+          &:after {
+            .mixin3("Розовый фильтр");
+          }
+        }
+      }
+      &:nth-child(3) td {
+        &:nth-child(n+2) {
+          position: relative;
+          &:after {
+            .mixin3("Смайлики");
+          }
+        }
+      }
+      &:nth-child(4) td {
+        &:nth-child(n+2) {
+          position: relative;
+          &:after {
+            .mixin3("Комментарии");
+          }
+        }
+      }
     }
   }
   .table-controls {
@@ -182,20 +205,7 @@
     }
   }
 }
-.mixin3(@text, @number) {
-  &:nth-child(@number) td {
-    &:nth-child(n+2) {
-      position: relative;
-      &:after {
-        position: relative;
-        content: @text;
-        text-align: left;
-        font-family: "OpenSansLight";
-        font-size: 16px;
-      }
-    }
-  }
-}
+
 @media (min-width: 700px) and (max-width: 1200px) {
   .table__features {
     background-color: @grey;

@@ -388,7 +388,9 @@ footer .footbar {
   padding: 35px 20px 0;
   font-family: "OpenSansLight";
   position: relative;
-  transform: scaley(100px);
+  -webkit-transform: scaleY(100px);
+      -ms-transform: scaleY(100px);
+          transform: scaleY(100px);
 }
 .content__information div {
   margin: 0;
@@ -403,7 +405,6 @@ footer .footbar {
 .content__information .content__img {
   margin-top: 45px;
   position: relative;
-  bottom: -20px;
   margin-left: 50%;
   left: -79px;
   width: 158px;
@@ -502,32 +503,6 @@ footer .footbar {
     line-height: 24px;
   }
 }
-@font-face {
-  font-family: "OpenSansRegular";
-  src: url("../fonts/OpenSansRegular/OpenSansRegular.eot");
-  src: url("../fonts/OpenSansRegular/OpenSansRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSansRegular/OpenSansRegular.woff") format("woff"), url("../fonts/OpenSansRegular/OpenSansRegular.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-@font-face {
-  font-family: "OpenSansLight";
-  src: url("../fonts/OpenSansLight/OpenSansLight.eot");
-  src: url("../fonts/OpenSansLight/OpenSansLight.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSansLight/OpenSansLight.woff") format("woff"), url("../fonts/OpenSansLight/OpenSansLight.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-@font-face {
-  font-family: "OpenSansBold";
-  src: url("../fonts/OpenSansBold/OpenSansBold.eot");
-  src: url("../fonts/OpenSansBold/OpenSansBold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSansBold/OpenSansBold.woff") format("woff"), url("../fonts/OpenSansBold/OpenSansBold.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-@media (max-width: 700px) {
-  .header__background {
-    background-image: url(../img/background-2@1x.jpg);
-  }
-}
 @-webkit-keyframes left-center {
   0% {
     right: 0;
@@ -590,11 +565,11 @@ footer .footbar {
 }
 .cr {
   -webkit-animation: centerright 1s ease-out forwards;
-  animation: left-center 1s ease-out forwards;
+  animation: centerright 1s ease-out forwards;
 }
 .lr {
   -webkit-animation: left-right 1s ease-out forwards;
-  animation: left-center 1s ease-out forwards;
+  animation: left-right 1s ease-out forwards;
 }
 .rl {
   -webkit-animation: right-left 1s ease-out forwards;
@@ -656,7 +631,9 @@ footer .footbar {
     position: absolute;
     top: -35px;
     left: -35px;
-    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
     border: 25px solid transparent;
     border-bottom: 25px solid #d22856;
     width: 20px;
@@ -670,7 +647,9 @@ footer .footbar {
     top: 5px;
     left: 1px;
     color: #fff;
-    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
   }
   .table__features td {
     min-width: 275px;
@@ -782,7 +761,9 @@ footer .footbar {
     position: absolute;
     top: -35px;
     left: -35px;
-    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
     border: 25px solid transparent;
     border-bottom: 25px solid #d22856;
     width: 20px;
@@ -796,7 +777,9 @@ footer .footbar {
     top: 5px;
     left: 1px;
     color: #fff;
-    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
   }
   .table__features td {
     width: 25%;
@@ -811,6 +794,32 @@ footer .footbar {
   }
   .table__features td.no {
     background: #ffffff url(../img/no.svg) no-repeat center;
+  }
+}
+@font-face {
+  font-family: "OpenSansRegular";
+  src: url("../fonts/OpenSansRegular/OpenSansRegular.eot");
+  src: url("../fonts/OpenSansRegular/OpenSansRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSansRegular/OpenSansRegular.woff") format("woff"), url("../fonts/OpenSansRegular/OpenSansRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "OpenSansLight";
+  src: url("../fonts/OpenSansLight/OpenSansLight.eot");
+  src: url("../fonts/OpenSansLight/OpenSansLight.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSansLight/OpenSansLight.woff") format("woff"), url("../fonts/OpenSansLight/OpenSansLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "OpenSansBold";
+  src: url("../fonts/OpenSansBold/OpenSansBold.eot");
+  src: url("../fonts/OpenSansBold/OpenSansBold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSansBold/OpenSansBold.woff") format("woff"), url("../fonts/OpenSansBold/OpenSansBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@media (max-width: 700px) {
+  .header__background {
+    background-image: url(../img/background-2@1x.jpg);
   }
 }
 .treangle {
