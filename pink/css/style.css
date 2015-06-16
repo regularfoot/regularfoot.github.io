@@ -16,146 +16,148 @@ body {
   font-size: 18px;
   line-height: 18px;
 }
-header {
-  background-color: #1d2631;
-  margin-bottom: 0;
-}
-header .logo {
-  display: inline-block;
-  width: 74px;
-  height: 24px;
-  background-image: url(../img/Pink-logo-1.png);
-}
-header .nav-bar {
-  box-sizing: border-box;
-  background-color: rgba(40, 54, 69, 0.6);
-  min-width: 350px;
-  padding: 20px;
-  margin: 0;
-  position: relative;
-}
-header .nav-bar .gamburger {
-  float: right;
-}
-header ul {
-  margin: 0;
-  margin-top: 20px;
-  display: block;
-  position: absolute;
-  padding: 0;
-  left: 0;
-  z-index: 5;
-  min-width: 100%;
-}
-header ul li {
-  box-sizing: border-box;
-  border: 1px solid black;
-  min-width: 350px;
-  list-style: none;
-  text-align: center;
-  background-color: #283645;
-  padding: 0px;
-}
-header ul li:nth-child(n+1) {
-  border-top: 1px solid #495361;
-}
-header ul li a {
-  display: block;
-  box-sizing: border-box;
-  min-width: 350px;
-  color: #ffffff;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 18px;
-  line-height: 32px;
-  font-family: "OpenSansBold";
-  height: 60px;
-  padding-top: 13px;
-}
-header .close {
-  display: none;
-}
-header .memu-open {
-  padding-bottom: 19px;
-  border-bottom: 1px solid black;
-  background-color: #283645;
-}
-header .header__background {
-  display: block;
-  background: #2a3948 url(../img/background-1@1x.jpg) no-repeat center;
-  min-height: 460px;
-  position: relative;
-}
-header .header__background:after {
-  content: "";
-  position: absolute;
-  display: block;
-  margin: 0 50%;
-  left: -144px;
-  width: 258px;
-  height: 286px;
-  background-image: url(../img/iphone-hand-1.png);
-  bottom: 0;
-}
-header .header__slogan {
-  position: absolute;
-  top: 95px;
-  text-align: center;
-  margin: 0 50px;
-  margin-left: 50%;
-  left: -140px;
-  font-size: 24px;
-  line-height: normal;
-  color: #fff;
-  font-family: "OpenSansLight";
-}
-header .header__download {
-  height: 100px;
-}
-header .header__download a {
-  display: block;
-  width: 280px;
-  box-sizing: border-box;
-  border: 5px solid #fff;
-  padding: 20px 32px;
-  border-radius: 40px;
-  font-family: "OpenSansBold";
-  text-decoration: none;
-  color: #fff;
-  font-size: 18px;
-  line-height: 18px;
-  margin: 30px auto 15px;
-}
-header .versions {
-  display: block;
-  margin: 0 auto;
-  box-sizing: border-box;
-  width: 210px;
-  height: 65px;
-}
-header .versions a {
-  vertical-align: middle;
-}
-header .versions__icon-1 {
-  float: left;
-  margin-right: 35px;
-}
-header .versions__icon-2 {
-  margin-top: 10px;
-  float: left;
-}
-header .versions__icon-3 {
-  float: right;
-  margin-top: 10px;
-}
-header .versions__text {
-  padding: 0 45px;
-  padding-bottom: 30px;
-  text-align: center;
-  font-size: 14px;
-  line-height: 24px;
-  color: #fff;
-  font-family: "OpenSansLight";
+@media (min-width: 700px) and (max-width: 1200px) {
+  header {
+    background-color: #1d2631;
+    margin-bottom: 0;
+  }
+  header .logo {
+    display: inline-block;
+    width: 74px;
+    height: 24px;
+    background-image: url(../img/Pink-logo-1.png);
+  }
+  header .nav-bar {
+    box-sizing: border-box;
+    background-color: rgba(40, 54, 69, 0.6);
+    min-width: 350px;
+    padding: 20px;
+    margin: 0;
+    position: relative;
+  }
+  header .nav-bar .gamburger {
+    float: right;
+  }
+  header ul {
+    margin: 0;
+    margin-top: 20px;
+    display: block;
+    position: absolute;
+    padding: 0;
+    left: 0;
+    z-index: 5;
+    min-width: 100%;
+  }
+  header ul li {
+    box-sizing: border-box;
+    border: 1px solid black;
+    min-width: 350px;
+    list-style: none;
+    text-align: center;
+    background-color: #283645;
+    padding: 0px;
+  }
+  header ul li:nth-child(n+1) {
+    border-top: 1px solid #495361;
+  }
+  header ul li a {
+    display: block;
+    box-sizing: border-box;
+    min-width: 350px;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 32px;
+    font-family: "OpenSansBold";
+    height: 60px;
+    padding-top: 13px;
+  }
+  header .close {
+    display: none;
+  }
+  header .memu-open {
+    padding-bottom: 19px;
+    border-bottom: 1px solid black;
+    background-color: #283645;
+  }
+  header .header__background {
+    display: block;
+    background: #2a3948 url(../img/background-1@1x.jpg) no-repeat center;
+    min-height: 460px;
+    position: relative;
+  }
+  header .header__background:after {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: 0 50%;
+    left: -144px;
+    width: 258px;
+    height: 286px;
+    background-image: url(../img/iphone-hand-1.png);
+    bottom: 0;
+  }
+  header .header__slogan {
+    position: absolute;
+    top: 95px;
+    text-align: center;
+    margin: 0 50px;
+    margin-left: 50%;
+    left: -140px;
+    font-size: 24px;
+    line-height: normal;
+    color: #fff;
+    font-family: "OpenSansLight";
+  }
+  header .header__download {
+    height: 100px;
+  }
+  header .header__download a {
+    display: block;
+    width: 280px;
+    box-sizing: border-box;
+    border: 5px solid #fff;
+    padding: 20px 32px;
+    border-radius: 40px;
+    font-family: "OpenSansBold";
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    line-height: 18px;
+    margin: 30px auto 15px;
+  }
+  header .versions {
+    display: block;
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 210px;
+    height: 65px;
+  }
+  header .versions a {
+    vertical-align: middle;
+  }
+  header .versions__icon-1 {
+    float: left;
+    margin-right: 35px;
+  }
+  header .versions__icon-2 {
+    margin-top: 10px;
+    float: left;
+  }
+  header .versions__icon-3 {
+    float: right;
+    margin-top: 10px;
+  }
+  header .versions__text {
+    padding: 0 45px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 24px;
+    color: #fff;
+    font-family: "OpenSansLight";
+  }
 }
 @media (min-width: 700px) and (max-width: 1200px) {
   header .header__background {
@@ -207,49 +209,167 @@ header .versions__text {
     left: 40px;
   }
 }
-footer {
-  text-align: center;
+@media (min-width: 1200px) {
+  body:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100vw;
+    height: 102px;
+    top: 0;
+    background-color: rgba(40, 54, 69, 0.6);
+    z-index: 1;
+  }
+  header .header__background {
+    background-image: url(../img/background-fullsize.jpg);
+    min-height: 885px;
+    position: relative;
+  }
+  header .header__background:after {
+    content: "";
+    position: absolute;
+    left: -350px;
+    width: 1050px;
+    height: 645px;
+    margin-left: 50%;
+    bottom: 0px;
+    background-image: url(../img/iphone-hand-3@1x.png);
+    z-index: 4;
+  }
+  header .header__slogan {
+    position: relative;
+    top: 0px;
+    text-align: center;
+    margin: 0 40px;
+    padding-bottom: 30px;
+    left: 0px;
+    font-size: 50px;
+    line-height: normal;
+    color: #fff;
+    font-family: "OpenSansLight";
+  }
+  header .header__download {
+    height: 100px;
+    padding-bottom: 30px;
+  }
+  header .header__download a {
+    display: block;
+    width: 300px;
+    box-sizing: border-box;
+    border: 5px solid #fff;
+    padding: 20px 32px;
+    border-radius: 40px;
+    font-family: "OpenSansBold";
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    line-height: 18px;
+    padding: 20px 25px;
+    font-size: 21px;
+    margin: 30px auto 15px;
+  }
+  header .logo {
+    display: inline-block;
+    width: 145px;
+    height: 40px;
+    margin: 35px 0;
+    background-image: url(../img/Pink-logo-3@1x.png);
+  }
+  header .nav-bar {
+    z-index: 2;
+    background-color: transparent;
+    box-sizing: border-box;
+    padding: 0;
+    width: 950px;
+    margin: 0 auto;
+    position: relative;
+  }
+  header .nav-bar .gamburger {
+    display: none;
+  }
+  header ul {
+    display: inline-block;
+    padding: 0;
+    float: right;
+    margin: 0;
+  }
+  header ul li {
+    list-style: none;
+    text-align: center;
+    float: right;
+  }
+  header ul li a {
+    display: inline-block;
+    float: right;
+    box-sizing: border-box;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 32px;
+    font-family: "OpenSansRegular";
+    padding: 35px;
+  }
+  header ul li a:hover {
+    background-color: #1d2631;
+  }
+  header .versions {
+    display: block;
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 210px;
+    height: 65px;
+  }
+  header .versions a {
+    vertical-align: middle;
+  }
+  header .versions__icon-1 {
+    float: left;
+    margin-right: 35px;
+  }
+  header .versions__icon-2 {
+    margin-top: 10px;
+    float: left;
+  }
+  header .versions__icon-3 {
+    float: right;
+    margin-top: 10px;
+  }
+  header .versions__text {
+    padding: 0;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 24px;
+    color: #fff;
+    font-family: "OpenSansLight";
+  }
+  .header-700px {
+    width: 320px;
+    position: absolute;
+    top: 210px;
+    margin-left: 50%;
+    left: -400px;
+  }
 }
-footer .questions {
-  display: block;
-  font-family: "Times-new-roman";
-  font-size: 24px;
-  text-decoration: none;
-  color: #283645;
-  margin: 1em 40px;
-}
-footer p {
-  font-family: "OpenSansBold";
-  font-size: 18px;
-  padding: 0 20px 0.5em;
-  margin: 0 0;
-}
-footer p.contacts {
-  font-family: "OpenSansLight";
-  font-size: 24px;
-  color: #d22856;
-  padding-bottom: 1em;
-  margin: 0 0;
-}
-footer .footbar {
+.footbar {
   display: none;
 }
-@media (min-width: 700px) and (max-width: 1200px) {
-  footer .footbar {
+@media (min-width: 700px) {
+  .footbar {
     padding: 36px 40px;
-    border-top: 1px solid black;
     display: block;
+    text-align: center;
   }
-  footer .footbar__logo {
+  .footbar__logo {
     float: left;
     padding-right: 40px;
   }
-  footer .footbar__social {
+  .footbar__social {
     width: 200px;
     text-align: center;
     display: inline-block;
   }
-  footer .footbar__social a {
+  .footbar__social a {
     box-sizing: border-box;
     padding: 0 5px;
     margin: 0 5px;
@@ -257,14 +377,14 @@ footer .footbar {
     display: inline-block;
     width: 50px;
     height: 50px;
-    border: 3px solid #bec2c7;
+    border: 3px solid #e9ebec;
     border-radius: 50%;
     vertical-align: middle;
   }
-  footer .footbar__social img {
+  .footbar__social img {
     margin: 12px;
   }
-  footer .footbar__by {
+  .footbar__by {
     box-sizing: border-box;
     max-width: 260px;
     float: right;
@@ -273,7 +393,7 @@ footer .footbar {
     display: inline-block;
     position: relative;
   }
-  footer .footbar__by a {
+  .footbar__by a {
     vertical-align: baseline;
     width: auto;
     padding: 0;
@@ -283,7 +403,7 @@ footer .footbar {
     color: #283645;
     text-decoration: none;
   }
-  footer .footbar__by img {
+  .footbar__by img {
     position: relative;
     display: inline-block;
     top: 10px;
@@ -335,9 +455,15 @@ footer .footbar {
   border-radius: 50%;
   border: 3px solid #fff;
 }
+.slider-controls i:hover {
+  cursor: pointer;
+}
 .slider-controls i.slider-controls--active {
   border: 3px solid #283645;
   background: #fff;
+}
+.slider-controls i.slider-controls--active:hover {
+  cursor: default;
 }
 @media (min-width: 700px) and (max-width: 1200px) {
   .slider {
@@ -380,7 +506,6 @@ footer .footbar {
   display: none;
 }
 .content__information {
-  background-color: #f2f2f2;
   color: #283645;
   text-align: center;
   font-size: 14px;
@@ -411,7 +536,10 @@ footer .footbar {
   height: 278px;
   background-image: url(../img/screen-1-3.png);
 }
-@media (min-width: 700px) and (max-width: 1200px) {
+.bg-grey {
+  background-color: #f2f2f2;
+}
+@media (min-width: 700px) {
   .content__slogan {
     display: block;
     font-size: 40px;
@@ -425,10 +553,15 @@ footer .footbar {
     margin: 0 60px 80px;
     line-height: 40px;
   }
+  .center {
+    max-width: 940px;
+    margin: 0 auto;
+  }
   .effect {
+    max-width: 940px;
     padding-left: 40px;
     padding-top: 57px;
-    padding-right: 80px;
+    padding-right: 40px;
     padding-bottom: 20px;
     display: block;
   }
@@ -484,10 +617,19 @@ footer .footbar {
     clear: both;
   }
   .content__information {
-    padding-left: 340px;
-    padding-right: 40px;
+    box-sizing: border-box;
+    padding-left: 0px;
+    padding-right: 0x;
     padding-bottom: 20px;
+    text-align: center;
+    max-width: 940px;
+    margin: 0 auto;
+  }
+  .content__information--center {
+    display: inline-block;
     position: relative;
+    padding-left: 320px;
+    max-width: 940px;
     text-align: left;
   }
   .content__information .content__img {
@@ -495,9 +637,8 @@ footer .footbar {
     background-image: url(../img/iphone-screen-2-3@1x.png);
     width: 268px;
     height: 481px;
-    margin-left: 40px;
-    bottom: 0;
-    left: 0;
+    bottom: -20px;
+    margin-left: 10%;
   }
   .content__information p {
     line-height: 24px;
@@ -588,7 +729,7 @@ footer .footbar {
   .table__features {
     box-sizing: border-box;
     background-color: #f2f2f2;
-    padding: 40px 20px 70px;
+    padding: 40px 20px 40px;
     position: relative;
     min-width: 350px;
     overflow: hidden;
@@ -709,7 +850,7 @@ footer .footbar {
     text-align: center;
     width: 100%;
     height: 12px;
-    margin-top: 30px;
+    margin-top: 40px;
   }
   .table-controls i {
     box-sizing: border-box;
@@ -721,12 +862,18 @@ footer .footbar {
     border-radius: 50%;
     border: 3px solid #f2f2f2;
   }
+  .table-controls i:hover {
+    cursor: pointer;
+  }
   .table-controls i.table-controls--active {
     border: 3px solid #283645;
     background: #fff;
   }
+  .table-controls i.table-controls--active:hover {
+    cursor: default;
+  }
 }
-@media (min-width: 700px) and (max-width: 1200px) {
+@media (min-width: 700px) {
   .table__features {
     background-color: #f2f2f2;
     padding: 40px 40px 70px;
@@ -794,6 +941,81 @@ footer .footbar {
   }
   .table__features td.no {
     background: #ffffff url(../img/no.svg) no-repeat center;
+  }
+}
+.main__contacts {
+  text-align: center;
+  padding-bottom: 20px;
+}
+.main__contacts .questions {
+  display: block;
+  font-family: "OpenSansLight";
+  font-size: 24px;
+  text-decoration: none;
+  color: #283645;
+  margin: 1em 40px;
+}
+.main__contacts p {
+  font-family: "OpenSansBold";
+  font-size: 18px;
+  padding: 0 20px 0.5em;
+  margin: 0 0;
+}
+.main__contacts p.contacts {
+  font-family: "OpenSansLight";
+  font-size: 24px;
+  color: #d22856;
+  padding-bottom: 1em;
+  margin: 0 0;
+}
+.map {
+  display: block;
+  background-color: #ccc;
+  white-space: 100%;
+  height: 200px;
+}
+.map:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-right: 50vw solid transparent;
+  border-left: 50vw solid transparent;
+  border-top: 8vw solid #fff;
+  left: -17px;
+}
+@media (min-width: 700px) {
+  .main__contacts .questions {
+    font-family: "OpenSansLight";
+    font-size: 40px;
+  }
+  .main__contacts .contacts__wrapper--left {
+    width: 25%;
+    float: left;
+    margin-left: 15%;
+    margin-right: 10%;
+    display: .block;
+  }
+  .main__contacts .contacts__wrapper--right {
+    width: 25%;
+    float: right;
+    margin-left: 10%;
+    margin-right: 15%;
+    display: .block;
+  }
+  .map {
+    display: block;
+    background-color: #ccc;
+    white-space: 100%;
+    height: 390px;
+  }
+  .map:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-right: 50vw solid transparent;
+    border-left: 50vw solid transparent;
+    border-top: 8vw solid #fff;
+    left: -17px;
   }
 }
 @font-face {

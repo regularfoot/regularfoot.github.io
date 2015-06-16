@@ -65,7 +65,7 @@
   .table__features {
     box-sizing: border-box;
     background-color: @grey;
-    padding: 40px 20px 70px;
+    padding: 40px 20px 40px;
     position: relative;
     min-width: 350px;
     overflow: hidden;
@@ -188,7 +188,7 @@
     text-align: center;
     width: 100%;
     height: 12px;
-    margin-top: 30px;
+    margin-top: 40px;
     i {
       box-sizing: border-box;
       width: 12px;
@@ -198,15 +198,21 @@
       margin-right: 13px;
       border-radius: 50%;
       border: 3px solid @grey;
+      &:hover {
+      cursor: pointer;
+    }
       &.table-controls--active {
         border: 3px solid @dark-blue2;
         background: #fff;
+          &:hover {
+      cursor: default;
+    }
       }
     }
   }
 }
 
-@media (min-width: 700px) and (max-width: 1200px) {
+@media (min-width: 700px) {
   .table__features {
     background-color: @grey;
     padding: 40px 40px 70px;

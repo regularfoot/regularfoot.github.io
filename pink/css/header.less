@@ -1,4 +1,5 @@
-header {
+@media(min-width: 700px) and (max-width: 1200px) {
+  header {
   background-color: @black-blue;
   margin-bottom: 0;
   .logo {
@@ -133,6 +134,7 @@ header {
     .mixin2(14px, 24px);
   }
 }
+}
 @media(min-width: 700px) and (max-width: 1200px) {
   header {
     .header {
@@ -187,4 +189,148 @@ header {
 
 
 }
+@media(min-width: 1200px) {
+  body {
+  &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100vw;
+        height: 102px;
+        top: 0;
+        background-color: @dark-blue;
+        z-index: 1;
+      }
+  }
+  header {
+    .header {
+      &__background {
+        background-image: url(../img/background-fullsize.jpg);
+        min-height: 885px;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          left: -350px;
+          width: 1050px;
+          height: 645px;
+          margin-left: 50%;
+          bottom: 0px;
+          background-image: url(../img/iphone-hand-3@1x.png);
+          z-index: 4;
+        }
+      }
+      &__slogan {
+        position: relative;
+        top: 0px;
+        text-align: center;
+        margin: 0 40px;
+        padding-bottom: 30px;
+        left: 0px;
+        font-size: 50px;
+        line-height: normal;
+        color: #fff;
+        font-family: "OpenSansLight";
+      }
+      &__download{
+      height: 100px;
+      padding-bottom: 30px;
+      a{
+        display: block;
+        width: 300px;
+        .mixin1;
+        padding: 20px 25px;
+        font-size: 21px;
+        margin: 30px auto 15px;
+      }
+    }
 
+    }
+    & .logo {
+      display: inline-block;
+      width: 145px;
+      height: 40px;
+      margin: 35px 0;
+      background-image: url(../img/Pink-logo-3@1x.png);
+    }
+   
+    .nav-bar {
+      z-index: 2;
+    background-color: transparent;
+    box-sizing: border-box;
+    padding: 0;
+      width: 950px;
+    margin: 0 auto;
+    position: relative;
+      
+    .gamburger {
+      display: none;
+    }
+  }
+  
+  ul {
+    display: inline-block;
+    padding: 0;
+    float: right;
+    margin: 0;
+    li {
+      list-style: none;
+      text-align: center;
+      float: right;
+      a {
+        display: inline-block;
+        float: right;
+        box-sizing: border-box;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 32px;
+        font-family: "OpenSansRegular";
+        padding: 35px;
+        &:hover {
+          background-color: @black-blue;
+        }
+      }
+    }
+  }
+    .versions {
+    display: block;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    width: 210px;
+    height: 65px;
+    & a{
+      vertical-align: middle;
+    }
+    &__icon-1{
+      float: left;
+      margin-right: 35px;
+    }
+    &__icon-2{
+      margin-top: 10px;
+      float: left;
+    }
+    &__icon-3{
+      float: right;
+      margin-top: 10px;
+    }
+
+  }
+    .versions__text{
+      padding: 0;
+      padding-top: 30px;
+      .mixin2(18px, 24px);
+    }
+
+  }
+  .header-700px {
+    width: 320px;
+    position: absolute;
+    top: 210px;
+    margin-left: 50%;
+    left: -400px;
+  }
+
+
+}
