@@ -7,9 +7,17 @@
     padding: 36px 40px;
     display: block;
   text-align: center;
-    &__logo {
+    &__logo{
+      display: block;
+      width: 145px;
+      height: 40px;
+      background: url(../img/Pink-logo-footer-2@1x.png) no-repeat center;
       float: left;
       padding-right: 40px;
+
+      &:active {
+        fill: transparent;
+      }
     }
     &__social {
       width: 200px;
@@ -26,6 +34,31 @@
         border: 3px solid #e9ebec;
         border-radius: 50%;
         vertical-align: middle;
+        & i.twitter {
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: url(../img/twitter.svg) no-repeat center;
+        }
+        & i.facebook {
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: url(../img/facebook.svg) no-repeat center;
+        }
+        & i.youtube {
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: url(../img/youtube.svg) no-repeat center;
+        }
+        &:hover {
+          border: 3px solid @black-blue;
+        }
+        &:active {
+          opacity: 0.5;
+          border: 3px solid #e9ebec;
+        }
       }
       & img {
         margin: 12px;
@@ -48,13 +81,36 @@
         font-size: 14px;
         color: @dark-blue2;
         text-decoration: none;
+        &:hover {
+          .gluchanco {
+            & path {
+              fill: @black-blue;
+            }
+            & polygon {
+              fill: @black-blue;
+            }
+          }
+        }
+        &:active {
+          opacity: 0.5;
+        }
       }
-      & img {
+      & svg {
         position: relative;
         display: inline-block;
         top: 10px;
         padding: 0 10px;
       }
+    }
+  }
+}
+@media(min-width: 1200px) {
+  .footbar {
+    padding: 70px 40px;
+  }
+  .footbar {
+    &__logo {
+      background: url(../img/Pink-logo-footer-3@1x.png) no-repeat center;
     }
   }
 }

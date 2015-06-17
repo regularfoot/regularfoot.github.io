@@ -19,41 +19,175 @@
     var btn1 = document.querySelector(".slider-controls i:nth-child(1)");
     var btn2 = document.querySelector(".slider-controls i:nth-child(2)");
     var btn3 = document.querySelector(".slider-controls i:nth-child(3)");
-    var slide1 = document.querySelector(".slider .slide:nth-child(1)");
+    var slide1 = document.querySelector(".slider div.slide:nth-child(1)");
     var slide2 = document.querySelector(".slider .slide:nth-child(2)");
     var slide3 = document.querySelector(".slider .slide:nth-child(3)");
+    var control_left = document.querySelector(".control-left");
+    var control_right = document.querySelector(".control-right");
 //        var nav_ul = document.querySelector(".nav-bar ul");
+    control_left.addEventListener("click", function (event) {
+        event.preventDefault();
+        if (btn1.classList.contains("slider-controls--active")) {
+            btn1.classList.remove("slider-controls--active");
+            btn3.classList.add("slider-controls--active");
+            slide1.classList.add("block-100");
+            setTimeout(function() {
+                slide1.classList.remove("block");
+                slide1.classList.remove("block-1");
+                slide1.classList.remove("block-100");
+            }, 500);
+            setTimeout(function() {
+                slide3.classList.add("block");
+            }, 500);
+            slide3.classList.add("block-1");
+        }
+        else if (btn3.classList.contains("slider-controls--active")) {
+            btn3.classList.remove("slider-controls--active");
+            btn2.classList.add("slider-controls--active");
+            slide3.classList.add("block-100");
+            setTimeout(function() {
+                slide3.classList.remove("block");
+                slide3.classList.remove("block-1");
+                slide3.classList.remove("block-100");
+            }, 500);
+            setTimeout(function() {
+                slide2.classList.add("block");
+            }, 500);
+            slide2.classList.add("block-1");
+        }
+        else if (btn2.classList.contains("slider-controls--active")) {
+            btn2.classList.remove("slider-controls--active");
+            btn1.classList.add("slider-controls--active");
+            slide2.classList.add("block-100");
+            setTimeout(function() {
+                slide2.classList.remove("block");
+                slide2.classList.remove("block-1");
+                slide2.classList.remove("block-100");
+            }, 500);
+            setTimeout(function() {
+                slide1.classList.add("block");
+            }, 500);
+            slide1.classList.add("block-1");
+        }
+
+    });
+    control_right.addEventListener("click", function (event) {
+        event.preventDefault();
+        if (btn1.classList.contains("slider-controls--active")) {
+            btn1.classList.remove("slider-controls--active");
+            btn2.classList.add("slider-controls--active");
+            slide1.classList.add("block-100");
+            setTimeout(function() {
+                slide1.classList.remove("block");
+                slide1.classList.remove("block-1");
+                slide1.classList.remove("block-100");
+            }, 500);
+            setTimeout(function() {
+                slide2.classList.add("block");
+            }, 500);
+            slide2.classList.add("block-1");
+        }
+        else if (btn2.classList.contains("slider-controls--active")) {
+            btn2.classList.remove("slider-controls--active");
+            btn3.classList.add("slider-controls--active");
+            slide2.classList.add("block-100");
+            setTimeout(function() {
+                slide2.classList.remove("block");
+                slide2.classList.remove("block-1");
+                slide2.classList.remove("block-100");
+            }, 500);
+            setTimeout(function() {
+                slide3.classList.add("block");
+            }, 500);
+            slide3.classList.add("block-1");
+        }
+        else if (btn3.classList.contains("slider-controls--active")) {
+            btn3.classList.remove("slider-controls--active");
+            btn1.classList.add("slider-controls--active");
+            slide3.classList.add("block-100");
+            setTimeout(function() {
+                slide3.classList.remove("block");
+                slide3.classList.remove("block-1");
+                slide3.classList.remove("block-100");
+            }, 500);
+            setTimeout(function() {
+                slide1.classList.add("block");
+            }, 500);
+            slide1.classList.add("block-1");
+        }
+
+    });
     btn1.addEventListener("click", function (event) {
         event.preventDefault();
         if (!btn1.classList.contains("slider-controls--active")) {
+            if (btn2.classList.contains("slider-controls--active")) {
+                slide2.classList.add("block-100");
+            }
+            if (btn3.classList.contains("slider-controls--active")) {
+                slide3.classList.add("block-100");
+            }
             btn1.classList.add("slider-controls--active");
             btn2.classList.remove("slider-controls--active");
             btn3.classList.remove("slider-controls--active");
-            slide1.classList.add("block");
-            slide2.classList.remove("block");
-            slide3.classList.remove("block");
+            setTimeout(function() {
+                slide2.classList.remove("block");
+                slide2.classList.remove("block-1");
+                slide2.classList.remove("block-100");
+                slide3.classList.remove("block");
+                slide3.classList.remove("block-1");
+                slide3.classList.remove("block-100");
+            }, 500);
+            setTimeout(function() {slide1.classList.add("block")}, 500);
+            slide1.classList.add("block-1");
         }
     });
     btn2.addEventListener("click", function (event) {
         event.preventDefault();
         if (!btn2.classList.contains("slider-controls--active")) {
+            if (btn1.classList.contains("slider-controls--active")) {
+                slide1.classList.add("block-100");
+            }
+            if (btn3.classList.contains("slider-controls--active")) {
+                slide3.classList.add("block-100");
+            }
             btn1.classList.remove("slider-controls--active");
             btn2.classList.add("slider-controls--active");
             btn3.classList.remove("slider-controls--active");
-            slide1.classList.remove("block");
-            slide2.classList.add("block");
-            slide3.classList.remove("block");
+            setTimeout(function() {
+                slide1.classList.remove("block");
+                slide1.classList.remove("block-1");
+                slide1.classList.remove("block-100");
+                slide3.classList.remove("block");
+                slide3.classList.remove("block-1");
+                slide3.classList.remove("block-100");
+            }, 500);
+            setTimeout(function() {slide2.classList.add("block")}, 500);
+            slide2.classList.add("block-1");
+
         }
     });
     btn3.addEventListener("click", function (event) {
         event.preventDefault();
         if (!btn3.classList.contains("slider-controls--active")) {
+            if (btn1.classList.contains("slider-controls--active")) {
+                slide1.classList.add("block-100");
+            }
+            if (btn2.classList.contains("slider-controls--active")) {
+                slide2.classList.add("block-100");
+            }
             btn1.classList.remove("slider-controls--active");
             btn2.classList.remove("slider-controls--active");
             btn3.classList.add("slider-controls--active");
-            slide1.classList.remove("block");
-            slide2.classList.remove("block");
-            slide3.classList.add("block");
+            setTimeout(function() {
+                slide1.classList.remove("block");
+                slide1.classList.remove("block-1");
+                slide1.classList.remove("block-100");
+                slide2.classList.remove("block");
+                slide2.classList.remove("block-1");
+                slide2.classList.remove("block-100");
+            }, 500);
+            setTimeout(function() {slide3.classList.add("block")}, 500);
+            slide3.classList.add("block-1");
         }
     });
 }());

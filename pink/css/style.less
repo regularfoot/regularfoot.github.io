@@ -4,7 +4,6 @@
 @import "footer.less";
 @import "slider.less";
 @import "content.less";
-@import "paralax-slider.less";
 @import "table.less";
 @import "contact.less";
 @font-face {
@@ -51,4 +50,7 @@ url("../fonts/OpenSansBold/OpenSansBold.ttf") format("truetype");
   .treangle {
     border-right: 367px solid #f2f2f2;
   }
+}
+.transparent(@color) {
+  color: rgba(@color, .2);
 }
