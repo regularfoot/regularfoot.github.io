@@ -1,0 +1,71 @@
+footer {
+    background: black url(../img/bg-grip1.jpg) center;
+    .h1(light);
+    box-shadow: 0 0 50px #000;
+
+    min-width: 980px;
+    .footer {
+        width: 900px;
+        position: relative;
+        padding: 50px 30px;
+        &__left {
+            float: left;
+            max-width: 300px;
+            text-align: left;
+            padding: 10px;
+            margin-top: 10px;
+            text-shadow: 2px 2px 2px black;
+            text-transform: uppercase;
+            border-radius: 50px;
+            box-shadow: inset 2px 2px 2px 2px black;
+            background: rgba(255, 0, 50, 0.6);
+        }
+        &__social {
+            margin-right: 50%;
+            right: -100px;
+            position: absolute;
+            float: left;
+            width: 200px;
+            display: inline-block;
+            padding: 0;
+            & a {
+                display: inline-block;
+                width: 80px;
+                height: 80px;
+                border-radius: 50px;
+                text-shadow: 2px 2px 2px black;
+                box-shadow: inset 2px 2px 2px 2px black;
+                &:hover {
+                    box-shadow: 2px 2px 2px 2px black;
+                }
+            }
+            .vk {
+                background: rgba(255, 0, 50, 0.6) url("../img/vk.png") no-repeat center;
+                background-size: 70%;
+            }
+            .inst {
+                background: rgba(255, 0, 50, 0.6) url("../img/inst.png") no-repeat center;
+                background-size: 50%;
+            }
+        }
+        &__right {
+            float: right;
+            max-width: 300px;
+            text-align: right;
+            margin-top: 10px;
+            padding: 10px;
+            text-shadow: 2px 2px 2px black;
+            border-radius: 50px;
+            box-shadow: inset 2px 2px 2px 2px black;
+            background: rgba(255, 0, 50, 0.6);
+        }
+    }
+}
+
+#wrap {
+    min-height: 100%;
+    width: 100%;
+    height: auto !important;
+    margin: 0 auto;
+    background: url(../img/bg-deck.jpg) center repeat-y;
+}
