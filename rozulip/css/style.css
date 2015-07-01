@@ -1,0 +1,196 @@
+html {
+	padding: 0;
+	margin: 0;
+	color: #fff;
+	background: #3c7ec5;
+}
+body {
+	width: 1280px;
+	margin: 0 auto;
+}
+.slider {
+	box-sizing: border-box;
+	position: relative;
+	width: 1280px;
+	height: 752px;
+	background: #000 url(../img/back.png) center no-repeat;
+}
+.slider-left, .slider-right {
+	position: absolute;
+	display: block;
+	height: 100%;
+	width: 100px;
+	background: url(../img/arrow.png) center no-repeat;
+	background-position-x: 10px;
+}
+.slider-left {
+	cursor: default;
+}
+.slider-right {
+	right: 0;
+	transform: rotate(180deg);
+}
+@-webkit-keyframes slide-left-control {
+  0% {
+    background-position-x: 10px;
+    
+  }
+  100% {
+    background-position-x: 30px;
+  }
+}
+@keyframes slide-left-control {
+  0% {
+    background-position-x: 10px;
+    
+  }
+  100% {
+    background-position-x: 30px;
+  }
+}
+.slider-left:hover {
+	-webkit-animation: slide-left-control .3s ease-in infinite alternate;
+	animation: slide-left-control .3s ease-in infinite alternate;
+}
+.slider-right:hover {
+	-webkit-animation: slide-left-control .3s ease-in infinite alternate;
+	animation: slide-left-control .3s ease-in infinite alternate;
+}
+.slide-1, .slide-2 {
+	position: absolute;
+	left: 250px;
+	display: block;
+	width: 835px;
+	height: 510px;
+}
+.slide-1 {
+	top: 10px;
+	display: none;
+	left: 250px;
+	background: url(../img/sad.png) center no-repeat;
+}
+.slide-1 .tablet {
+	position: absolute;
+	top: 300px;
+	left: -150px;
+	display: block;
+	width: 100px;
+	height: 43px;
+	transform: rotate(45deg);
+	background: url(../img/pill1.png) center no-repeat;
+	background-size: 100%;
+	z-index: 1000;
+}
+.slide-1.enable {
+	display: block;
+}
+.slide-2.enable {
+	display: block;
+}
+.slide-2 {
+	display: none;
+	top: 10px;
+	background: url(../img/happy.png) center no-repeat;
+}
+.logo {
+	padding: 20px 100px;
+	font-size: 55px;
+	font-weight: 700;
+	font-family: sans-serif;
+	padding-bottom: 5px;
+}
+.logo sup {
+	font-size: 20px;
+	font-weight: 200;
+}
+.slogan {
+	padding-left: 100px;
+	font-size: 15px;
+	text-transform: uppercase;
+	font-family: sans-serif;
+	font-stretch: condensed;
+}
+form {
+	margin-top: 440px;
+	padding: 0 180px;
+}
+.btn-wrapper {
+	position: absolute;
+	display: block;
+	margin-left: 50%;
+	width: 650px;
+	height: 75px;
+	left: -300px;
+	bottom: 50px;
+}
+
+.button {
+	float: left;
+	display: block;
+	width: 209px;
+	height: 75px;
+	cursor: pointer;
+}
+
+.button.day {
+	background-image: url(../img/day-button.png);
+}
+
+.button.week {
+	background-image: url(../img/week-button.png);
+}
+
+.button.mounth {
+	background-image: url(../img/mounth-button.png);
+}
+
+#day:checked ~ .button.day {
+	background-image: url(../img/day-pushed-button.png);
+}
+
+#week:checked ~ .button.week {
+	background-image: url(../img/week-pushed-button.png);
+}
+
+#mounth:checked ~ .button.mounth {
+	background-image: url(../img/mounth-pushed-button.png);
+}
+.range {
+	width: 100%;
+	position: relative;
+}
+.range a {
+	diplay: block;
+	z-index: 2;
+	position: absolute;
+	width: 90px;
+	height: 90px;
+	background: url(../img/roller-white.png) center no-repeat;
+	top: -45px;
+	margin-left: -50px;
+}
+.range a:focus {
+	outline: none;
+}
+.numbers {
+	position: absolute;
+	height: 50px;
+	padding: 0 150px;
+	bottom: 250px;
+}
+.number {
+	float: left;
+	padding-right: 1px;
+	font-size: 26px;
+	font-weight: 500;
+	font-family: sans-serif;
+	font-stretch: condensed;
+	line-height: 45px;
+	text-align: center;
+	width: 45px;
+	height: 45px;
+	
+}
+.number.active {
+	background: url(../img/roller-red.png) center no-repeat;
+}
