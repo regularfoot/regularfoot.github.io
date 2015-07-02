@@ -1,32 +1,21 @@
+var slide_1= $('.slide-1'); //new
+var tablet = $('.tablet');  //new
+
 //вешаем обработчик событий на левую стрелку
 $('.slider-left').click(function(event) {
-	if (!($('.slide-1').hasClass('enable'))) {
-		$('.slide-1').addClass('enable');			//
-		$('.slide-2').removeClass('enable');		//
-	}
-	if (($('.slide-1').hasClass('enable'))) {
-		$('.slider-left').css('cursor', 'default');
-		$('.slider-right').css('cursor', 'pointer');
-	}
-	else {
-		$('.slider-left').css('cursor', 'pointer');
-		$('.slider-right').css('cursor', 'default');
-	}
+	$('.range').slider('enable');	 //new разблокируем положение ползунка
+	tablet.draggable('enable');	     //new разблокируем положение таблетки
+    $('input').attr('disabled', false); //включаем кнопки
+    $('.slider-right').css('cursor', 'pointer');   //смена указателя
+    $('.slider-left').css('cursor', 'default');   //смена указателя
 });
 //вешаем обработчик событий на правую стрелку
 $('.slider-right').click(function(event) {
-	if (!($('.slide-2').hasClass('enable'))) {
-		$('.slide-2').addClass('enable');			//
-		$('.slide-1').removeClass('enable');		//
-	}
-	if (($('.slide-1').hasClass('enable'))) {
-		$('.slider-left').css('cursor', 'default');
-		$('.slider-right').css('cursor', 'pointer');
-	}
-	else {
-		$('.slider-left').css('cursor', 'pointer');
-		$('.slider-right').css('cursor', 'default');
-}
+	$('.range').slider('disable');	//new  лочим положение ползунка
+	tablet.draggable('disable');	//new  лочим положение таблетки
+    $('input').attr('disabled', true);   //отключаем кнопки
+    $('.slider-right').css('cursor', 'default');  //смена указателя
+    $('.slider-left').css('cursor', 'pointer');   //смена указателя
 });
 
 
@@ -53,14 +42,37 @@ $('form').bind('slide',function(event,info) {
 //перенос таблетки
 $(function(){
 	var options = {};
-	$('.tablet').draggable({});
-    $('.slide-1').droppable('enable'); 
-		//при бросании на "грусную" картинку - делаем ее "счастливой" (меняем фон)
+	tablet.draggable({});
+    slide_1.droppable('enable'); 
+		//наведение таблетки на картинку
+        options.over = function(event){
+          slide_1.css({
+              'background-image': 'url(img/sad_hover.png)',
+          });
+        };
+        //выведение таблетки с картинки
+        options.out = function(event){
+          slide_1.css({
+              'background-image': 'url(img/sad.png)',
+          });
+        };
+        //при бросании на "грусную" картинку - делаем ее "счастливой" (меняем фон)
 		//и скрываем таблетку - display:none
 		options.drop = function(event){
-			$('.slide-1').css('background', 'url(img/happy.png)');
-			$('.slide-1 .tablet').css('display', 'none');
+          tablet.animate({
+            'opacity': 'hide'
+          });
+          //анимация слайдера при переносе картинки
+          slide_1.fadeOut(500, function(){  //при исчезании вызываем функцию смены изображения
+            slide_1.css({
+              background: 'url(img/happy.png)',
+              width: '835px',
+              left: '100px',
+              });
+            }
+          );
+          slide_1.fadeIn(500);
 		};
-	$('.slide-1').droppable(options);
+	slide_1.droppable(options);
 });
 	

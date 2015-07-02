@@ -3,17 +3,18 @@ html {
   margin: 0;
   color: #fff;
   background: #3c7ec5;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  width: 1280px;
-  margin: 0 auto;
+  width: 1024px;
+  margin: 0;
 }
 .slider {
   box-sizing: border-box;
   position: relative;
-  width: 1280px;
-  height: 752px;
-  background: #000000 url(../img/back.png) center no-repeat;
+  width: 1024px;
+  height: 768px;
+  background: #000000 url(../img/back.jpg) center no-repeat;
 }
 .slider-left,
 .slider-right {
@@ -57,24 +58,19 @@ body {
   -webkit-animation: slide-left-control 0.3s ease-in infinite alternate;
   animation: slide-left-control 0.3s ease-in infinite alternate;
 }
-.slide-1,
-.slide-2 {
-  position: absolute;
-  left: 250px;
-  display: block;
-  width: 835px;
-  height: 510px;
-}
 .slide-1 {
+  position: absolute;
+  width: 440px;  //width: 835px;
+  height: 510px;
   top: 10px;
-  display: none;
-  left: 250px;
-  background: url(../img/sad.png) center no-repeat;
+  left: 300px;   //left: 100px;
+  background: center no-repeat;
+  background-image: url(../img/sad.png);
 }
-.slide-1 .tablet {
+.tablet {
   position: absolute;
   top: 300px;
-  left: -150px;
+  left: 80px;
   display: block;
   width: 100px;
   height: 43px;
@@ -85,19 +81,8 @@ body {
   background-size: 100%;
   z-index: 1000;
 }
-.slide-1.enable {
-  display: block;
-}
-.slide-2.enable {
-  display: block;
-}
-.slide-2 {
-  display: none;
-  top: 10px;
-  background: url(../img/happy.png) center no-repeat;
-}
 .logo {
-  padding: 20px 100px;
+  padding: 20px;
   font-size: 55px;
   font-weight: 700;
   font-family: sans-serif;
@@ -108,24 +93,24 @@ body {
   font-weight: 200;
 }
 .slogan {
-  padding-left: 100px;
+  padding-left: 20px;
   font-size: 15px;
   text-transform: uppercase;
   font-family: sans-serif;
   font-stretch: condensed;
 }
 form {
-  margin-top: 440px;
-  padding: 0 180px;
+  margin-top: 410px;
+  padding: 0 135px 0 155px;
 }
 .btn-wrapper {
-  position: absolute;
-  display: block;
-  margin-left: 50%;
-  width: 650px;
-  height: 75px;
-  left: -300px;
-  bottom: 50px;
+	position: absolute;
+	display: block;
+	margin-left: 50%;
+	width: 650px;
+	height: 75px;
+	left: -300px;
+	bottom: 80px; 
 }
 .button {
   float: left;
@@ -160,32 +145,33 @@ form {
   diplay: block;
   z-index: 2;
   position: absolute;
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
   background: url(../img/roller-white.png) center no-repeat;
-  top: -45px;
-  margin-left: -50px;
+  background-size: 100%;
+  top: -30px;
+  margin-left: -40px;
 }
 .range a:focus {
   outline: none;
 }
 .numbers {
   position: absolute;
-  height: 50px;
-  padding: 0 150px;
+  height: 70px;
+  padding: 0 110px 0 130px;
   bottom: 250px;
 }
 .number {
   float: left;
-  padding-right: 1px;
-  font-size: 26px;
-  font-weight: 500;
+  padding-right: 1.6px;
+  font-size: 20px;
+  font-weight: 600;
   font-family: sans-serif;
   font-stretch: condensed;
-  line-height: 45px;
+  line-height: 36px;
   text-align: center;
-  width: 45px;
-  height: 45px;
+  width: 35px;
+  height: 35px;
 }
 .number.active {
   background: url(../img/roller-red.png) center no-repeat;
