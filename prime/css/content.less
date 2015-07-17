@@ -1,0 +1,54 @@
+.content {
+  position: relative;
+  height: 480px;
+  box-sizing: border-box;
+  &__banner {
+    position: absolute;
+    float: left;
+    height: 490px;
+    width: 730px;
+    &:first-child {
+      left: -222px;
+      background: center no-repeat;
+    }
+    &:nth-child(5) {
+      background: center no-repeat;
+    }
+    &:nth-child(3) {
+      background: center no-repeat;
+      left: 239px;
+    }
+    &:last-child {
+      background: center no-repeat;
+      left: 472px;
+    }
+    & a {
+      width: 170px;
+      font-family: 'PT Sans', sans-serif;
+      position: absolute;
+      top: 50%;
+      left: 35%;
+      text-align: center;
+      font-size: 13px;
+      line-height: 22px;
+      z-index: 100;
+      &:hover {
+        font-size: 18px;
+      }
+    }
+  }
+  & hr {
+    z-index: 100;
+    position: absolute;
+    width: 880px;
+    transform: rotate(-30.3deg);
+    top: 230px;
+    right: 288px;
+    &:nth-child(4) {
+      right: 55px;
+    }
+    &:nth-child(6) {
+      right: -176px;
+    }
+  }
+}

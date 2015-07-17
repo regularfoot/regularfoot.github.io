@@ -1,0 +1,187 @@
+footer {
+  color: #fff;
+  .footer__partners {
+    min-width: 1020px;
+    height: 46px;
+    background-color:  #252525;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    text-align: left;
+    &--text {
+      padding-top: 15px;
+      float: left;
+      width: 150px;
+    }
+    & a {
+      float: left;
+      display: block;
+      width: 120px;
+      height: 46px;
+    }
+    &--logo1 {
+      background: url("../img/company_logo1.png") center no-repeat;
+    }
+    &--logo2 {
+      background: url("../img/company_logo2.png") center no-repeat;
+      &:hover {
+        background: url("../img/company_logo2_hover.png") center no-repeat;
+      }
+    }
+    &--logo3 {
+      background: url("../img/company_logo3.png") center no-repeat;
+      &:hover {
+        background: url("../img/company_logo3_hover.png") center no-repeat;
+      }
+    }
+    &--logo4 {
+      background: url("../img/company_logo4.png") center no-repeat;
+      &:hover {
+        background: url("../img/company_logo4_hover.png") center no-repeat;
+      }
+    }
+    &--logo5 {
+      background: url("../img/company_logo5.png") center no-repeat;
+      &:hover {
+        background: url("../img/company_logo5_hover.png") center no-repeat;
+      }
+    }
+    &--logo6 {
+      background: url("../img/company_logo6.png") center no-repeat;
+      &:hover {
+        background: url("../img/company_logo6_hover.png") center no-repeat;
+      }
+    }
+    &--logo7 {
+      background: url("../img/company_logo7.png") center no-repeat;
+      &:hover {
+        background: url("../img/company_logo7_hover.png") center no-repeat;
+      }
+    }
+  }
+  .indexes {
+    padding: 10px 0;
+    display: flex;
+    width: 100%;
+    height: 26px;
+    background-color:  #000;
+    & .center {
+      box-sizing: border-box;
+      padding: 0 92px 0 88px;
+    }
+    &--arrow{
+      &-left {
+        position: absolute;
+      }
+      &-right {
+        position: absolute;
+      }
+    }
+    & div {
+      display: inline-block;
+      height: 23px;
+      padding-top: 2px;
+    }
+    &__company1{
+      width: 200px;
+      &-name {
+        .mixin1;
+      }
+      &-price {
+        .mixin2;
+      }
+      &-percent {
+        .mixin2(#33cf15, 0);
+      }
+    }
+    &__company2{
+      width: 198px;
+      border-left: 2px solid white;
+      &-name {
+        .mixin1;
+      }
+      &-price {
+        .mixin2;
+      }
+      &-percent {
+        .mixin2(#33cf15, 0);
+      }
+    }
+    &__company3{
+      width: 198px;
+      border-left: 2px solid white;
+      &-name {
+        .mixin1;
+      }
+      &-price {
+        .mixin2;
+      }
+      &-percent {
+        .mixin2(#8c0a0e, 0);
+      }
+    }
+    &__company4{
+      width: 198px;
+      border-left: 2px solid white;
+      &-name {
+        .mixin1;
+      }
+      &-price {
+        .mixin2;
+      }
+      &-percent {
+        .mixin2(#8c0a0e, 0);
+      }
+    }
+  }
+  .contacts {
+    &__adress {
+      float: left;
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 400;
+      padding-top: 20px;
+    }
+    &__phones {
+      width: 400px;
+      margin: 0 auto;
+      font-family: "OpenSansRegular";
+      font-size: 19px;
+      font-weight: 300;
+      line-height: 14px;
+      padding-right: 0;
+      text-align: center;
+      padding-top: 15px;
+      text-decoration: none;
+      & a {
+        padding: 0 20px;
+        &:first-child {
+          border-right: 2px solid white;
+        }
+      }
+      & span {
+        font-weight: 700;
+      }
+    }
+    &__copyright {
+      float: right;
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 400;
+      margin-top: -10px;
+    }
+  }
+}
+
+.mixin1 {
+  font-size: 11px;
+  font-weight: 600;
+  padding-left: 25px;
+}
+.mixin2(@color: "#fff", @padding: 20px) {
+  font-size: 13px;
+  font-weight: 700;
+  padding-left: @padding;
+  color: @color;
+}
