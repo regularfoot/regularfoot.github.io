@@ -6,7 +6,7 @@
   float: left;
   width: 166px;
   height: 100px;
-  background: url("../img/header-logo.svg") center no-repeat;
+  background: url("../img/header-logo.png") center no-repeat;
 }
 .header__menu .menu-bar {
   float: right;
