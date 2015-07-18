@@ -1,6 +1,7 @@
 html {
   margin: 0;
   padding: 0;
+  min-width: 1100px;
   background: #0e0e0e url(../img/bg.jpg) center no-repeat;
 }
 body {
@@ -179,29 +180,30 @@ a {
   position: absolute;
   float: left;
   height: 490px;
-  width: 730px;
+  width: 500px;
 }
 .content__banner:first-child {
-  left: -222px;
-  background: center no-repeat;
-}
-.content__banner:nth-child(5) {
+  left: -110px;
   background: center no-repeat;
 }
 .content__banner:nth-child(3) {
   background: center no-repeat;
-  left: 239px;
+  left: 125px;
+}
+.content__banner:nth-child(5) {
+  left: 358px;
+  background: center no-repeat;
 }
 .content__banner:last-child {
   background: center no-repeat;
-  left: 472px;
+  left: 590px;
 }
 .content__banner a {
   width: 170px;
   font-family: 'PT Sans', sans-serif;
   position: absolute;
   top: 50%;
-  left: 35%;
+  left: 28%;
   text-align: center;
   font-size: 13px;
   line-height: 22px;
