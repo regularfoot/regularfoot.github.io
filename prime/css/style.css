@@ -92,10 +92,16 @@ a {
   margin-bottom: 10px;
 }
 .header__nav-bar ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
 }
 .header__nav-bar li {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   height: 43px;
 }
 .header__nav-bar li a {
@@ -208,7 +214,9 @@ a {
   z-index: 100;
   position: absolute;
   width: 880px;
-  transform: rotate(-30.3deg);
+  -webkit-transform: rotate(-30.3deg);
+      -ms-transform: rotate(-30.3deg);
+          transform: rotate(-30.3deg);
   top: 230px;
   right: 288px;
 }
@@ -283,6 +291,9 @@ footer .footer__partners--logo7:hover {
 }
 footer .indexes {
   padding: 10px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   height: 26px;
