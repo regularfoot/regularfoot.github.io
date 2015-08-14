@@ -235,27 +235,35 @@
     };
 
     var supportsTouch = ('ontouchstart' in document.documentElement);
+
+    console.log(supportsTouch);
+    var resize = function() {
+        window.addEventListener("resize", function (event) {
+
+            if (window.innerWidth <= 1000) {
+                strong_bg.style.backgroundPosition = -window.pageXOffset - 446 + 'px';
+                classic_bg.style.backgroundPosition = -window.pageXOffset - 446 + 'px';
+                strong_bg.style.backgroundPositionY = 100 + 'px';
+                classic_bg.style.backgroundPositionY = 100 + 'px';
+                console.log('window.pageXOffset');
+            }
+            else {
+                strong_bg.style.backgroundPositionX = '';
+                classic_bg.style.backgroundPositionX = '';
+            }
+            if (window.innerHeight <= 800) {
+                strong_bg.style.backgroundPositionY = -window.pageYOffset - 284 + 'px';
+                classic_bg.style.backgroundPositionY = -window.pageYOffset - 284 + 'px';
+            }
+            else {
+                strong_bg.style.backgroundPositionY = '';
+                classic_bg.style.backgroundPositionY = '';
+
+            }
+        });
+    };
     if(!supportsTouch) {
         scroll();
+        resize();
     }
-    console.log(supportsTouch);
-    window.addEventListener("resize", function(event) {
-        if (window.innerWidth <= 1000) {
-            strong_bg.style.backgroundPositionX = -window.pageXOffset -446 + 'px';
-            classic_bg.style.backgroundPositionX = -window.pageXOffset -446 + 'px';
-        }
-        else {
-            strong_bg.style.backgroundPositionX = '';
-            classic_bg.style.backgroundPositionX = '';
-        }
-        if (window.innerHeight <= 800) {
-            strong_bg.style.backgroundPositionY = -window.pageYOffset -284 + 'px';
-            classic_bg.style.backgroundPositionY = -window.pageYOffset -284 + 'px';
-        }
-        else {
-            strong_bg.style.backgroundPositionY = '';
-            classic_bg.style.backgroundPositionY = '';
-
-        }
-    });
 })();
