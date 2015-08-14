@@ -446,7 +446,7 @@ div.age18-overlay.hidden {
 }
 .main .logo-classic {
   position: absolute;
-  background: url("/images/classic-logo.png") center no-repeat;
+  background: url("/images/Classic-logo.png") center no-repeat;
   width: 190px;
   height: 100px;
   top: 105px;
@@ -599,7 +599,7 @@ div.age18-overlay.hidden {
   height: 500px;
 }
 .assortment .board-logo {
-  background: url("/images/classic-logo.png") center no-repeat;
+  background: url("/images/Classic-logo.png") center no-repeat;
   width: 185px;
   height: 100px;
   display: inline-block;
