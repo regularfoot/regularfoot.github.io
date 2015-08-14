@@ -209,28 +209,36 @@
         
     }
 
-    function Scroll() {
-        if (window.innerWidth <= 1000) {
-            strong_bg.style.backgroundPositionX = -window.pageXOffset -446 + 'px';
-            classic_bg.style.backgroundPositionX = -window.pageXOffset -446 + 'px';
-        }
-        else {
-            strong_bg.style.backgroundPositionX = '';
-            classic_bg.style.backgroundPositionX = '';
-        }
-        if (window.innerHeight <= 800) {
-            strong_bg.style.backgroundPositionY = -window.pageYOffset -284 + 'px';
-            classic_bg.style.backgroundPositionY = -window.pageYOffset -284 + 'px';
-        }
-        else {
-            strong_bg.style.backgroundPositionY = '';
-            classic_bg.style.backgroundPositionY = '';
+    var scroll = function(){
+        window.addEventListener("scroll", function(event) {
+            if (window.innerWidth <= 1000) {
+                strong_bg.style.backgroundPositionX = -window.pageXOffset -446 + 'px';
+                classic_bg.style.backgroundPositionX = -window.pageXOffset -446 + 'px';
+                strong_bg.style.backgroundPositionY =  1000 - window.innerWidth + 'px';
+                classic_bg.style.backgroundPositionY =  1000 - window.innerWidth + 'px';
+            }
+            else {
+                strong_bg.style.backgroundPositionX = '';
+                classic_bg.style.backgroundPositionX = '';
+                strong_bg.style.backgroundPositionY = '';
+                classic_bg.style.backgroundPositionY = '';
+            }
+            if (window.innerHeight <= 800) {
+                strong_bg.style.backgroundPositionY = -window.pageYOffset -284 + 'px';
+                classic_bg.style.backgroundPositionY = -window.pageYOffset -284 + 'px';
+            }
+            else {
+                strong_bg.style.backgroundPositionY = '';
+                classic_bg.style.backgroundPositionY = '';
+            }
+        });
+    };
 
-        }//end of scroll event for iOS
-        //and
-        //start/end of scroll event for other browsers
+    var supportsTouch = ('ontouchstart' in document.documentElement);
+    if(!supportsTouch) {
+        scroll();
     }
-   
+    console.log(supportsTouch);
     window.addEventListener("resize", function(event) {
         if (window.innerWidth <= 1000) {
             strong_bg.style.backgroundPositionX = -window.pageXOffset -446 + 'px';
