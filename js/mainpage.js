@@ -196,8 +196,10 @@
             }
         });
     }
+	document.addEventListener("touchmove", ScrollStart, false);
+    document.addEventListener("scroll", Scroll, false);
 
-    window.addEventListener("scroll", function(event) {
+    function ScrollStart() {
         if (window.innerWidth <= 1000) {
             strong_bg.style.backgroundPositionX = -window.pageXOffset -446 + 'px';
             classic_bg.style.backgroundPositionX = -window.pageXOffset -446 + 'px';
@@ -214,12 +216,31 @@
             strong_bg.style.backgroundPositionY = '';
             classic_bg.style.backgroundPositionY = '';
 
+        }//start of scroll event for iOS
+    }
+
+    function Scroll() {
+        if (window.innerWidth <= 1000) {
+            strong_bg.style.backgroundPositionX = -window.pageXOffset -446 + 'px';
+            classic_bg.style.backgroundPositionX = -window.pageXOffset -446 + 'px';
         }
+        else {
+            strong_bg.style.backgroundPositionX = '';
+            classic_bg.style.backgroundPositionX = '';
+        }
+        if (window.innerHeight <= 800) {
+            strong_bg.style.backgroundPositionY = -window.pageYOffset -284 + 'px';
+            classic_bg.style.backgroundPositionY = -window.pageYOffset -284 + 'px';
+        }
+        else {
+            strong_bg.style.backgroundPositionY = '';
+            classic_bg.style.backgroundPositionY = '';
 
-
-
-
-    });
+        }//end of scroll event for iOS
+        //and
+        //start/end of scroll event for other browsers
+    }
+   
     window.addEventListener("resize", function(event) {
         if (window.innerWidth <= 1000) {
             strong_bg.style.backgroundPositionX = -window.pageXOffset -446 + 'px';
