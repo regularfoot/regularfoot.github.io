@@ -1,0 +1,1525 @@
+
+box-sizing()
+  -webkit-box-sizing arguments
+  -moz-box-sizing arguments
+  -o-box-sizing arguments
+  -ms-box-sizing arguments
+  box-sizing arguments
+
+transition()
+   -webkit-transition arguments
+   -moz-transition arguments
+   -o-transition arguments
+   -ms-transition arguments
+   transition arguments
+
+flex()
+  display -webkit-box;
+  display -moz-box;
+  display -ms-flexbox;
+  display -webkit-flex;
+  display flex;
+  -webkit-justify-content arguments;
+  justify-content arguments
+  -webkit-flex-flow row wrap
+  flex-flow row wrap
+
+
+placeholder()
+  &::-webkit-input-placeholder
+    {block}
+  &:-moz-placeholder
+    {block}
+  &::-moz-placeholder
+    {block}
+  &:-ms-input-placeholder
+    {block}
+
+
+border-radius()
+  -moz-border-radius arguments
+  -webkit-border-radius arguments
+  -khtml-border-radius arguments
+  border-radius arguments
+
+keyframes()
+  @-webkit-keyframes arguments
+    block
+  @keyframes arguments
+    block
+
+
+animation()
+  animation: arguments;
+  -webkit-animation: arguments;
+  -moz-animation: arguments;
+  -o-animation: arguments;
+
+$white = #ffffff
+$pop-black = #211a0f
+
+$roboto = "Roboto", sans-serif
+$robotoCondensed = "Roboto Condensed", sans-serif
+$verdana = "Verdana", sans-serif
+$pt = "PT Serif"
+$animation_time = .3s
+
+
+html,body
+  width 100%
+  height 100%
+  margin 0
+  padding 0
+
+  &.newspage
+     background url('../images/backgrounds/Sibirskaya_news_bg.jpg') center top no-repeat
+
+  &.traditionspage
+     background url('../images/backgrounds/Sib_quality_traditions_bg.jpg') center top no-repeat
+
+  &.contactspage
+    min-width 1024px
+    min-height 800px
+    background #000 url('/images/backgrounds/Contacts-bg.jpg') top center no-repeat
+    background-position-y: -80px
+    -ms-background-position-y; -80px
+
+  &.mainpage
+    min-width 1024px
+    background #000
+
+  &.assortpage
+    min-width 1300px
+    min-height 800px
+    background #000 url('/images/backgrounds/assort-bg.jpg') bottom center no-repeat
+
+@keyframes bg-open
+  0%
+  padding-right 100%
+  margin-left 0%
+  100%
+  padding-right 100%
+  margin-left 0
+
+
+@keyframes bg-close
+  0%
+    padding-right 0%
+    margin-left 100%
+  100%
+    padding-right 0
+    margin-left 100%
+
+
+@keyframes bg-left-wrap
+  0%
+    padding-right 0
+    margin-left 100%
+  100%
+    padding-right 48.7%
+    margin-left 51.3%
+
+
+@keyframes bg-right-wrap
+  0%
+    padding-right 100%
+    margin-left 0
+  100%
+    padding-right 48.7%
+    margin-left 51.3%
+
+@keyframes bg-classic-hover-in
+  0%
+    padding-right 48.7%
+    margin-left 51.3%
+  100%
+    padding-right 0%
+    margin-left 100%
+
+@keyframes bg-classic-hover-out
+  0%
+    padding-right 0%
+    margin-left 100%
+  100%
+    padding-right 48.7%
+    margin-left 51.3%
+
+@keyframes bg-strong-hover-in
+  0%
+    padding-right 48.7%
+    margin-left 51.3%
+  100%
+    padding-right 100%
+    margin-left 0%
+
+@keyframes bg-strong-hover-out
+  0%
+    padding-right 100%
+    margin-left 0%
+  100%
+    padding-right 48.7%
+    margin-left 51.3%
+
+
+
+.bg-wrapper
+  position absolute
+  top 0
+  width 100%
+  height 100%
+  & .classic-bg
+    top 10px
+    width 100%
+    height 100%
+    background url('/images/backgrounds/main-classic-bg.jpg') center bottom no-repeat
+    background-attachment fixed
+  & .strong-bg
+    box-sizing(border-box)
+    padding-right 48.7%
+    margin-left 51.3%
+    float right
+    background-origin content-box
+    height 100%
+    position absolute
+    top 0
+    background url('/images/backgrounds/main-strong-bg.jpg') center bottom no-repeat;
+    background-attachment fixed
+    &.open
+      animation (bg-open $animation_time ease)
+      padding-right 100%
+      margin-left 0
+    &.close
+      animation (bg-close $animation_time ease)
+      padding-right 0
+      margin-left 100%
+    &.left-wrap
+      animation (bg-left-wrap $animation_time ease)
+      padding-right 48.7%
+      margin-left 51.3%
+    &.right-wrap
+      animation (bg-right-wrap $animation_time ease)
+      padding-right 48.7%
+      margin-left 51.3%
+    &.bg-classic-hover-in
+      animation (bg-classic-hover-in $animation_time ease)
+      padding-right 0%
+      margin-left 100%
+    &.bg-classic-hover-out
+      animation (bg-classic-hover-out $animation_time ease)
+      padding-right 48.7%
+      margin-left 51.3%
+    &.bg-strong-hover-in
+      animation (bg-strong-hover-in $animation_time ease)
+      padding-right 100%
+      margin-left 0%
+    &.bg-strong-hover-out
+      animation (bg-strong-hover-out $animation_time ease)
+      padding-right 48.7%
+      margin-left 51.3%
+
+
+.flex-sb
+  flex(space-between)
+
+div.container
+  position relative
+  width 1024px
+  height auto
+  margin 0 auto
+
+div.disclaimer
+  position relative
+  width 891px
+  height 56px
+  margin 20px auto
+  background url('../images/disclaimer.png');
+  &.bottom
+    position absolute
+    bottom 0
+    left 50%
+    margin-left -445px
+  &.main
+    position absolute
+    margin-left -450px
+    bottom 0
+
+@keyframes gone
+  0%
+    opacity 100%
+  99%
+    display none
+  100%
+    opacity 0
+    display none
+
+@keyframes come
+  0%
+    opacity 0
+  50%
+    opacity 0
+  100%
+    opacity 100%
+
+@keyframes bottle-come
+  0%
+    opacity 0
+  100%
+    opacity 100%
+
+@keyframes frost_gone
+  0%
+    width 50%
+  100%
+    width 0
+
+@keyframes frost_come
+  0%
+    width 0%
+  100%
+    width 50%
+
+@keyframes frost_right_gone
+  0%
+    right -50%
+  100%
+    right -100%
+
+@keyframes frost_right_come
+  0%
+    right -100%
+  100%
+    right -50%
+
+.frost-wrapper
+  position relative
+  width 100%
+  overflow hidden
+  top -221px
+  z-index 5
+  .left-frost
+    position absolute
+    display block
+    width 0
+    margin-left -80px
+    top 0
+    height 100vh
+    background url("/images/backgrounds/classic-frost.jpg") 100% 100% no-repeat
+    -webkit-background-size cover
+    background-size cover
+    z-index 10
+
+    .left-col
+      position absolute
+      width 341px
+      float left
+      right 80px
+      top 27%
+      & .x-close
+        position absolute
+        right -45px
+        top -50px
+        cursor pointer
+        background url("/images/main-close.png") center no-repeat
+        width 22px
+        height 26px
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      & .logo-classic
+        background url("/images/Classic-logo.png") center no-repeat
+        width 185px
+        height 90px
+
+    .marks-wrapper
+      position absolute
+      top -60px
+      width 250px
+      float left
+      margin-bottom 50px
+      img
+        display inline-block
+        width: 40px
+        margin-right 20px
+        vertical-align top
+    & .text
+      font-size 13px
+      line-height 22px
+      font-family $verdana
+      font-weight  100
+      z-index 1000
+      color $white
+
+    &.hidden
+      animation (frost_gone $animation_time ease-in)
+      width 0
+    &.showen
+      animation (frost_come $animation_time ease-out)
+      width 50%
+
+  .right-frost
+    overflow hidden
+    position relative
+    right -50%
+    top 0
+    width 0  //50%
+    height 100vh
+    margin-left 120px
+    background url("/images/backgrounds/strong-frost.jpg") 100% 100% no-repeat
+    -webkit-background-size cover
+    background-size cover
+    z-index 10
+
+    &.hidden
+      animation (frost_right_gone $animation_time ease-in)
+      width 50%
+      right -100%
+    &.showen
+      animation (frost_right_come $animation_time ease-out)
+      width 50%
+      right -50%
+
+    .right-col
+      position absolute
+      width 350px
+      float right
+      left 50px
+      top 27%
+      & .x-close
+        position absolute
+        left -20px
+        top -50px
+        cursor pointer
+        background url("/images/main-close.png") center no-repeat
+        width 22px
+        height 26px
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      & .logo-strong
+        background url("/images/strong-logo.png") center no-repeat
+        width 185px
+        height 90px
+      & .marks-wrapper
+        width 190px
+        left 165px
+
+  .marks-wrapper
+    position absolute
+    top -60px
+    width 250px
+    float left
+    margin-bottom 50px
+    img
+      display inline-block
+      width: 40px
+      margin-right 20px
+      vertical-align top
+
+  & .text
+    font-size 13px
+    line-height 22px
+    font-family $verdana
+    font-weight  100
+    z-index 1000
+    color $white
+
+
+@keyframes bg-show
+  0%
+
+  100%
+    opacity 0
+
+@keyframes bg-hide
+  0%
+    opacity 0
+  100%
+    opacity 100%
+div.age18-overlay
+  position fixed
+  top 0
+  width 100%
+  min-height 100%
+  background-color rgba(0, 0, 0, .69)
+  z-index 999
+  &.hidden
+    animation (gone ($animation_time/2) ease-in forwards)
+.age18
+  position absolute
+  background: #0e2d74 url("/images/backgrounds/age18-bg.jpg") center no-repeat;
+  width 560px
+  height 380px
+  box-sizing (border-box);
+  padding 25px 20px
+  top 50%
+  left 50%
+  margin-left -280px
+  margin-top -190px
+  z-index 1000
+  text-align center
+  color $white
+  &.hidden
+    animation (gone ($animation_time) ease-in forwards)
+  & .language
+    position absolute
+    right 0
+    margin 0 20px 0 0
+
+    & .lang-link
+      position relative
+      color $white
+      font-family $roboto
+      text-transform uppercase
+      font-size 14px
+      text-decoration none
+      font-weight 300
+
+      &.active
+        color #f7511d
+        text-decoration underline
+
+  & .question
+    font-size 32px
+    font-weight 700
+    text-transform uppercase
+    font-family $robotoCondensed
+    margin-bottom 30px
+
+
+  & .info
+    position relative
+    text-align left
+    font-size 14px
+    font-weight 100
+    text-transform uppercase
+    font-family $robotoCondensed
+    width 330px
+    margin-left 140px
+    margin-bottom 30px
+    &:before
+      content ""
+      display block
+      width 65px
+      height 65px
+      position absolute
+      left -90px
+      top -5px
+      border 1px solid $white
+      border-radius (50%)
+      background: rgba(255, 255, 255, .3) url("/images/age18.png") center no-repeat
+      color $white
+
+
+  & a.btn
+    display: inline-block
+    background: url("/images/age18-btn-hover.png")
+    width 230px
+    height 58px
+    color $white
+    text-decoration none
+    margin-bottom 7px
+    line-height 58px
+    font-size 14px
+    font-weight 300
+    font-family $robotoCondensed
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    transition(all $animation_time ease)
+    &:hover
+      opacity 1
+      background: url("/images/age18-btn.png")
+  & .copyright
+    font-size 14px
+    font-weight 100
+    font-family $robotoCondensed
+
+
+.main
+  width: 1024px
+  position absolute
+  margin: 0 auto
+  text-align left
+  color $white
+  display table
+  clear both
+  z-index 10
+  left 50%
+  margin-left -515px
+  bottom 670px
+
+  & .logo-classic
+    position absolute
+    background url("/images/classic-logo.png") center no-repeat
+    width 190px
+    height 100px
+    top 105px
+    left 150px
+    cursor pointer
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    transition(all $animation_time ease)
+    &.hidden
+      animation (gone ($animation_time/2) ease-in forwards)
+    &.showen
+      animation (come $animation_time ease-in forwards)
+
+    &:hover
+      background-position-x 2px
+      transition(all $animation_time ease)
+      background url("/images/classic-logo-hover.png") center no-repeat
+  & .logo-strong
+    position absolute
+    background url("/images/strong-logo.png") center no-repeat
+    width 185px
+    height 90px
+    top 120px
+    right 110px
+    cursor pointer
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    transition(all $animation_time ease)
+    &.hidden
+      animation (gone ($animation_time/2) ease-in forwards)
+    &.showen
+      animation (come $animation_time ease-in forwards)
+    &:hover
+      background url("/images/strong-logo-hover.png") center no-repeat
+
+  .bottle
+    position absolute
+    background url("/images/classic-bottle.png") center no-repeat
+    width 200px
+    height 491px
+    left 50%
+    top 100px
+    margin-left -80px
+    &.strong
+      background url("/images/strong-bottle.png") center top no-repeat
+      &.hidden
+        animation (gone ($animation_time/2) ease-in forwards)
+      &.showen
+        animation (bottle-come ($animation_time/2) ease-in forwards)
+
+
+  .marks-wrapper
+    position absolute
+    top -60px
+    width 250px
+    float left
+    margin-bottom 50px
+    img
+      display inline-block
+      width: 40px
+      margin-right 20px
+      vertical-align top
+
+  & .text
+    font-size 13px
+    line-height 22px
+    font-family $verdana
+    font-weight  100
+    z-index 1000
+
+.assortment
+  position absolute
+  width 1024px
+  height 500px
+  margin 0 auto
+  text-align left
+  color $white
+  bottom 210px
+  left 50%
+  margin-left -520px
+
+  .board
+    position absolute
+    background url("/images/board.png") center no-repeat
+    width 343px
+    height 178px
+    left -120px
+    top -12px
+    text-align center
+    z-index 90
+    &.strong
+      left 800px
+
+    //boarder-rope
+    &:after
+      position absolute
+      content ""
+      top -481px
+      left 60px
+      display block
+      background url("/images/board-rope.png") center repeat-y
+      width 6px
+      height 500px
+    &:before
+      position absolute
+      content ""
+      top -481px
+      left 280px
+      display block
+      background url("/images/board-rope.png") center repeat-y
+      width 6px
+      height 500px
+
+    &-logo
+      background url("/images/classic-logo.png") center no-repeat
+      width 185px
+      height 100px
+      display inline-block
+      &.strong
+        background url("/images/strong-logo.png") center no-repeat
+
+    &-btn
+      background url("/images/board-btn.png") center no-repeat
+      width 172px
+      height 43px
+      display inline-block
+      margin-bottom 5px
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      transition(all .3s ease)
+      &:hover
+        background url("/images/board-btn-hover.png") center no-repeat
+      & a
+        font-family $roboto
+        text-decoration none
+        display block
+        font-size 17px
+        width 172px
+        height 43px
+        line-height 43px
+        letter-spacing -1px
+        color: $white
+
+    &-text
+      font-family "PT Sans", sans-serif
+      font-size 14px
+
+  .left-col
+    position relative
+    width 320px
+    float left
+    border-radius(20px)
+    padding 10px
+    background: rgba(0,0,0, 0.4)
+    &.hidden
+      display none
+    & .x-close
+      position absolute
+      right -45px
+      top -50px
+      cursor pointer
+      background url("/images/main-close.png") center no-repeat;
+      width 22px
+      height 26px
+
+
+    & .logo-classic
+      background url("/images/Classic-logo.png") center no-repeat
+      width 185px
+      height 90px
+      margin-bottom 10px
+
+
+  .right-col
+    position relative
+    width 310px
+    float right
+    border-radius(20px)
+    padding 10px
+    background: rgba(0,0,0, 0.4)
+    transition(all .6s ease)
+    &.hidden
+      display none
+    & .marks-wrapper
+      margin-left 145px
+    & .logo-strong
+      background url("/images/strong-logo.png") center no-repeat
+      width 185px
+      height 90px
+      margin-bottom 10px
+
+
+  .bottles
+    position absolute
+    background url("/images/classic-bottles.png") center no-repeat
+    width 495px
+    height 550px
+    left 50%
+    margin-left -247px
+    margin-top 10px
+    &.strong
+      background-image url("/images/strong-bottles.png")
+    &.hidden
+      display none
+    &.come
+      animation (come ($animation_time/2) ease-in forwards)
+      opacity 100%
+    &.gone
+      animation (gone ($animation_time/2) ease-in forwards)
+
+
+    & .plus1, .plus2, .plus3
+      cursor pointer
+      color $white
+      font-family $verdana
+      font-size 10px
+      line-height 13px
+      font-weight bold
+      text-align center
+      position absolute
+      top 20px
+      left 260px
+      width 14px
+      height 14px
+      background #f7511d
+      background-clip content-box
+      border 10px solid rgba(255,255,255, .01)
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      transition(all .6s ease)
+      border-radius(50%)
+      &:after
+        content '+'
+      &:hover
+        border 10px solid rgba(255,255,255, .69)
+    & .plus2
+      top 255px
+      left 240px
+    & .plus3
+      top 475px
+      left 240px
+
+  .marks-wrapper
+    position absolute
+    top -60px
+    width 250px
+    float left
+    margin-bottom 50px
+    img
+      display inline-block
+      width: 40px
+      margin-right 20px
+      vertical-align top
+
+  & .text
+    font-size 13px
+    line-height 20px
+    font-family $verdana
+    font-weight  100
+
+
+
+.contacts-btn
+  display block
+  width 186px
+  height 60px
+  position absolute
+  left 50%
+  margin-left -90px
+  bottom 100px
+  text-transform uppercase
+  color  #c1b7a5
+  font-size 14px
+  font-weight 400
+  text-align center
+  text-decoration none
+  line-height 60px
+  font-family Roboto
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.75);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background url("../images/popup-active-btn.png") center no-repeat;
+  &:hover
+    text-shadow: -2px -1px 3px rgba(0, 0, 0, 0.75);
+
+  &-wrapper
+    min-height 650px
+    position relative
+div.popup-overlay
+  position fixed
+  top 0
+  width 100%
+  min-height 100%
+  background-color rgba(0, 0, 0, .69)
+  &.hidden
+    display none
+div.popup
+  position absolute
+  width 647px
+  height 470px
+  background: url("../images/popup-back.png") center no-repeat;
+  left 50%
+  top 230px
+  margin-left -320px
+  z-index 100
+  .close
+    position: absolute
+    right 40px
+    top 30px
+    background: url("../images/close.png") center no-repeat;
+    width 14px
+    height 14px
+    cursor pointer
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  .contact-title
+    font-family Roboto
+    color  #1f1f1f
+    font-size 30px
+    font-weight 700
+    text-align center
+    text-transform uppercase
+    margin-top 50px
+  div
+    hr
+      margin 0
+      position absolute
+      width 380px
+      border-top 1px solid $pop-black
+      border-bottom none
+      left 140px
+      top 260px
+      &:last-child
+        margin-top 100px
+      &:nth-child(3)
+        margin-top 66px
+      &:first-child
+        margin-top 33px
+  input[type="text"], input[type="email"]
+    border 0
+    border-bottom 1px solid $pop-black
+    background none
+    outline none
+    width 380px
+    margin-top 25px
+    line-height 30px
+    margin-left 140px
+    &:focus
+      font-family Roboto
+      color $pop-black
+      font-size 14px;
+    &[type="text"]
+      margin-top 15px
+    +placeholder()
+      font-family Roboto
+      color  $pop-black
+      font-size 14px;
+      text-align center
+    &:focus
+      +placeholder()
+        color transparent
+  &.hidden
+    display none
+  textarea
+    margin-left 140px
+    background none
+    width 380px
+    outline none
+    font-family Roboto
+    color  $pop-black
+    font-size 14px
+    line-height 35px
+    border none
+    resize none
+    height 130px
+    margin-top 30px
+    +placeholder()
+      font-family Roboto
+      color  $pop-black
+      font-size 14px
+      text-align center
+    &:focus
+      +placeholder()
+        color transparent
+
+  input[type="submit"]
+    position relative
+    display inline-block
+    width 263px
+    height 107px
+    left 50%
+    margin-left -130px
+    background url("../images/popup-btn.png")center no-repeat;
+    border none
+    outline none
+    text-transform uppercase
+    font-family Roboto
+    color  #c1b7a5
+    font-size 16px
+    font-weight 400
+    text-decoration none
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.75);
+    cursor pointer
+    &:hover
+      text-shadow: -1px -2px 3px rgba(0, 0, 0, 0.75);
+  label
+    position absolute
+    content ""
+    left 200px
+    bottom -15px
+    display block
+    width 58px
+    height 80px
+    background url("../images/clip.png") center no-repeat
+
+
+
+div.headline
+  position relative
+  background #030e2e
+  width 100%
+  padding 8px 0
+  color $white
+  z-index 100
+  box-sizing(border-box)
+
+  div.phone
+    position relative
+    font-family $roboto
+    font-size 14px
+    font-weight: 500
+
+    span
+      position relative
+      line-height 100%
+      font-size 12px
+      font-weight 300
+      font-family 'Arial', sans-serif
+
+
+  div.headright
+    position relative
+    margin 0
+    flex(space-between)
+    width 170px
+
+    div.language
+      position relative
+      margin 0 10px 0 0
+
+      .lang-link
+        position relative
+        color $white
+        font-family $roboto
+        text-transform uppercase
+        font-size 14px
+        text-decoration none
+        font-weight 300
+
+        &.active
+          color #f7511d
+          text-decoration underline
+
+    div.socials
+      position relative
+      flex(space-between)
+      margin 0 10px
+      width 70px
+
+      a
+        transition(all .3s ease)
+        &:hover
+          opacity .7
+
+
+nav.top-menu
+  position relative
+  width 1024px
+  margin 10px auto
+  z-index 100
+
+  ul
+    position relative
+    width 100%
+    margin 0
+    padding 0
+    list-style none
+    flex(space-between)
+    -webkit-align-items center
+    align-items center
+
+    li
+      position relative
+
+      a
+        color $white
+        text-transform uppercase
+        text-decoration none
+        font-family $robotoCondensed
+        font-size 16px
+        transition(all .3s ease)
+        font-weight 500
+        &.active
+          padding-bottom 5px
+          border-bottom 2px solid #f7511d
+        &:hover
+          opacity .7
+
+
+div.headline
+  position relative
+  background #030e2e
+  width 100%
+  padding 8px 0
+  color $white
+  box-sizing(border-box)
+
+  div.phone
+    position relative
+    font-family $roboto
+    font-size 14px
+    font-weight: 500
+
+    span
+      position relative
+      line-height 100%
+      font-size 12px
+      font-weight 300
+      font-family 'Arial', sans-serif
+
+
+  div.headright
+    position relative
+    margin 0
+    flex(space-between)
+    width 170px
+
+    div.language
+      position relative
+      margin 0 10px 0 0
+
+      .lang-link
+        position relative
+        color $white
+        font-family $roboto
+        text-transform uppercase
+        font-size 14px
+        text-decoration none
+        font-weight 300
+
+        &.active
+          color #f7511d
+          text-decoration underline
+
+    div.socials
+      position relative
+      flex(space-between)
+      margin 0 10px
+      width 70px
+
+      a
+        transition(all .3s ease)
+        &:hover
+          opacity .7
+
+
+nav.top-menu
+  position relative
+  width 1024px
+  margin 10px auto
+
+  ul
+    position relative
+    width 100%
+    margin 0
+    padding 0
+    list-style none
+    flex(space-between)
+    -webkit-align-items center
+    align-items center
+
+    li
+      position relative
+
+      a
+        color $white
+        text-transform uppercase
+        text-decoration none
+        font-family $robotoCondensed
+        font-size 16px
+        transition(all .3s ease)
+        font-weight 500
+        &.active
+          padding-bottom 5px
+          border-bottom 2px solid #f7511d
+        &:hover
+          opacity .7
+
+.slogan
+  position relative
+  width 445px
+  height 65px
+  margin 5px auto
+  background url('/images/slogan-sib.png')
+
+div.news-block
+  position relative
+  width 941px
+  height 479px
+  margin 10px auto
+  padding 80px 40px 35px 40px
+  box-sizing(border-box)
+  background url('/images/backgrounds/paper-background.png')
+
+  .load-more
+    position absolute
+    background #000000
+    color $white
+    font-family $roboto
+    font-size 12px
+    text-transform uppercase
+    text-align center
+    width 150px
+    padding 12px 0
+    bottom 0
+    left 395px
+    cursor pointer
+
+  .date
+    position absolute
+    top 25px
+    right 40px
+    color #f7511d
+    text-transform uppercase
+    font-family $roboto
+    font-weight 300
+    font-size 12px
+
+  .red-link
+    color #f7511d
+    text-transform uppercase
+    font-family $roboto
+    text-decoration underline
+    font-weight 300
+    &:hover
+      opacity .7
+    &.subscribe-link
+      position absolute
+      top 27px
+      left 40px
+      font-size 10px
+      font-weight 500
+
+  .news-wrapper
+    position relative
+    width 100%
+    height 100%
+    margin 0
+    padding 0
+    flex(space-between)
+
+    .col-narrow
+      position relative
+      width 25%
+      height 100%
+      box-sizing(border-box)
+      padding 0 10px
+
+      .news-item
+        position relative
+        width 100%
+        padding 0px 0 15px 0
+        margin 0 0 15px 0
+        box-sizing(border-box)
+        &:nth-of-type(1)
+          background url('../images/news-line.png') left bottom no-repeat
+
+        .news-date
+           position relative
+           color #f7511d
+           text-transform uppercase
+           font-family $roboto
+           font-weight 500
+           font-size 11px
+           text-align left
+           margin 6px 0
+
+        .news-title
+           position relative
+           color #000000
+           font-family $roboto
+           font-size 14px
+           font-weight 500
+           margin 10px 0
+
+        .news-preview
+           position relative
+           color #000000
+           font-family $roboto
+           font-size 11px
+           font-weight 300
+           margin 7px 0
+
+        .news-more
+           position relartive
+           background url('../images/icons/arrows.png') 0 0 no-repeat
+           text-decoration none
+           padding-left 22px
+           color #f7511d
+           font-size 12px
+           text-transform uppercase
+           font-family $roboto
+
+    .col-wide
+      position relative
+      width 50%
+      height 100%
+      box-sizing(border-box)
+      padding 0px 15px
+      border-left 1px solid #d4d2cd
+      border-right 1px solid #d4d2cd
+
+      .news-item
+        position relative
+        width 100%
+        padding 0px 0 15px 0
+        margin 0 0 15px 0
+        box-sizing(border-box)
+        background url('../images/news-big-line.png') left bottom no-repeat
+        &.news-of-the-day
+          .news-tag
+             position relative
+             background url('../images/backgrounds/tag-bg.png')
+             color $white
+             text-transform uppercase
+             font-family $roboto
+             font-size 12px
+             padding 3px 8px
+
+
+        .news-date
+          position relative
+          color #f7511d
+          display inline-block
+          text-transform uppercase
+          font-family $roboto
+          font-weight 500
+          font-size 11px
+          text-align left
+          margin 6px 0
+
+        .news-title
+          position relative
+          color #000000
+          font-family $roboto
+          font-size 14px
+          font-weight 500
+          margin 6px 0
+
+        .news-preview
+          position relative
+          color #000000
+          font-family $roboto
+          font-size 11px
+          font-weight 300
+          margin 7px 0
+
+        .news-more
+          position relartive
+          background url('../images/icons/arrows.png') 0 0 no-repeat
+          text-decoration none
+          padding-left 22px
+          color #f7511d
+          font-size 12px
+          text-transform uppercase
+          font-family $roboto
+
+div.slides-container
+  position relative
+  width 800px
+  height 450px
+  margin 20px auto
+  overflow hidden
+
+  div.v-slide
+    position relative
+    width 100%
+    height 100%
+    margin 0
+
+    h2
+      position relative
+      margin 10px auto
+      text-align center
+      width auto
+      max-width 300px
+      min-width 200px
+      color $white
+      font-family $pt
+      font-size 26px
+      padding-bottom 5px
+      display block
+      border-bottom 2px solid #f7511d
+
+    .left-text
+      position relatie
+      width 420px
+      height 320px
+      float left
+      margin 20px 0 0 0
+      overflow auto
+      color $white
+      font-size 14px
+      font-family 'Verdana', sans-serif
+
+    .right-pic
+      position relative
+      float right
+      margin 20px 0
+
+    .awards
+       position relative
+       margin 40px auto 0 auto
+       flex(space-between)
+       width 700px
+
+       .aw-item
+         position relative
+         width 150px
+
+         .title
+           position relative
+           color $white
+           font-size 16px
+           text-align center
+           font-family "PT Serif"
+
+         .line
+          position relative
+          height 2px
+          background #f7511d
+          margin 10px auto
+          width 50px
+
+         img
+          position relative
+          display block
+          width 140px
+          margin 20px auto
+
+
+.next-slide-arrow
+  position relative
+  width 35px
+  height 12px
+  background url('../images/next-slide-arrow.png');
+  margin 10px auto;
+  cursor pointer
+  opacity .7
+  transition(all 0.3s ease)
+
+  &:hover
+    opacity 1
+
+.slider-links
+  position absolute
+  width 210px
+  padding 15px
+  box-sizing(border-box)
+  background #e8eef4
+  font-family 'PT Serif'
+  font-size 14px
+  top 300px
+  right 50px
+
+  ul
+    position relative
+    width 100%
+    list-style none
+    padding 0
+    margin 0
+
+    li.v-link
+      position relative
+      margin 5px 0
+      color #04204e
+      display block
+      cursor pointer
+      transition(all 0.2s ease)
+
+      &.active
+        color #f7511d
+        padding-left 14px
+        background url('../images/red-def.png') 0 center no-repeat
+        transition(all 0.2s ease)
+
+@media (max-width: 1024px)
+  div.disclaimer
+    &.main
+      margin-left 50px
+
+  .main
+    left 0
+    margin-left -7px
+  html
+    &.contactspage
+      width 1024px
+  .bg-wrapper
+    min-width: 1026px;
+  div.popup
+    left 500px
+  div.popup-overlay
+    width 1024px
+    min-height 100vh
+
+@media (max-height: 800px)
+  .bg-wrapper
+    min-height 800px
+    & .classic-bg
+      background-position center top
+      background-position-y: -280px;
+    & .strong-bg
+      background-position center top
+      background-position-y: -280px;
+
+
+  .frost-wrapper
+    .left-frost
+      height 800px
+    .right-frost
+      height 800px
+  div.disclaimer
+    &.main
+      top 700px
+      position absolute
+
+@media (max-height: 800px)
+  .main
+    top 350px
+    margin-top -220px
+
+@media (max-height: 935px)
+  div.disclaimer
+    &.assortpage
+      top 720px
+
+@media (max-height: 935px)
+  body
+    &.assortpage
+      background-position top center
+      background-position-y: -175px;
+  .assortment
+    top 210px
+
+@media (min-height: 1080px)
+  .assortment
+    top 350px
+  body
+    &.assortpage
+      background-position top
+  .disclaimer
+    &.assortpage
+      top 950px
+  .bg-wrapper
+    & .classic-bg
+      background-position center top
+    & .strong-bg
+      background-position center top
+  .main
+    top 400px
+  div.disclaimer
+    &.main
+      top 970px
+  
+@media (max-width: 1300px)
+  body
+    & .assortment
+      left 0
+      margin-left 135px
+  & div.disclaimer
+    &.assortpage
+      left 0
+      margin-left 200px
