@@ -200,23 +200,13 @@
     document.addEventListener("scroll", Scroll, false);
 
     function ScrollStart() {
-        if (window.innerWidth <= 1000) {
+        
             strong_bg.style.backgroundPositionX = -window.pageXOffset -446 + 'px';
             classic_bg.style.backgroundPositionX = -window.pageXOffset -446 + 'px';
-        }
-        else {
-            strong_bg.style.backgroundPositionX = '';
-            classic_bg.style.backgroundPositionX = '';
-        }
-        if (window.innerHeight <= 800) {
+        
             strong_bg.style.backgroundPositionY = -window.pageYOffset -284 + 'px';
             classic_bg.style.backgroundPositionY = -window.pageYOffset -284 + 'px';
-        }
-        else {
-            strong_bg.style.backgroundPositionY = '';
-            classic_bg.style.backgroundPositionY = '';
-
-        }//start of scroll event for iOS
+        
     }
 
     function Scroll() {
