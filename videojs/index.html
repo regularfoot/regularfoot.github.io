@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Test Player</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="node_modules/video.js/dist/video-js.css">
+  <script src="node_modules/video.js/dist/ie8/videojs-ie8.js"></script>
+</head>
+
+<body>
+  <video id="live-player" width=600 height=300 class="video-js vjs-default-skin" controls></video>
+  <script src="node_modules/video.js/dist/video.js"></script>
+  <script src="node_modules/dashjs/dist/dash.all.debug.js"></script>
+  <script src="dist/videojs-dash.js"></script>
+
+  <script>
+    var
+      livePlayer = videojs('live-player', {
+          html5: {
+              hls: {
+                  withCredentials: true
+              },
+              dash: {
+                  setLimitBitrateByPortal: true,
+                  setMaxAllowedBitrateFor: ['video', 2000]
+              }
+          }
+      });
+
+    var cookie = 'household_id=154ec0a6e47dc216e4ff96ce5bf176424a0b4ab173c284c1e9c3cc40380ef207f6936dde03d40bcc1544bed8351d55935c03a13781b56a2bd9d8ae62fa9fde64';
+    // var cookie = 'v1-household=154ec0a6e47dc216e4ff96ce5bf176424a0b4ab173c284c1e9c3cc40380ef207f6936dde03d40bcc1544bed8351d55935c03a13781b56a2bd9d8ae62fa9fde64';
+
+    livePlayer.ready(function () {
+        livePlayer.src({
+            src: 'http://h1-msk.cdn.megafon.tv/video-3309745/live/delta22/out/u/v1-video-3309745.mpd',
+            // src: 'http://h1-msk.cdn.megafon.tv/video-3309745/live/delta22/out/u/v1-video-3309745.m3u8',
+            type: 'application/dash+xml',
+            // type: 'application/x-mpegURL',
+            keySystemOptions: [
+                {
+                    name: 'com.widevine.alpha',
+                    options: {
+                        serverURL: 'https://widevine.megafon.tv/cenc/getlicense/inventosmegalabs?application=megafontv&asset_file_id=video-3309745',
+                        audioRobustness: "SW_SECURE_CRYPTO",
+                        videoRobustness: 'SW_SECURE_CRYPTO',
+                        httpRequestHeaders: {
+                            'Custom-Data': cookie
+                        },
+                        initDataType: 'cenc',
+                    }
+                },
+                {
+                    name: 'com.microsoft.playready',
+                    options: {
+                        serverURL: 'https://playready.megafon.tv/rightsmanager.asmx?asset_file_id=video-3309745&application=megafontv',
+                        audioRobustness: "SW_SECURE_CRYPTO",
+                        videoRobustness: 'SW_SECURE_CRYPTO',
+                        httpRequestHeaders: {
+                            'customdata': cookie
+                        },
+                        initDataType: 'cenc',
+                    }
+                }
+            ]
+        });
+    });
+  </script>
+</body>
+
+</html>
