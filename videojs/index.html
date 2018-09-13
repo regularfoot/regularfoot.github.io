@@ -12,6 +12,8 @@
 </head>
 
 <body>
+
+  <video id="player" width=600 height=300 class="video-js vjs-default-skin" controls></video>
   <video id="live-player" width=600 height=300 class="video-js vjs-default-skin" controls></video>
   <script src="dist/video.js"></script>
   <script src="dist/dash.all.debug.js"></script>
@@ -19,24 +21,40 @@
 
   <script>
     var
+      player = videojs('player', {
+            html5: {
+                hls: {
+                    withCredentials: true
+                },
+                dash: {
+                    setLimitBitrateByPortal: true
+                }
+            }
+        }),
       livePlayer = videojs('live-player', {
           html5: {
               hls: {
                   withCredentials: true
               },
               dash: {
-                  setLimitBitrateByPortal: true,
-                  setMaxAllowedBitrateFor: ['video', 2000]
+                  setLimitBitrateByPortal: true
               }
           }
       });
+
+    player.ready(function () {
+        player.src({
+            src: 'http://h1-msk.cdn.megafon.tv/video-3309745/live/delta22/out/u/v1-dash-video-3309745.mpd',
+            type: 'application/dash+xml',
+        });
+    });
 
     var cookie = 'household_id=154ec0a6e47dc216e4ff96ce5bf176424a0b4ab173c284c1e9c3cc40380ef207f6936dde03d40bcc1544bed8351d55935c03a13781b56a2bd9d8ae62fa9fde64';
     // var cookie = 'v1-household=154ec0a6e47dc216e4ff96ce5bf176424a0b4ab173c284c1e9c3cc40380ef207f6936dde03d40bcc1544bed8351d55935c03a13781b56a2bd9d8ae62fa9fde64';
 
     livePlayer.ready(function () {
         livePlayer.src({
-            src: 'https://h1-msk.cdn.megafon.tv/video-3309745/live/delta22/out/u/v1-video-3309745.mpd',
+            src: 'http://h1-msk.cdn.megafon.tv/video-3309745/live/delta22/out/u/v1-video-3309745.mpd',
             // src: 'http://h1-msk.cdn.megafon.tv/video-3309745/live/delta22/out/u/v1-video-3309745.m3u8',
             type: 'application/dash+xml',
             // type: 'application/x-mpegURL',
@@ -50,6 +68,7 @@
                         httpRequestHeaders: {
                             'Custom-Data': cookie
                         },
+                        clearkeys: '',
                         initDataType: 'cenc',
                     }
                 },
@@ -62,6 +81,7 @@
                         httpRequestHeaders: {
                             'customdata': cookie
                         },
+                        clearkeys: '',
                         initDataType: 'cenc',
                     }
                 }
