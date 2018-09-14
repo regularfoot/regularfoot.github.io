@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Test Player</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="dist/video-js.css">
+    <script src="dist/ie8/videojs-ie8.js"></script>
+</head>
+
+<body>
+
+<h3>Тест live-потоков: Мегафон</h3>
+
+<p>Megafon open mpd (dash)</p>
+<video id="megafon-open-mpd" width=600 height=300 class="video-js vjs-default-skin" controls></video>
+<p>Megafon open m3u8 (hls)</p>
+<video id="megafon-open-m3u8" width=600 height=300 class="video-js vjs-default-skin" controls></video>
+<p>Megafon open mss</p>
+<video id="megafon-open-mss" width=600 height=300 class="video-js vjs-default-skin" controls></video>
+
+<script src="dist/video.js"></script>
+<script src="dist/dash.all.debug.js"></script>
+<script src="dist/videojs-contrib-hls.min.js"></script>
+<script src="dist/videojs-dash.js"></script>
+<script src="dist/dash.mss.debug.js"></script>
+
+<script>
+    var megafonOpenMpd = videojs('megafon-open-mpd', {
+            html5: {
+                dash: {
+                    setLimitBitrateByPortal: true,
+                }
+            }
+        }),
+        megafonOpenM3u8 = videojs('megafon-open-m3u8', {
+            html5: {
+                hls: {
+                    withCredentials: true,
+                },
+            }
+        }),
+        megafonOpenMss = videojs('megafon-open-mss', {
+            html5: {
+                dash: {
+                    setLimitBitrateByPortal: true,
+                }
+            }
+        });
+
+    megafonOpenMpd.ready(function () {
+        megafonOpenMpd.src({
+            src: 'http://h1-msk.cdn.megafon.tv/video-3309745/live/delta22/out/u/v1-dash-video-3309745.mpd',
+            type: 'application/dash+xml',
+        });
+    });
+    megafonOpenM3u8.ready(function () {
+        megafonOpenM3u8.src({
+            src: 'http://h1-msk.cdn.megafon.tv/video-3309745/live/delta22/out/u/v1-hls-video-3309745.m3u8',
+            type: 'application/x-mpegURL',
+        });
+    });
+    megafonOpenMss.ready(function () {
+        megafonOpenMss.src({
+            src: 'http://h1-msk.cdn.megafon.tv/video-3309745/live/delta22/out/u/v1-mss-video-3309745.ism/Manifest',
+            type: 'application/dash+xml',
+        });
+    });
+
+</script>
+</body>
+
+</html>
