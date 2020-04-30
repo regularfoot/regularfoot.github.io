@@ -5323,7 +5323,7 @@ input:-webkit-autofill:active {
   opacity: 1;
 }
 
-@media only screen and (max-width: 599px) {
+@media only screen and (max-width: 559px) {
   #window {
     max-width: 100%;
   }
