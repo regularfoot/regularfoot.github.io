@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>{{.Title}}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script type="text/javascript">
+		var MAP = {
+			RedirectUrl: "{{.RedirectUrl}}",
+			Result: "{{.Success}}",
+			State: "Result",
+			RedirectDelay: 1000,
+			ResultText: {
+				success: "Оплата прошла успешно",
+			}
+		};
+	</script>
+<link rel="shortcut icon" href="https://static-stage.mapisacard.com/static/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://static-stage.mapisacard.com/static/favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://static-stage.mapisacard.com/static/favicon/favicon-32x32.png">
+<link href="./css/main.d1c5de04.css" rel="stylesheet"></head>
+
+<body>
+	<noscript>
+		<div id="noscript">Для продолжения оплаты необходимо включить поддержку JavaScript в вашем браузере.</div>
+	</noscript>
+	<div id="app">
+		<div id="wrapper" class="grid center cross-center">
+			<div id="window" class="grid hidden">
+				<div id="logo" class="map-logo" :class="setIconResult">MAP</div>
+				<div class="u-16 body grid">
+					<div class="paymentResult u-16 text-center">${ setTextResult }</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script src="./js/main.d1c5de04.js"></script></body>
+
+</html>
