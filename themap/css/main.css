@@ -4922,7 +4922,7 @@ button {
 }
 
 button.loading {
-  background: url(../img/loading.gif) 50% no-repeat !important
+  background: #aaaaaa url(../img/loading.gif) 50% no-repeat !important;
 }
 
 button.loading > * {
