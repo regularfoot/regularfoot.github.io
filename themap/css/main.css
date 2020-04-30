@@ -5326,7 +5326,6 @@ input:-webkit-autofill:active {
 @media only screen and (max-width: 599px) {
   #window {
     max-width: 100%;
-    padding: 20px;
   }
   input.cvv, .body form .date, .body form .card .value .title {
     width: 100%;
