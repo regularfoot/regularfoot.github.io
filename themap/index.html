@@ -2,137 +2,175 @@
 <html>
 
 <head>
-	<meta charset="UTF-8">
-	<title>{{.Title}}</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>{{.Title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<script type="text/javascript">
-		var MAP = {
-			SessionType: "{{.SessionType}}",
-			Amount: "{{.Amount}}",
-			Currency: "{{.Currency}}",
-			AllowNewCard: "{{.AllowNewCard}}",
-			Secret: "{{.Secret}}",
-			Error: "{{.Error}}",
-			IsReceipt: "{{.IsReceipt}}",
-			Email: "{{.Email}}",
-			AddCard: "{{.AddCard}}",
-			HasUserCred: "{{.HasUserCred}}",
-			Holder: "Mr Cardholder",
-			ShowOrderId: false,
-			ShowDescription: false,
-			ShowAmount: true,
-			ShowCVV: true,
-			ButtonText: {
-				Pay: '{{index .CustomParams "PayButtonCustomText"}}' || 'Оплатить'
-			}
-		};
-	</script>
-<link rel="shortcut icon" href="https://static-stage.mapisacard.com/static/favicon/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://static-stage.mapisacard.com/static/favicon/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://static-stage.mapisacard.com/static/favicon/favicon-32x32.png">
-<link href="./css/main.css" rel="stylesheet"></head>
+    <script type="text/javascript">
+        var MAP = {
+            SessionType: "{{.SessionType}}",
+            Amount: "{{.Amount}}",
+            Currency: "{{.Currency}}",
+            AllowNewCard: "{{.AllowNewCard}}",
+            Secret: "{{.Secret}}",
+            Error: "{{.Error}}",
+            IsReceipt: "{{.IsReceipt}}",
+            Email: "{{.Email}}",
+            AddCard: "{{.AddCard}}",
+            HasUserCred: "{{.HasUserCred}}",
+            Holder: "Mr Cardholder",
+            ShowOrderId: false,
+            ShowDescription: false,
+            ShowAmount: true,
+            ShowCVV: true,
+            ButtonText: {
+                Pay: '{{index .CustomParams "PayButtonCustomText"}}' || 'Оплатить'
+            }
+        };
+    </script>
+    <link rel="shortcut icon" href="https://static-stage.mapisacard.com/static/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="https://static-stage.mapisacard.com/static/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="https://static-stage.mapisacard.com/static/favicon/favicon-32x32.png">
+    <link href="./css/main.css" rel="stylesheet">
+</head>
 
 <body>
-	<noscript>
-		<div id="noscript">Для продолжения оплаты необходимо включить поддержку JavaScript в вашем браузере.</div>
-	</noscript>
-	<div id="app">
-		<div id="wrapper" class="grid center cross-start cross-center-ss">
-			<div id="window" class="grid center hidden">
-				<div id="logo" class="map-logo" :class="setIconResult">MAP</div>
-				<div class="u-16 body grid">
-					<form id="payForm" class="u-16 grid" :class="{hidden: showResult}" novalidate autocomplete="off" method="POST"
-						@submit.prevent="submitPayment">
-					<div class="u-16 text-center paymentInfo">
-						<div id="orderId" v-if="showOrderId">Номер заказа: {{.OrderID}}</div>
-						<div id="description" v-if="showDescription">{{index .CustomParams "Description"}}</div>
-						<div class="u-16 card">
-							<div class="value inputWrapper">
-								<span class="title" v-show="!showPanInput" @click="displayCardList"></span>
-								<input id="cardname" v-model="PAN" v-focus type="tel" v-show="showPanInput" ref="pan" name="PAN"
-									:maxlength="panMaxLength" class="pan" :class="{error : ValidationStack.PAN.Success == false}"
-									placeholder="" :next="next.PAN" @keypress="checkInput" @keyup="keyupfunc"
-									@blur="onBlurElement" required>
-								<label class="inputLabel" for="cardname">Номер карты</label>
-								<div class="border"></div>
-								<div class="errorMessage rightSide" v-if="errorMessage">${ errorMessage }</div>
-							</div>
-							<div class="cardList" v-show="showCardList">
-								{{ range $uid, $pan := .CardsPANs}}
-								<label><input type="radio" v-model="carduid" name="carduid" value="{{ $uid }}" id="{{ $uid }}"
-										@change="onSelectCard"><span class="name">{{ $pan }}</span></label>
-								{{end}}
-								<label><input type="radio" v-model="carduid" name="carduid" value="free" id="free"
-										@change="onSelectCard"><span class="title">Новая карта</span></label>
-							</div>
-							<span class="mps" :class="mpsClass"></span>
-							<a v-if="selectCard" class="selectCard" @click="displayCardList">
-								<i></i>
-							</a>
-							<div v-if="showClear" class="clear" @click="clearPANInput"></div>
-						</div>
-						<div class="u-16 grid between">
-						<div class="text half left date inputWrapper"
-							:class="{error : ValidationStack.EYear.Success == false || ValidationStack.EMonth.Success == false, 'onlyDate' : !options.ShowCVV}">
-							<input v-model="EMonth" ref="month" name="EMonth" type="tel" maxlength="2" novalidate
-								class="number month" placeholder="" prev="PAN" :next="next.EYear" @keypress="checkInput"
-								@keyup="keyupfunc" @blur="onBlurElement" @input="validate" :disabled="!showPanInput" required>
-							<span>/</span>
-							<input v-model="EYear" ref="year" name="EYear" type="tel" maxlength="2" novalidate class="number year"
-								placeholder="" prev="month" :next="next.cvv" @keypress="checkInput" @keyup="keyupfunc"
-								@blur="onBlurElement" @input="validate" :disabled="!showPanInput" required>
-							<div class="inputLabel">ММ/ГГ</div>
-							<div class="border"></div>
-							<div class="errorMessage leftSide" v-if="errorMessage">${ errorMessage }</div>
-						</div>
-						<div class="inputWrapper cvvWrapper">
-							<input id="CVV" v-model="cvv" v-if="options.ShowCVV" :maxlength="cvvMaxLenght" ref="cvv" name="cvv" type="text" value="12"
-								novalidate class="half right cvv number text password" :class="{error : ValidationStack.cvv.Success == false}"
-								placeholder="" prev="EDate" :next="next.holder" @keypress="checkInput" @keyup="keyupfunc"
-								@blur="onBlurElement" @input="validate" required>
-							<label class="inputLabel" for="CVV">CVV</label>
-							<div class="border"></div>
-							<div class="errorMessage rightSide" v-if="errorMessage">${ errorMessage }</div>
-						</div>
-						<div class="u-16" v-if="showHolder">
-							<input v-model.trim="holder" ref="holder" name="holder" type="text" class="holder latin text"
-								:class="{error : ValidationStack.holder.Success == false}" placeholder="ДЕРЖАТЕЛЬ КАРТЫ" prev="cvv"
-								@keypress="checkInput" @input="checkInputHolder" @blur="onBlurElement" :disabled="!showPanInput">
-						</div>
-						<div v-if="options.isReceipt" class="u-16">
-							<input v-model.trim="email" ref="email" name="email" type="text" class="email latin text"
-								:class="{error : ValidationStack.email.Success == false}" placeholder="EMAIL" prev="holder"
-								@keypress="checkInput" @input="validate" @blur="onBlurElement">
-						</div><button type="submit" :disabled="disabledSubmit" :class="[isLoad ? 'loading' : '', currencyClass]">
-							<i class="map-icon map-icon-lock"></i>
-							<span>${ setButtonText }</span>
-							<span>${ setAmount }</span>
-						</button>
-						<div class="u-16 grid between cross-center secure-logo">
-							<div><img src="https://static-evo.mapisacard.com/static/defaultNew/img/visa.png">
-							</div>
-							<div><img src="https://static-evo.mapisacard.com/static/defaultNew/img/mc-securecode.png">
-							</div>
-							<div><img src="https://static-evo.mapisacard.com/static/defaultNew/img/mir-accept.png"></div>
-							<div><img src="https://static-evo.mapisacard.com/static/defaultNew/img/pci.png">
-							</div>
-						</div>
-						<div class="u-16 grid center cross-center footer">
-							<img src="https://static-evo.mapisacard.com/static/defaultNew/img/security.svg" />
-							<div>Безопасная оплата обеспечивается <span class="themap">theMAP</span></div>
-						</div>
-					</form>
-					<!-- {{index .CustomParams "Test"}} -->
-				</div>
-				<div v-show="showBack" class="back" @click="clickOnBack"></div>
-				<div class="u-16 text-center" v-if="showSaveCard && AddCard">
-					<label class="saveCard"><input type="checkbox" v-model="saveCard" name="saveCard"
-							id="saveCard"><span>Сохранить карту</span></label>
-				</div>
-			</div>
-		</div>
-	</div>
-<script src="./js/main.d1c5de04.js"></script></body>
+<noscript>
+    <div id="noscript">Для продолжения оплаты необходимо включить поддержку JavaScript в вашем браузере.</div>
+</noscript>
+<div id="app">
+    <div id="wrapper" class="grid center cross-start cross-center-ss">
+        <div id="window" class="grid center hidden">
+            <div id="logo" class="map-logo" :class="setIconResult">MAP</div>
+            <div class="u-16 body grid">
+                <form id="payForm" class="u-16 grid" :class="{hidden: showResult}" novalidate autocomplete="off"
+                      method="POST"
+                      @submit.prevent="submitPayment">
+                    <div class="u-16 text-center paymentInfo">
+                        <div id="orderId" v-if="showOrderId">Номер заказа: {{.OrderID}}</div>
+                        <div id="description" v-if="showDescription">{{index .CustomParams "Description"}}</div>
+                        <div class="u-16 card">
+                            <div :class="{errorPan : ValidationStack.PAN.Success == false,
+							errorDate : (ValidationStack.EYear.Success == false || ValidationStack.EMonth.Success == false),
+							errorCVV : ValidationStack.cvv.Success == false,  otherErrorMessage: true
+							}" v-if="errorMessage">${ errorMessage }
+                            </div>
+                            <div class="value inputWrapper">
+                                <span class="title" v-show="!showPanInput" @click="displayCardList"></span>
+                                <input id="cardname" v-model="PAN" v-focus type="tel" v-show="showPanInput" ref="pan"
+                                       name="PAN"
+                                       :maxlength="panMaxLength" class="pan"
+                                       :class="{error : ValidationStack.PAN.Success == false}"
+                                       placeholder="" :next="next.PAN" @keypress="checkInput" @keyup="keyupfunc"
+                                       @blur="onBlurElement" required>
+                                <label class="inputLabel" for="cardname">Номер карты</label>
+                                <div class="border"></div>
+                                <div :class="{error : ValidationStack.PAN.Success == false, errorMessage : true, rightSide : true}">
+                                    ${ ValidationStack.PAN.ErrorMessage }
+                                </div>
+                            </div>
+                            <div class="cardList" v-show="showCardList">
+                                {{ range $uid, $pan := .CardsPANs}}
+                                <label><input type="radio" v-model="carduid" name="carduid" value="{{ $uid }}"
+                                              id="{{ $uid }}"
+                                              @change="onSelectCard"><span class="name">{{ $pan }}</span></label>
+                                {{end}}
+                                <label><input type="radio" v-model="carduid" name="carduid" value="free" id="free"
+                                              @change="onSelectCard"><span class="title">Новая карта</span></label>
+                            </div>
+                            <span class="mps" :class="mpsClass"></span>
+                            <a v-if="selectCard" class="selectCard" @click="displayCardList">
+                                <i></i>
+                            </a>
+                            <div v-if="showClear" class="clear" @click="clearPANInput"></div>
+                        </div>
+                        <div class="u-16 grid between">
+                            <div class="text half left date inputWrapper"
+                                 :class="{error : ValidationStack.EYear.Success == false || ValidationStack.EMonth.Success == false, 'onlyDate' : !options.ShowCVV}">
+                                <input v-model="EMonth" ref="month" name="EMonth" type="tel" maxlength="2" novalidate
+                                       class="number month" placeholder="" prev="PAN" :next="next.EYear"
+                                       @keypress="checkInput"
+                                       @keyup="keyupfunc" @blur="onBlurElement" @input="validate"
+                                       :disabled="!showPanInput" required>
+
+                                <input v-model="EYear" ref="year" name="EYear" type="tel" maxlength="2" novalidate
+                                       class="number year"
+                                       placeholder="" prev="month" :next="next.cvv" @keypress="checkInput"
+                                       @keyup="keyupfunc"
+                                       @blur="onBlurElement" @input="validate" :disabled="!showPanInput" required>
+                                <span class="slash">/</span>
+                                <div class="inputLabel">ММ/ГГ</div>
+                                <div class="border"></div>
+                                <div :class="{error : ValidationStack.EYear.Success == false || ValidationStack.EMonth.Success == false, errorMessage : true, leftSide : true}">
+                                    ${ ValidationStack.EYear.ErrorMessage }
+                                </div>
+                            </div>
+                            <div class="inputWrapper cvvWrapper">
+                                <input id="CVV" v-model="cvv" v-if="options.ShowCVV" :maxlength="cvvMaxLenght" ref="cvv"
+                                       name="cvv" type="text" value="12"
+                                       novalidate class="half right cvv number text password"
+                                       :class="{error : ValidationStack.cvv.Success == false}"
+                                       placeholder="" prev="EDate" :next="next.holder" @keypress="checkInput"
+                                       @keyup="keyupfunc"
+                                       @blur="onBlurElement" @input="validate" required>
+                                <label class="inputLabel" for="CVV">CVV</label>
+                                <div class="border"></div>
+                                <div :class="{error : ValidationStack.cvv.Success == false, errorMessage : true, rightSide : true}">
+                                    ${ ValidationStack.cvv.ErrorMessage }
+                                </div>
+                            </div>
+                            <div class="u-16" v-if="showHolder">
+                                <input v-model.trim="holder" ref="holder" name="holder" type="text"
+                                       class="holder latin text"
+                                       :class="{error : ValidationStack.holder.Success == false}"
+                                       placeholder="ДЕРЖАТЕЛЬ КАРТЫ" prev="cvv"
+                                       @keypress="checkInput" @input="checkInputHolder" @blur="onBlurElement"
+                                       :disabled="!showPanInput">
+                            </div>
+                            <div v-if="options.isReceipt" class="u-16">
+                                <input v-model.trim="email" ref="email" name="email" type="text"
+                                       class="email latin text"
+                                       :class="{error : ValidationStack.email.Success == false}" placeholder="EMAIL"
+                                       prev="holder"
+                                       @keypress="checkInput" @input="validate" @blur="onBlurElement">
+                            </div>
+                            <button type="submit" :disabled="disabledSubmit"
+                                    :class="[isLoad ? 'loading' : '', currencyClass]">
+                                <i class="map-icon map-icon-lock"></i>
+                                <span>${ setButtonText }</span>
+                                <span>${ setAmount }</span>
+                            </button>
+                            <div class="u-16 grid between cross-center secure-logo">
+                                <div><img src="https://static-evo.mapisacard.com/static/defaultNew/img/visa.png">
+                                </div>
+                                <div><img
+                                        src="https://static-evo.mapisacard.com/static/defaultNew/img/mc-securecode.png">
+                                </div>
+                                <div><img src="https://static-evo.mapisacard.com/static/defaultNew/img/mir-accept.png">
+                                </div>
+                                <div><img src="https://static-evo.mapisacard.com/static/defaultNew/img/pci.png">
+                                </div>
+                            </div>
+                            <div class="u-16 grid center cross-center footer">
+                                <img src="https://static-evo.mapisacard.com/static/defaultNew/img/security.svg"/>
+                                <div>Безопасная оплата обеспечивается <span class="themap">theMAP</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- {{index .CustomParams "Test"}} -->
+            </div>
+            <div v-show="showBack" class="back" @click="clickOnBack"></div>
+            <div class="u-16 text-center" v-if="showSaveCard && AddCard">
+                <label class="saveCard"><input type="checkbox" v-model="saveCard" name="saveCard"
+                                               id="saveCard"><span>Сохранить карту</span></label>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./js/main.d1c5de04.js"></script>
+</body>
 
 </html>

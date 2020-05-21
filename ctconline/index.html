@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="styles.css" rel="stylesheet">
+    <link href="menu.css" rel="stylesheet">
+</head>
+<body class="App">
+
+<header class="header">
+    <div class="container">
+        <div>
+            <a class="logo" href="/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="81" height="31" viewBox="0 0 73 27">
+                    <path fill-rule="evenodd" fill="#fed444"
+                          d="M59.924 6.556c-3.813 0-6.905 3.109-6.905 6.944s3.092 6.944 6.905 6.944c2.72 0 5.072-1.58 6.197-3.879h6.878c-1.379 5.978-6.71 10.433-13.075 10.433-7.414 0-13.425-6.043-13.425-13.498C46.499 6.045 52.51 0 59.924 0c6.262 0 11.522 4.313 13.005 10.146h-6.958a6.896 6.896 0 0 0-6.047-3.59zM39.851 26.609h-6.383V6.419h-5.505V0h17.396v6.419h-5.508v20.19zm-26.426-6.165c2.72 0 5.071-1.58 6.197-3.879H26.5c-1.379 5.978-6.711 10.433-13.075 10.433C6.011 26.998 0 20.955 0 13.5 0 6.045 6.011 0 13.425 0c6.262 0 11.522 4.313 13.005 10.146h-6.959a6.893 6.893 0 0 0-6.046-3.59c-3.814 0-6.906 3.109-6.906 6.944s3.092 6.944 6.906 6.944z"></path>
+                </svg>
+            </a>
+        </div>
+        <nav class="header__nav">
+            <ul class="header__list">
+                <li class="header__item">
+                    <a href="/online">
+                        Прямой эфир
+                    </a>
+                </li>
+                <li class="header__item">
+                    <a href="https://ctc.ru/projects/serials/">
+                        Сериалы
+                    </a>
+                </li>
+                <li class="header__item">
+                    <a href="https://ctc.ru/projects/show/">
+                        Шоу
+                    </a>
+                </li>
+                <li class="header__item">
+                    <a href="https://ctc.ru/projects/filmi/">
+                        Фильмы
+                    </a>
+                </li>
+                <li class="header__item">
+                    <a href="https://ctc.ru/projects/multiki/">
+                        Мультики
+                    </a>
+                </li>
+                <li class="header__item">
+                    <a href="https://ctc.ru/programm/">
+                        Телепрограмма
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="MobileMenu_container MobileMenu_isVisible">
+    <div class="MobileMenu_wrapper">
+        <div><a href="/collections/show/" class="MobileMenu_mainLink">Шоу</a><a
+                href="/collections/filmi/" class="MobileMenu_mainLink">Фильмы</a><a
+                href="/collections/multiki/" class="MobileMenu_mainLink">Мультики</a><a
+                href="/zakadrom/" class="MobileMenu_mainLink">Смотри больше</a><a
+                href="/" class="MobileMenu_mainLink">Напиши нам</a><a
+                href="/aktery-i-veduschie/" class="MobileMenu_mainLink">Актеры и
+            ведущие</a></div>
+        <div></div>
+        <div class="MobileMenu_socialLinks"></div>
+    </div>
+</div>
+<div class="MobileMainMenu_wrapper">
+    <div class="MobileMainMenu_menu">
+        <a href="https://ctc.ru/online/" class="MobileMainMenu_link">
+            <div class="MobileMainMenu_linkIcon">
+                <svg width="26" height="18" viewBox="0 0 26 18">
+                    <g fill="#000" fill-rule="nonzero">
+                        <path d="M1.503 6.383c6.29-6.19 16.523-6.189 22.813 0 .172.169.397.253.622.253.226 0 .451-.084.623-.253a.857.857 0 0 0 0-1.226C22.181 1.831 17.689 0 12.909 0 8.13 0 3.638 1.831.258 5.157a.857.857 0 0 0 0 1.226.89.89 0 0 0 1.245 0zM8.258 15.994a.857.857 0 0 0 0 1.226.89.89 0 0 0 1.245 0 5.173 5.173 0 0 1 3.653-1.487c1.382 0 2.68.528 3.653 1.487.172.169.397.254.623.254.225 0 .45-.085.623-.254a.857.857 0 0 0 0-1.226A6.936 6.936 0 0 0 13.156 14a6.937 6.937 0 0 0-4.898 1.994zM21.808 11.797a.857.857 0 0 0 0-1.226C19.468 8.268 16.35 7 13.033 7 9.715 7 6.6 8.268 4.258 10.571a.857.857 0 0 0 0 1.226c.172.17.397.254.623.254.225 0 .45-.085.622-.254 2.008-1.976 4.682-3.064 7.53-3.064s5.522 1.088 7.53 3.064a.89.89 0 0 0 1.245 0z"></path>
+                    </g>
+                </svg>
+            </div>
+            <div class="MobileMainMenu_title">Прямой эфир</div>
+        </a>
+        <a href="/collections/serials/" class="MobileMainMenu_link">
+            <div class="MobileMainMenu_linkIcon">
+                <svg width="22" height="21" viewBox="0 0 22 21">
+                    <g fill="none" fill-rule="nonzero" transform="translate(0 1)">
+                        <rect width="20.5" height="13.674" x="0.75" y="4.936" stroke="#000" stroke-width="1.5"
+                              rx="1.8"></rect>
+                        <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                              d="M2.951 2.616h16.098M4.561.523h13.146"></path>
+                        <path fill="#000"
+                              d="M8.585 9.905v4.225a.6.6 0 0 0 .887.527l3.88-2.113a.6.6 0 0 0 0-1.053l-3.88-2.113a.6.6 0 0 0-.887.527z"></path>
+                    </g>
+                </svg>
+            </div>
+            <div class="MobileMainMenu_title">Сериалы</div>
+        </a>
+        <a href="/programm/" class="MobileMainMenu_link">
+            <div class="MobileMainMenu_linkIcon">
+                <svg width="25" height="25" viewBox="0 0 25 25">
+                    <g fill="none" fill-rule="nonzero" stroke="#000" stroke-width="1.5" transform="translate(0 1)">
+                        <rect width="23.5" height="15.603" x="0.75" y="5.468" rx="1.8"></rect>
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M13.415 2.359l2.776 2.685M20.122 21.231l1.555 1.503M4.878 21.231l-1.554 1.503M21.044.447l-4.726 4.571 4.726-4.57z"></path>
+                    </g>
+                </svg>
+            </div>
+            <div class="MobileMainMenu_title">Телепрограмма</div>
+        </a>
+        <a id="MainMenu" class="MobileMainMenu_link">
+            <div class="MobileMainMenu_linkIcon">
+                <svg class="hamburger" width="20" height="16" viewBox="0 0 20 16">
+                    <g fill="none" fill-rule="nonzero" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                       stroke-width="1.5" opacity="0.598">
+                        <path d="M1 1.595h17.927M1 8.25h17.927M1 15.25h17.927"></path>
+                    </g>
+                </svg>
+                <svg class="close-menu" viewBox="0 0 14 14" width="14" height="14">
+                    <path fill="inherit" fill-rule="evenodd"
+                          d="M8.237 7.005l5.505-5.51A.874.874 0 0 0 12.508.259L7.003 5.766 1.5.258A.878.878 0 0 0 .256 1.496l5.505 5.509-5.505 5.508a.874.874 0 0 0 1.243 1.23l5.504-5.508 5.505 5.509a.875.875 0 0 0 1.234-1.238L8.237 7.005z"></path>
+                </svg>
+            </div>
+            <div class="MobileMainMenu_title">меню</div>
+        </a>
+    </div>
+</div>
+<nav id="mobile-menu-nav" data-open="false" class="header__nav">
+    <div id="header-bar" class="header__bar"></div>
+    <ul class="header__list">
+        <li class="header__item">
+            <a href="/online">
+                Прямой эфир
+            </a>
+        </li>
+        <li class="header__item">
+            <a href="https://ctc.ru/programm/">
+                Телепрограмма
+            </a>
+        </li>
+        <li class="header__item">
+            <a href="https://ctc.ru/projects/serials/">
+                Сериалы
+            </a>
+        </li>
+        <li class="header__item">
+            <a href="https://ctc.ru/projects/show/">
+                Шоу
+            </a>
+        </li>
+        <li class="header__item">
+            <a href="https://ctc.ru/projects/multiki/">
+                Мультики
+            </a>
+        </li>
+        <li class="header__item">
+            <a href="https://ctc.ru/projects/filmi/">
+                Фильмы
+            </a>
+        </li>
+    </ul>
+</nav>
+<div class="App-content"></div>
+<footer class="footer">
+    <section class="footer__main">
+        <div class="footer__container">
+            <div class="footer__block footer__block--list-project">
+                <span class="footer__title">Смотри на СТС</span>
+
+                <nav>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <a class="footer__item-link"
+                               href="https://ctc.ru/projects/serials/voroniny/">Воронины</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link" href="https://ctc.ru/projects/serials/ivanovy-ivanovy/">Ивановы-Ивановы</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link"
+                               href="https://ctc.ru/projects/show/galileo_s_vladimirom_markoni/">Галилео</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link"
+                               href="https://ctc.ru/projects/show/prosto_kuhnya/">Просто кухня</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link"
+                               href="https://ctc.ru/projects/show/shou-_uralskikh-pelmeney_/">Уральские пельмени</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link" href="https://ctc.ru/projects/serials/kuhnya__voina_za_otel/">Кухня.
+                                Война за отель</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link"
+                               href="https://ctc.ru/projects/serials/dyldy/">Дылды</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link"
+                               href="https://ctc.ru/projects/serials/molodezhka/">Молодежка</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link" href="https://ctc.ru/projects/show/rogov_doma/">Рогов дома</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link"
+                               href="https://ctc.ru/projects/show/fort_boyard__vozvraschenie/">Форт Боярд</a>
+                        </li>
+                    </ul>
+                    <ul class="footer__list fmu-second">
+                        <li class="footer__item">
+                            <a class="footer__item-link" href="https://ctc.ru/projects/serials/korni/">Корни</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link"
+                               href="https://ctc.ru/projects/serials/psihologini/">Психологини</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link" href="https://ctc.ru/projects/serials/otel_eleon/">Отель
+                                Элеон</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link" href="https://ctc.ru/projects/show/misha_portit_vse/">Миша
+                                портит всё</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link" href="https://ctc.ru/projects/show/stendap_andegraund/">Стендап
+                                Андеграунд</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link"
+                               href="https://ctc.ru/projects/show/detki-predki/">Детки-предки</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link" href="https://ctc.ru/projects/serials/kukhnya/">Кухня</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link" href="https://ctc.ru/projects/multiki/tri_kota/">Три Кота</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link"
+                               href="https://ctc.ru/projects/multiki/leks_i_plu_kosmicheskie_taksisty/">Лекс и Плу.
+                                Космические Таксисты</a>
+                        </li>
+
+                    </ul>
+                    <div class="clearfix"></div>
+                </nav>
+            </div>
+            <div class="footer__block footer__block--list-business">
+                <span class="footer__title">Бизнес</span>
+                <nav>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <a class="footer__item-link" href="http://ctcmedia.ru/rus/about/">О компании</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link" href="http://www.everest-sales.ru/hotnews/">HotNews</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link" href="http://www.everest-sales.ru/">Реклама</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link" href="http://ctcmedia.ru/rus/about/career/">Вакансии</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link" href="http://www.ctcmedia.ru/rus/">СТС Медиа</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link" href="http://www.domashniy.ru/">Домашний</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link" href="http://ctclove.ru/">СТС Love</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link" href="http://chetv.ru/">Че</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__block footer__block--list-app">
+                <i class="ctc-icon"><img src="./img/logo-ctc.svg" alt="tv"></i>
+                <div class="footer__title-with-icon ">Смотри СТС<br><span>на телефоне и мобильном</span></div>
+                <a class="logo-list-app logo-list-app_google-play"
+                   href="https://ad.apps.fm/bC9Lb1yiCAB4_JCtDxJ-W15KLoEjTszcQMJsV6-2VnHFDLXitVHB6BlL95nuoNYfO89MZxEsdYAglj7c6Cz5DQdZKAygBt_ndXALfaysMSeC8N2WBnBb5z_5FZUrFTTp"
+                   rel="nofollow" title="Скачать приложение из Google Play"></a>
+                <a class="logo-list-app logo-list-app_app-store"
+                   href="https://ad.apps.fm/pfiW0X7mcUTEqczohttHLfE7og6fuV2oOMeOQdRqrE1Riggw6OUwu00lRT8kthw8zVUIz07Zmowq2bBWKVfxiaVtBMW58vM5w_WAwdrzWIY"
+                   rel="nofollow" title="Скачать приложение из App Store"></a>
+
+            </div>
+            <div class="footer__block footer__block--list-tv">
+                <span class="f-title">Ищите приложение CTC <br> в меню телевизоров с поддержкой Smart TV</span>
+                <figure class="logo-smart-tv">
+                    <img class="logo-smart-tv-icon" src="img/tv.svg" alt="tv">
+                    <img class="logo-smart-tv-icon mobile" src="img/tv-mobile.svg" alt="tv">
+                    <figcaption class="lst-caption">
+                        <div>
+                            <span>LG</span>
+                            <span>Samsung</span>
+                            <span>Sony</span>
+                        </div>
+                        <div>
+                            <span>Philips</span>
+                            <span>Panasonic</span>
+                        </div>
+                    </figcaption>
+                    <div class="clearfix"></div>
+                </figure>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </section>
+
+    <section class="footer__copyright">
+        <div class="footer__container">
+            <nav class="fmc-menu">
+                <ul class="list-items">
+                    <li class="item">
+                        <a class="link-item" href="https://ctc.ru/programm">Телепрограмма</a>
+                    </li>
+                    <li class="item">
+                        <a class="link-item" href="https://ctc.ru/projects/all">Проекты</a>
+                    </li>
+                    <li class="item">
+                        <a class="link-item" href="https://ctc.ru/zakadrom/novosti">Новости</a>
+                    </li>
+                    <li class="item">
+                        <a class="link-item" href="https://ctc.ru/confidentiality">Конфиденциальность</a>
+                    </li>
+                    <li class="item">
+                        <a class="link-item" href="https://ctc.ru/rightholders">Правообладателям</a>
+                    </li>
+                    <li class="item">
+                        <a class="link-item" href="https://ctc.ru/useragreement">Пользовательское
+                            соглашение</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="fmc-copyright">
+                © 2018 Телеканал СТС, АО «СТС»
+                </span>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </section>
+</footer>
+
+</body>
+<script>
+    (function () {
+        const menuBtn = document.querySelector('#MainMenu');
+        const menu = document.querySelector('.MobileMenu_container');
+
+        menuBtn.onclick = function () {
+            menu.classList.toggle('isVisible');
+            menuBtn.classList.toggle('isVisible');
+            document.body.classList.toggle('menu-open');
+        }
+    }())
+</script>
+</html>

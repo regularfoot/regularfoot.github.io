@@ -4899,7 +4899,7 @@ input.email {
   background-position: 0 -159px
 }
 
-input.month ~ span {
+input.month ~ .slash {
   padding-top: 8px;
   color: rgba(255, 255, 255, 0.87)
 }
@@ -4914,6 +4914,7 @@ input.month, input.year {
 }
 input.year {
   width: 40px;
+  margin-left: 10px;
 }
 
 button {
@@ -5050,8 +5051,18 @@ input.cvv {
   letter-spacing: 2.3px;
   line-height: 1;
 }
-input.month:invalid ~ span {
+.slash {
   opacity: 0;
+  position: absolute;
+  left: 40px;
+}
+input.month:disabled ~ .slash,
+input.month:valid ~ .slash {
+  opacity: 1;
+}
+input.year:disabled ~ .slash,
+input.year:valid ~ .slash {
+  opacity: 1;
 }
 input.password {
   -webkit-text-security:disc;
@@ -5073,10 +5084,6 @@ input.month[disabled] ~ .inputLabel {
   letter-spacing: normal;
   color: rgba(255, 255, 255, 0.6);
 }
-/*.body form .card .value .title[style="display: none;"] ~ label {*/
-/*  display: block;*/
-/*}*/
-
 .body form .card .cardList .active {
   display: none
 }
@@ -5274,6 +5281,31 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0px 1000px #404040 inset !important;
 }
+.otherErrorMessage {
+  display: inline-block;
+  pointer-events: none;
+  background-color: #ce2226;
+  font-family: Montserrat;
+  max-width: 300px;
+  width: 100%;
+  font-size: 12px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: normal;
+  color: #fff;
+  padding: 6px 13px 6px;
+  min-height: 27px;
+  border-radius: 3px;
+  z-index: 1;
+  margin-bottom: 30px;
+}
+.otherErrorMessage.errorDate,
+.otherErrorMessage.errorCVV,
+.otherErrorMessage.errorPan {
+  display: none;
+}
 .errorMessage {
   position: absolute;
   pointer-events: none;
@@ -5315,13 +5347,18 @@ input:-webkit-autofill:active {
 }
 .errorMessage.leftSide {
   left: 0;
+  text-align: left;
 }
-.error:focus ~ .errorMessage,
-.error input:focus .errorMessage {
+.error.errorMessage {
   opacity: 1;
 }
 
 @media only screen and (max-width: 559px) {
+  .otherErrorMessage {
+    max-width: 100%;
+    margin-bottom: 20px;
+    font-size: 11px;
+  }
   #window {
     max-width: 100%;
   }
@@ -5421,7 +5458,10 @@ input:-webkit-autofill:active {
     width: 40px;
     padding-left: 4px;
   }
-  input.month ~ span {
+  .slash {
+    left: 38px;
+  }
+  input.month ~ .slash {
     padding-top: 5px;
     font-size: 16px;
   }
