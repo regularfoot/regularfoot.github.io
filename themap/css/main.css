@@ -4680,7 +4680,8 @@ body {
   font-size: 16px;
   position: relative;
   line-height: 1.65;
-  overflow-x: hidden
+  overflow-x: hidden;
+  background: black;
 }
 
 #noscript {
@@ -4732,7 +4733,7 @@ body {
 }
 
 .map-icon {
-  display: none;
+  /*display: none;*/
   position: relative;
   vertical-align: middle;
   opacity: 1
@@ -4767,7 +4768,7 @@ body {
 }
 
 #window {
-  max-width: 300px;
+  max-width: 600px;
   padding: 20px 0;
   width: 100%;
   position: relative;
@@ -4838,7 +4839,7 @@ input {
   width: 100%;
   height: 54px;
   border-radius: 5px;
-  padding: 15px 16px 0;
+  padding: 0 16px 0;
   color: rgba(255, 255, 255, 0.87);
   background-color: rgba(255, 255, 255, 0.05);
   display: block;
@@ -4849,9 +4850,11 @@ input {
   font-style: normal;
   line-height: 1.5;
   letter-spacing: normal;
-  -webkit-transition: all .2s ease-in;
-  -o-transition: all .2s ease-in;
-  transition: all .2s ease-in
+  caret-color: #42b2f8;
+  font-family: Montserrat;
+}
+input:valid {
+  padding: 17px 16px 0;
 }
 
 button {
@@ -4886,7 +4889,10 @@ input[type=radio] {
 }
 
 input.pan {
-  background-position: 0 -1px
+  background-position: 0 -1px;
+  padding-left: 51px;
+  letter-spacing: 0.6px;
+  font-family: Montserrat;
 }
 
 input.holder {
@@ -4911,6 +4917,15 @@ input.month, input.year {
   font-size: 17px;
   padding-top: 9px;
   cursor: text;
+}
+input.month:not(:disabled), input.year:not(:disabled) {
+  padding-top: 0;
+  margin-top: -3px;
+}
+input.month:valid, input.year:valid,
+input.month:valid ~ input.year {
+  padding-top: 9px;
+  margin-top: 0;
 }
 input.year {
   width: 40px;
@@ -4937,6 +4952,7 @@ button span {
 .body {
   max-height: 500px;
   position: relative;
+  font-family: Montserrat;
 }
 
 .body .paymentResult {
@@ -4973,9 +4989,6 @@ input.cvv,
   font-style: normal;
   line-height: 1.5;
   letter-spacing: normal;
-  -webkit-transition: all .2s ease-in;
-  -o-transition: all .2s ease-in;
-  transition: all .2s ease-in;
   cursor: text;
 }
 .body form .date {
@@ -5008,6 +5021,10 @@ input.cvv,
   letter-spacing: normal;
   pointer-events: none;
   color: rgba(255, 255, 255, 0.6);
+  transition: all 0.15s ease;
+}
+.inputLabel[for=cardname] {
+  padding-left: 30px;
 }
 .month ~ .inputLabel,
 .cvv ~ .inputLabel {
@@ -5020,7 +5037,8 @@ input.cvv,
   font-stretch: normal;
   font-style: normal;
   line-height: 1.5;
-  letter-spacing: normal;
+  padding-left: 51px;
+  letter-spacing: 0.6px;
   color: rgba(255, 255, 255, 0.87);
 }
 
@@ -5034,22 +5052,27 @@ input.cvv,
   line-height: 1;
   letter-spacing: normal;
   color: rgba(255, 255, 255, 0.6);
+  padding-left: 0;
 }
 input:valid ~ .inputLabel {
   font-size: 12px;
-  left: 17px;
+  left: 15px;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: 1;
   letter-spacing: normal;
   color: rgba(255, 255, 255, 0.6);
+  padding-left: 0;
 }
 input.cvv {
-  font-size: 39px;
-  padding-top: 24px;
+  font-size: 16px;
+  padding-top: 16px;
   letter-spacing: 2.3px;
   line-height: 1;
+}
+input.cvv:valid {
+  padding-top: 24px;
 }
 .slash {
   opacity: 0;
@@ -5127,26 +5150,44 @@ input.month[disabled] ~ .inputLabel {
 }
 
 .body form .mps {
-  display: none;
   background: url(../img/icons.png) no-repeat 0 0;
-  background-position: 0 200px;
+  background-size: 40px;
+  display: block;
   height: 20px;
   position: absolute;
-  top: 17px;
-  right: 17px;
+  top: 26px;
+  left: 7px;
   width: 40px
 }
-
+.body form input.pan ~ .mps {
+   margin-top: -6px;
+ }
+.body form input[style="display: none;"] ~ .mps {
+  margin-top: 0;
+}
+.body form input:valid ~ .mps {
+  margin-top: 0;
+}
+.body form .mps.new {
+  background-position: 0 -13px;
+  background-size: 49px;
+  top: 23px;
+  left: 2px;
+}
 .body form .mps.master {
   background-position: 0 -200px
 }
 
 .body form .mps.visa {
-  background-position: 0 -220px
+  background-position: 0 -174px;
+  background-size: 32px;
+  left: 13px;
 }
 
 .body form .mps.mir {
-  background-position: 0 -240px
+  background-position: 0 -195px;
+  background-size: 33px;
+  left: 11px;
 }
 
 .body form .mps.amex {
@@ -5170,7 +5211,7 @@ input.month[disabled] ~ .inputLabel {
 }
 input.cvv,
 .body form .date {
-  max-width: 142px;
+  max-width: 162px;
   -webkit-transition: all .2s ease-in;
   -o-transition: all .2s ease-in;
   transition: all .2s ease-in
@@ -5246,10 +5287,7 @@ input.cvv,
 }
 
 
-input:valid ~ .border:after,
-input.month[disabled] ~ .border:after,
-.body form .card .value .title:not([style="display: none;"]) ~ .border:after,
-.correct ~ .border:after {
+input:focus ~ .border:after{
   background-color: #42b2f8;
 }
 
@@ -5286,7 +5324,7 @@ input:-webkit-autofill:active {
   pointer-events: none;
   background-color: #ce2226;
   font-family: Montserrat;
-  max-width: 300px;
+  max-width: 560px;
   width: 100%;
   font-size: 12px;
   font-weight: 600;
@@ -5353,7 +5391,18 @@ input:-webkit-autofill:active {
   opacity: 1;
 }
 
+.form-wrapper {
+  width: 340px;
+  margin: 0 auto;
+}
+
 @media only screen and (max-width: 559px) {
+  .body {
+    max-height: 100%;
+  }
+  .form-wrapper {
+    max-width: 100%;
+  }
   .otherErrorMessage {
     max-width: 100%;
     margin-bottom: 20px;
@@ -5395,6 +5444,31 @@ input:-webkit-autofill:active {
     letter-spacing: 0.7px;
     line-height: 1;
   }
+
+  .body form .card .value .title,
+  input.pan {
+    padding-left: 40px;
+  }
+  .body form .mps {
+    transform: scale(0.8);
+    margin-left: -4px;
+
+  }
+
+  .body form input.pan ~ .mps {
+    margin-top: -10px;
+  }
+  .body form input[style="display: none;"] ~ .mps {
+    margin-top: -5px;
+  }
+  .body form input:valid ~ .mps {
+    margin-top: -5px;
+  }
+
+  .body form .mps.visa {
+    left: 10px;
+  }
+
   input {
     padding-left: 11px;
     padding-top: 13px;
@@ -5402,8 +5476,11 @@ input:-webkit-autofill:active {
     letter-spacing: 0.7px;
     line-height: 1;
   }
-  input.cvv, .body form .date, .body form .card .value .title {
+  input.cvv, .body form .date {
     padding-left: 11px;
+  }
+  .inputLabel[for=cardname] {
+    padding-left: 21px;
   }
 
   .cvvWrapper {
@@ -5474,5 +5551,18 @@ input:-webkit-autofill:active {
   }
   .body form .card .cardList {
     top: 42px;
+  }
+  input {
+    letter-spacing: 1.1px;
+    padding-top: 0;
+  }
+  input:valid {
+    padding-top: 14px;
+  }
+  input.cvv {
+    padding-top: 0;
+  }
+  input.cvv:valid {
+    padding-top: 10px;
   }
 }

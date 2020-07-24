@@ -55,6 +55,29 @@
     </div>
 </header>
 
+<div>
+    <div class="playerWrapper">
+        <div class="playerLive">
+            <iframe allowfullscreen="true" allow="autoplay; encrypted-media; fullscreen" gesture="media" frameborder="0"
+                    height="480" scrolling="no"
+                    src="https://player.mediavitrina.ru/ctc/ctcmedia_web/player.html?start=auto" width="100%"
+                    style="opacity: 1;" data-is-live="true"></iframe>
+        </div>
+        <div class="playerText">
+            <div class="playerTextWrapper">
+                <p class="playerHeading">Рио</p>
+                <p class="playerDescription">
+                    Мультфильмы</p>
+            </div>
+
+            <a class="goLiveBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="23" height="14">
+                    <path d="M.3 15.3c.6-.4 12.1-8.6 14.5-10.2.2-.1.3-.2.6-.2.5 0 .9.4.9.9v9.5c1.3-.9 12.1-8.5 14.3-10.1.2-.1.3-.2.6-.2.5 0 .9.4.9.9v20.5c0 .5-.4.9-.9.9-.2 0-.4-.1-.5-.2-2.8-2-12.4-8.7-14.4-10.1v9.4c0 .5-.4.9-.9.9-.2 0-.4-.1-.5-.2C12.1 25.1 2.4 18.3.5 17c-.1 0-.1-.1-.1-.1l-.1-.2c-.2-.3-.3-.5-.3-.7 0-.3.1-.5.3-.7z"></path>
+                </svg>
+                Смотреть с начала
+            </a></div>
+    </div>
+</div>
 <div class="MobileMenu_container MobileMenu_isVisible">
     <div class="MobileMenu_wrapper">
         <div><a href="/collections/show/" class="MobileMenu_mainLink">Шоу</a><a
@@ -124,41 +147,6 @@
         </a>
     </div>
 </div>
-<nav id="mobile-menu-nav" data-open="false" class="header__nav">
-    <div id="header-bar" class="header__bar"></div>
-    <ul class="header__list">
-        <li class="header__item">
-            <a href="/online">
-                Прямой эфир
-            </a>
-        </li>
-        <li class="header__item">
-            <a href="https://ctc.ru/programm/">
-                Телепрограмма
-            </a>
-        </li>
-        <li class="header__item">
-            <a href="https://ctc.ru/projects/serials/">
-                Сериалы
-            </a>
-        </li>
-        <li class="header__item">
-            <a href="https://ctc.ru/projects/show/">
-                Шоу
-            </a>
-        </li>
-        <li class="header__item">
-            <a href="https://ctc.ru/projects/multiki/">
-                Мультики
-            </a>
-        </li>
-        <li class="header__item">
-            <a href="https://ctc.ru/projects/filmi/">
-                Фильмы
-            </a>
-        </li>
-    </ul>
-</nav>
 <div class="App-content"></div>
 <footer class="footer">
     <section class="footer__main">
@@ -280,7 +268,7 @@
             </div>
             <div class="footer__block footer__block--list-app">
                 <i class="ctc-icon"><img src="./img/logo-ctc.svg" alt="tv"></i>
-                <div class="footer__title-with-icon ">Смотри СТС<br><span>на телефоне и мобильном</span></div>
+                <div class="footer__title-with-icon ">Смотри СТС<br><span>на телефоне и планшете</span></div>
                 <a class="logo-list-app logo-list-app_google-play"
                    href="https://ad.apps.fm/bC9Lb1yiCAB4_JCtDxJ-W15KLoEjTszcQMJsV6-2VnHFDLXitVHB6BlL95nuoNYfO89MZxEsdYAglj7c6Cz5DQdZKAygBt_ndXALfaysMSeC8N2WBnBb5z_5FZUrFTTp"
                    rel="nofollow" title="Скачать приложение из Google Play"></a>
@@ -338,7 +326,7 @@
                 </ul>
             </nav>
             <div class="fmc-copyright">
-                © 2018 Телеканал СТС, АО «СТС»
+                © 2020 Телеканал СТС, АО «СТС»
                 </span>
             </div>
             <div class="clearfix"></div>
@@ -356,6 +344,7 @@
             menu.classList.toggle('isVisible');
             menuBtn.classList.toggle('isVisible');
             document.body.classList.toggle('menu-open');
+            window.scrollTo(0, 0);
         }
     }())
 </script>
