@@ -670,7 +670,7 @@ body.vjs-full-window {
 .video-js .vjs-progress-control:hover .vjs-progress-holder {
   font-size: 1.666666666666666666em; }
 
-/* If we let the font size grow as much as everything else, the current time tooltip ends up
+/* If we let the fonts size grow as much as everything else, the current time tooltip ends up
  ginormous. If you'd like to enable the current time tooltip all the time, this should be disabled
  to avoid a weird hitch when you roll off the hover. */
 .video-js .vjs-progress-control:hover .vjs-time-tooltip,
