@@ -19721,15 +19721,15 @@ var selectConfigs = {
   },
 
   fontFamily: {
-    selector: '.vjs-font-family > select',
-    id: 'captions-font-family-%s',
+    selector: '.vjs-fonts-family > select',
+    id: 'captions-fonts-family-%s',
     label: 'Font Family',
     options: [['proportionalSansSerif', 'Proportional Sans-Serif'], ['monospaceSansSerif', 'Monospace Sans-Serif'], ['proportionalSerif', 'Proportional Serif'], ['monospaceSerif', 'Monospace Serif'], ['casual', 'Casual'], ['script', 'Script'], ['small-caps', 'Small Caps']]
   },
 
   fontPercent: {
-    selector: '.vjs-font-percent > select',
-    id: 'captions-font-size-%s',
+    selector: '.vjs-fonts-percent > select',
+    id: 'captions-fonts-size-%s',
     label: 'Font Size',
     options: [['0.50', '50%'], ['0.75', '75%'], ['1.00', '100%'], ['1.25', '125%'], ['1.50', '150%'], ['1.75', '175%'], ['2.00', '200%'], ['3.00', '300%'], ['4.00', '400%']],
     'default': 2,
@@ -20018,7 +20018,7 @@ var TextTrackSettings = function (_Component) {
   };
 
   /**
-   * Create font elements for the component
+   * Create fonts elements for the component
    *
    * @return {Element}
    *         The element that was created.
@@ -20029,7 +20029,7 @@ var TextTrackSettings = function (_Component) {
 
   TextTrackSettings.prototype.createElFont_ = function createElFont_() {
     var fontPercent = (0, _dom.createEl)('div', {
-      className: 'vjs-font-percent vjs-tracksetting'
+      className: 'vjs-fonts-percent vjs-tracksetting'
     }, undefined, this.createElSelect_('fontPercent'));
 
     var edgeStyle = (0, _dom.createEl)('div', {
@@ -20037,11 +20037,11 @@ var TextTrackSettings = function (_Component) {
     }, undefined, this.createElSelect_('edgeStyle'));
 
     var fontFamily = (0, _dom.createEl)('div', {
-      className: 'vjs-font-family vjs-tracksetting'
+      className: 'vjs-fonts-family vjs-tracksetting'
     }, undefined, this.createElSelect_('fontFamily'));
 
     return (0, _dom.createEl)('div', {
-      className: 'vjs-tracksettings-font'
+      className: 'vjs-tracksettings-fonts'
     }, undefined, [fontPercent, edgeStyle, fontFamily]);
   };
 

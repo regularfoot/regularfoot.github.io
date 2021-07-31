@@ -12368,7 +12368,7 @@ exports.renderHTML = _dereq_(39).render;
                 true,
                 true,
                 function (str) {
-                    /* TODO: handle font style */
+                    /* TODO: handle fonts style */
 
                     return str;
                 },
@@ -12382,7 +12382,7 @@ exports.renderHTML = _dereq_(39).render;
                 true,
                 true,
                 function (str) {
-                    /* TODO: handle font weight */
+                    /* TODO: handle fonts weight */
 
                     return str;
                 },
@@ -48846,9 +48846,9 @@ function EmbeddedTextHtmlRender() {
     function getStyle(videoElement, style) {
         var fontSize = videoElement.videoHeight / 15.0;
         if (style) {
-            return 'font-size: ' + fontSize + 'px; font-family: Menlo, Consolas, \'Cutive Mono\', monospace; color: ' + (style.foreground ? createRGB(style.foreground) : 'rgb(255, 255, 255)') + '; font-style: ' + (style.italics ? 'italic' : 'normal') + '; text-decoration: ' + (style.underline ? 'underline' : 'none') + '; white-space: pre; background-color: ' + (style.background ? createRGB(style.background) : 'transparent') + ';';
+            return 'fonts-size: ' + fontSize + 'px; fonts-family: Menlo, Consolas, \'Cutive Mono\', monospace; color: ' + (style.foreground ? createRGB(style.foreground) : 'rgb(255, 255, 255)') + '; fonts-style: ' + (style.italics ? 'italic' : 'normal') + '; text-decoration: ' + (style.underline ? 'underline' : 'none') + '; white-space: pre; background-color: ' + (style.background ? createRGB(style.background) : 'transparent') + ';';
         } else {
-            return 'font-size: ' + fontSize + 'px; font-family: Menlo, Consolas, \'Cutive Mono\', monospace; justify-content: flex-start; text-align: left; color: rgb(255, 255, 255); font-style: normal; white-space: pre; line-height: normal; font-weight: normal; text-decoration: none; width: 100%; display: flex;';
+            return 'fonts-size: ' + fontSize + 'px; fonts-family: Menlo, Consolas, \'Cutive Mono\', monospace; justify-content: flex-start; text-align: left; color: rgb(255, 255, 255); fonts-style: normal; white-space: pre; line-height: normal; fonts-weight: normal; text-decoration: none; width: 100%; display: flex;';
         }
     }
 
