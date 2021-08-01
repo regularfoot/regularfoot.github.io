@@ -1,5 +1,5 @@
 .main-banner {
-  height: 715px;
+  min-height: 715px;
   width: 100%;
   position: relative;
 }
@@ -172,7 +172,6 @@
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 1.17px;
-  text-transform: uppercase;
   margin-right: 72px;
 }
 .tab-1 {
@@ -209,6 +208,7 @@
   padding: 13px 57px 12px 49px;
   border: 1px solid #fff;
   color: #fff;
+  text-align: center;
   cursor: pointer;
 }
 .btn-black {
@@ -277,6 +277,7 @@
 
 .schedule-block {
   width: 723px;
+  padding-right: 20px;
 }
 
 .schedule-img {
@@ -302,12 +303,12 @@
 .schedule-item {
   font-weight: 800;
   font-size: 18px;
-  line-height: 60px;
+  line-height: 58px;
   letter-spacing: 0.006px;
   color: #131415;
   display: block;
   border-bottom: 2px solid #131415;
-  margin-bottom: -2px;
+  margin-top: -2px;
   position: relative;
   cursor: pointer;
 }
@@ -558,6 +559,7 @@
 
 .go-skate-text {
   width: 540px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   font-weight: 500;
@@ -597,4 +599,579 @@
   height: 60px;
   box-sizing: border-box;
   line-height: 35px;
+}
+
+.tabs-price .tabs-title,
+.tabs .tabs-title {
+  display: none;
+}
+.tabs-price .tabs-controls,
+.tabs .tabs-controls {
+  display: none;
+}
+@media (max-width: 1299px) {
+  .tab-1, .tab-2 {
+    /*flex-direction: column;*/
+    height: auto;
+    display: block;
+    position: relative;
+  }
+  .tab-1 .tab-info,
+  .tab-info {
+    width: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 70px;
+    box-sizing: border-box;
+  }
+  .tab-img {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .tab-2 .tab-info-block {
+    padding-right: 0;
+    width: auto;
+    float: none;
+  }
+  .tab-info-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .tab-info-icons span {
+    margin-right: 0;
+  }
+
+  .travel-img {
+    width: 50%;
+    height: 100%;
+    margin-right: 0;
+  }
+  .travel-text-wrapper {
+    width: 50%;
+    padding-left: 50px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+  .travel-text {
+    width: 100%;
+  }
+  .tab-price-1,
+  .tab-price-2 {
+    width: 50%;
+  }
+  .tab-price-1 .tab-price-block,
+  .tab-price-2 .tab-price-block {
+    width: 100%;
+    padding: 70px 20px 84px;
+    box-sizing: border-box;
+  }
+  .slider {
+    overflow: auto;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    padding-left: 20px;
+    justify-content: left;
+    box-sizing: border-box;
+  }
+  .slide-item {
+    margin-right: 20px;
+  }
+  .about {
+    overflow: hidden;
+
+    display: table;
+  }
+  .about .container {
+    width: 100%;
+  }
+
+  .about-block {
+    position: relative;
+    z-index: 1;
+  }
+  .about-img-block {
+    width: 46%;
+    position: relative;
+    z-index: 0;
+  }
+}
+@media (max-width: 1024px) {
+  .main-banner {
+    min-height: 436px;
+    overflow: hidden;
+  }
+  .main-banner .bg-img {
+    object-position: 30% 100%;
+    height: 130%;
+    bottom: 0;
+  }
+  .main-banner-text {
+    margin-top: 78px;
+  }
+  .main-banner-subtitle {
+    font-size: 12px;
+    line-height: 55px;
+    letter-spacing: 10px;
+    margin-bottom: -10px;
+  }
+  .main-banner-title {
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+  }
+  .main-banner-info {
+    font-size: 12px;
+    line-height: 34px;
+    letter-spacing: -0.69375px;
+    margin-top: 0;
+    padding: 0 15px;
+  }
+  .advantages {
+    padding-top: 40px;
+    padding-bottom: 50px;
+  }
+  .advantages-title {
+    font-size: 22px;
+    line-height: 34px;
+    margin-bottom: 35px;
+  }
+  .advantages-slider {
+    display: block;
+  }
+  .advantages-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .advantages-item-icon {
+    margin-bottom: 0;
+    font-size: 58px;
+  }
+  .advantages-item-title {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .advantages-item-subtitle {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .tabs {
+    background-color: #fff;
+  }
+  .tabs-price {
+    background-color: #131415;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+  }
+  .tabs-price .tabs-title,
+  .tabs .tabs-title {
+    display: block;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 34px;
+    margin-top: 40px;
+    padding: 0 20px;
+    margin-bottom: 17px;
+  }
+  .tabs-price .tabs-title,
+  .tabs-price .tabs-controls {
+    color: #fff;
+  }
+  .tabs-price .tabs-controls,
+  .tabs .tabs-controls {
+    display: block;
+
+  }
+  .tabs-price .tabs-controls,
+  .tabs .tabs-controls {
+    display: flex;
+    flex-direction: row;
+    padding: 0 20px;
+    margin-bottom: 30px;
+  }
+  .tabs-price .tabs-controls div,
+  .tabs .tabs-controls div {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 32px;
+    text-transform: uppercase;
+    padding: 0 11px;
+    margin-right: 23px;
+  }
+  .tabs-price .tabs-controls .active,
+  .tabs .tabs-controls .active {
+    background-color: #96C5BD;
+  }
+  .tabs-price .tabs-controls .active {
+    color: #131415;
+  }
+  .tab-price-title {
+    display: none;
+  }
+  .tab-price-1 .tab-price-block, .tab-price-2 .tab-price-block {
+    padding: 0 20px;
+    margin-top: 20px;
+  }
+  .tab-price-1, .tab-price-2 {
+    max-width: 100%;
+    width: 500px;
+  }
+  .tab-price-2 {
+    display: none;
+    background-color: #131415;
+  }
+  .tab-price-2 .tab-price-block {
+    color: #fff;
+  }
+  .tab-price-item {
+    border-top: 1px dashed #fff;
+  }
+  .tab-price-item:last-child {
+    border-bottom: 1px dashed #fff;
+  }
+
+  .tab-img {
+    position: relative;
+    top: 0;
+    right: 0;
+    padding-bottom: 61%;
+    width: 100%;
+    height: 0;
+  }
+  .tab-2 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .tab-1 .tab-info, .tab-info {
+    width: 100%;
+    padding: 40px 20px 50px;
+  }
+  .tab-info-title {
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 21px;
+  }
+
+  .tab-info-text {
+    margin-bottom: 32px;
+  }
+  .tab-2 .tab-info-icons {
+    border-bottom: none;
+  }
+  .tab-info-icons {
+    border-bottom: none;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-bottom: 0;
+    margin-bottom: 25px;
+  }
+  .tab-info-icons > span {
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: none;
+  }
+
+  .travel-img {
+    width: 370px;
+    height: 345.34px;
+    margin:  0 auto 58px;
+  }
+  .travel-text-wrapper {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+  }
+  .travel-text {
+    margin-bottom: 30px;
+  }
+  .travel {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+  .travel-block {
+    flex-direction: column;
+  }
+  .travel-title {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 22px;
+  }
+  .travel-text {
+    font-size: 16px;
+    line-height: 29px;
+  }
+  .travel-text p {
+    margin-bottom: 3px;
+  }
+  .video {
+    height: 0;
+    min-height: 0;
+    padding-bottom: 61%;
+  }
+
+  .schedule {
+    padding-top: 40px;
+    padding-bottom: 0;
+  }
+  .schedule .container {
+    flex-direction: column;
+  }
+  .schedule-block {
+    width: 100%;
+  }
+  .schedule-img {
+    margin-top: 40px;
+    margin-left: -20px;
+    margin-right: -20px;
+    width: calc(100% + 40px);
+    height: 0;
+    padding-bottom: 69%;
+  }
+  .schedule-img img {
+    object-position: 0 30%;
+  }
+  .schedule-title {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 30px;
+  }
+
+  .schedule-item {
+    font-size: 18px;
+  }
+  .schedule-more {
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+
+  .skateparks,
+  .last-trips {
+    padding-top: 40px;
+    padding-bottom: 50px;
+  }
+  .slider-title {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 26px;
+  }
+
+  .last-trips .slide-item {
+    width: 214px;
+    margin-right: 20px;
+  }
+  .last-trips .slide-item img {
+    width: 214px;
+    height: 246px;
+  }
+
+  .skateparks .slide-item {
+    width: 214px;
+    margin-right: 20px;
+  }
+
+  .skateparks .slide-item img {
+    width: 214px;
+    height: auto;
+  }
+
+  .slide-info {
+    font-size: 12px;
+    line-height: 29px;
+  }
+  .slide-info b {
+    font-size: 18px;
+  }
+  .slider {
+    overflow: auto;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    padding-left: 20px;
+    justify-content: left;
+  }
+
+  .about {
+    padding-top: 50px;
+    padding-bottom: 35px;
+  }
+  .about .container {
+    flex-direction: column;
+  }
+  .about-block {
+    width: 100%;
+    margin-bottom: 42px;
+  }
+  .about-img-block {
+    height: 328px;
+    width: 360px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .about-title {
+    font-size: 28px;
+    line-height: 40px;
+    margin-bottom: 25px;
+  }
+  .about-text {
+    font-size: 16px;
+    line-height: 29px;
+  }
+  .about-img-block .img1 {
+    transform: translate(10px, 60px) rotate(
+      -23deg
+    );
+    width: 194px;
+    height: 231px;
+  }
+  .about-img-block .img2 {
+    transform: translate(103px, 0);;
+    width: 187px;
+    height: 222px;
+  }
+  .about-img-block .img3 {
+    width: 187px;
+    height: 222px;
+    transform: translate(120px, 80px) rotate(
+      16deg
+    );
+  }
+  .shop-banner {
+    min-height: auto;
+  }
+  .shop-banner .bg-img {
+    object-position: 70% 100%;
+  }
+  .shop-banner-text {
+    display: none;
+  }
+  .shop-banner-title {
+    margin-top: 315px;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: -1px;
+    margin-bottom: 40px;
+    max-width: 100%;
+  }
+  .shop-banner-btn {
+    background: none;
+    color: #fff;
+    border: 1px solid #fff;
+    width: 335px;
+    box-sizing: border-box;
+    text-align: center;
+    max-width: 100%;
+    margin-bottom: 45px;
+  }
+
+  .go-skate-title {
+    margin-top: 60px;
+    margin-bottom: 16px;
+    font-size: 32px;
+    line-height: 45px;
+  }
+  .go-skate-text {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 26px;
+  }
+
+  .form {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+  .inputLabel {
+    width: 335px;
+    max-width: 100%;
+    margin-bottom: 30px;
+    margin-right: 0;
+  }
+  .go-skate .btn {
+    width: 335px;
+    max-width: 100%;
+  }
+
+  .footer {
+    height: auto;
+    padding-top: 103px;
+    position: relative;
+  }
+  .footer .menu-nav {
+    padding-left: 0;
+    flex-direction: column;
+    margin-top: 0;
+    margin-bottom: 32px;
+  }
+  .footer .menu-nav li {
+    margin: 20px 0 0;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 1px;
+  }
+  .footer .menu-nav li:first-child {
+    margin-top: 0;
+  }
+  .footer-menu {
+    flex-direction: column;
+    height: auto;
+    align-items: normal;
+  }
+  .footer .logo {
+    position: absolute;
+    left: 20px;
+    bottom: 25px;
+    font-size: 26px;
+  }
+  .footer .tel-number {
+    position: absolute;
+    left: 20px;
+    top: 37px;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: 3px;
+  }
+  .footer .social {
+    height: 73px;
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #FFFFFF;
+    align-items: center;
+  }
+  .footer .social a {
+  }
+  .footer .icon {
+    font-size: 28px;
+  }
+  .footer .icon span {
+    font-size: 28px;
+  }
+
+  .menu .menu-nav {
+    display: none;
+  }
+  .menu .menu-block {
+    height: 55px;
+  }
+  .menu {
+    background: #fff;
+  }
+  .menu .social {
+    display: none;
+  }
+  .menu .logo {
+    font-size: 30px;
+  }
 }
