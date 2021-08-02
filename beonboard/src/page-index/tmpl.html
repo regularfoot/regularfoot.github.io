@@ -10,6 +10,7 @@
         content="width=device-width,user-scalable=0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 </head>
@@ -98,36 +99,37 @@
 <div class="tabs">
   <div class="tabs-title">Занятия</div>
   <div class="tabs-controls">
-    <div class="active">Индивидуальные</div>
-    <div>Групповые</div>
+    <div class="active goto-tab tab-type1" data-tabIndex="0" data-tabtype="tab-type1">Индивидуальные</div>
+    <div class="goto-tab tab-type1" data-tabIndex="1" data-tabtype="tab-type1">Групповые</div>
   </div>
-  <div class="tab-1">
-    <div class="tab-img">
-      <img src="<%= require('../img/img-1.jpg') %>">
+  <div class="tabs-wrapper">
+    <div class="tab-1">
+      <div class="tab-img">
+        <img src="<%= require('../img/img-1.jpg') %>">
+      </div>
+      <div class="tab-info">
+        <h2 class="tab-info-title">Индивидуальные занятия</h2>
+        <div class="tab-info-text">
+          Отлично подходит для тех, кто:
+          <ul>
+            <li>только знакомится со скейтбордом</li>
+            <li>стремиться к быстрому прогрессу</li>
+            <li>хочет заниматься независимо от времени групповых занятий</li>
+          </ul>
+        </div>
+        <div class="tab-info-icons">
+          <span><span class="icon-clock"></span>1,5 часа</span>
+          <span>
+            <span class="icon-three-coin"><span class="path1"></span><span class="path2"></span></span>от 2500 Р
+          </span>
+          <span><span class="icon-bike"></span>от 4-х лет</span>
+        </div>
+        <div class="tab-info-btn btn">
+          Записаться на занятие
+        </div>
+      </div>
     </div>
-    <div class="tab-info">
-      <h2 class="tab-info-title">Индивидуальные занятия</h2>
-      <div class="tab-info-text">
-        Отлично подходит для тех, кто:
-        <ul>
-          <li>только знакомится со скейтбордом</li>
-          <li>стремиться к быстрому прогрессу</li>
-          <li>хочет заниматься независимо от времени групповых занятий</li>
-        </ul>
-      </div>
-      <div class="tab-info-icons">
-        <span><span class="icon-clock"></span>1,5 часа</span>
-        <span>
-          <span class="icon-three-coin"><span class="path1"></span><span class="path2"></span></span>от 2500 Р
-        </span>
-        <span><span class="icon-bike"></span>от 4-х лет</span>
-      </div>
-      <div class="tab-info-btn btn">
-        Записаться на занятие
-      </div>
-    </div>
-  </div>
-  <div class="tab-2">
+    <div class="tab-2">
     <div class="tab-info">
       <div class="tab-info-block">
         <h2 class="tab-info-title">Групповые занятия</h2>
@@ -160,6 +162,7 @@
       <img class="img-src-uses-require" src="<%= require('../img/img-2.jpg') %>">
     </div>
   </div>
+  </div>
 </div>
 
 <div class="travel">
@@ -183,7 +186,15 @@
 </div>
 
 <div class="video">
-  <img class="video-img bg-img" src="<%= require('../img/video-bg.jpg') %>">
+  <video controls>
+    <source src="./src/Rick.webm"
+            type="video/webm">
+  </video>
+  <img class="bg-img" src="<%= require('../img/video-bg.jpg') %>">
+  <div class="play">
+    <img src="<%= require('../img/play.svg') %>">
+    BE ON BOARD SCHOOL
+  </div>
 </div>
 
 <div class="schedule">
@@ -199,7 +210,7 @@
       <div class="btn btn-black">Записаться</div>
     </div>
     <div class="schedule-img">
-      <img class="video-img img-src-uses-require" src="<%= require('../img/coach.jpg') %>">
+      <img class="img-src-uses-require" src="<%= require('../img/coach.jpg') %>">
     </div>
   </div>
 </div>
@@ -207,30 +218,31 @@
 <div class="tabs-price">
   <div class="tabs-title">Занятия</div>
   <div class="tabs-controls">
-    <div class="active">Индивидуальные</div>
-    <div>Групповые</div>
+    <div class="active goto-price-tab tab-type2" data-tabIndex="0" data-tabtype="tab-type2">Индивидуальные</div>
+    <div class="goto-price-tab tab-type2" data-tabIndex="1" data-tabtype="tab-type2">Групповые</div>
   </div>
-  <div class="tab-price-1">
-    <div class="tab-price-block">
-      <div class="tab-price-title">
-        Цены на <br>
-        индивидуальные занятия
-      </div>
-      <div class="tab-price-item">
-        Индивидуальное
-        <span>8 800 ₽</span>
-      </div>
-      <div class="tab-price-item">
-        Групповое
-        <span>12 000 ₽</span>
-      </div>
-      <div class="tab-price-item">
-        Групповое
-        <span>12 000 ₽</span>
+  <div class="tab-price-wrapper">
+    <div class="tab-price-1">
+      <div class="tab-price-block">
+        <div class="tab-price-title">
+          Цены на <br>
+          индивидуальные занятия
+        </div>
+        <div class="tab-price-item">
+          Индивидуальное
+          <span>8 800 ₽</span>
+        </div>
+        <div class="tab-price-item">
+          Групповое
+          <span>12 000 ₽</span>
+        </div>
+        <div class="tab-price-item">
+          Групповое
+          <span>12 000 ₽</span>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="tab-price-2">
+    <div class="tab-price-2">
     <div class="tab-price-block">
       <div class="tab-price-title">
         Цены на <br>
@@ -250,12 +262,27 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
-<div class="last-trips">
+<div class="last-trips defaultSlider">
   <div class="container">
     <div class="slider-title">Прошедшие поездки</div>
     <div class="slider">
+      <div class="slide-item">
+        <img src="<%= require('../img/slide-1.jpg') %>">
+        <div class="slide-info">
+          <b>Сочи</b>
+          Июнь, 2020
+        </div>
+      </div>
+      <div class="slide-item">
+        <img src="<%= require('../img/slide-1.jpg') %>">
+        <div class="slide-info">
+          <b>Сочи</b>
+          Июнь, 2020
+        </div>
+      </div>
       <div class="slide-item">
         <img src="<%= require('../img/slide-1.jpg') %>">
         <div class="slide-info">
@@ -318,10 +345,10 @@
   </div>
 </div>
 
-<div class="skateparks">
+<div class="skateparks defaultSlider">
   <div class="container">
     <div class="slider-title">Скейтпарки Москвы</div>
-    <div class="slider">
+    <div class="skateparks-slider">
       <div class="slide-item">
         <img src="<%= require('../img/park-1.jpg') %>">
         <div class="slide-info">
