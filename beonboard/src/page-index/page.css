@@ -1,3 +1,84 @@
+
+.hamburger {
+  display: none;
+  overflow: visible;
+  cursor: pointer;
+  transition-timing-function: linear;
+  transition-duration: .15s;
+  transition-property: opacity, filter;
+  text-transform: none;
+  color: inherit;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  height: 17px;
+}
+
+.hamburger-box {
+  position: relative;
+  display: inline-block;
+  width: 26px;
+  height: 17.3px;
+}
+
+.hamburger-inner {
+  top: 50%;
+  display: block;
+  margin-top: -2px;
+  transition-timing-function: cubic-bezier(.55, .055, .675, .19);
+  transition-duration: 75ms;
+  position: absolute;
+  width: 26px;
+  height: 3px;
+  transition-property: transform;
+  background-color: #000;
+}
+
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+  position: absolute;
+  width: 26px;
+  height: 3px;
+  transition-timing-function: ease;
+  transition-duration: .15s;
+  transition-property: transform;
+  background-color: #000;
+}
+
+.hamburger-inner:after, .hamburger-inner:before {
+  display: block;
+  content: "";
+}
+
+.hamburger-inner:before {
+  top: -7px;
+}
+
+.hamburger-inner:after {
+  bottom: -7px;
+}
+
+.menu-open .hamburger-inner:before {
+  top: 0;
+  transition: top 75ms ease, opacity 75ms ease .12s;
+  opacity: 0;
+}
+
+.menu-open .hamburger-inner:after {
+  bottom: 0;
+  transition: bottom 75ms ease, transform 75ms cubic-bezier(.215, .61, .355, 1) .12s;
+  transform: rotate(
+    -90deg
+  );
+}
+
+.menu-open .hamburger-inner {
+  transition-delay: .12s;
+  transition-timing-function: cubic-bezier(.215, .61, .355, 1);
+  transform: rotate(
+    45deg
+  );
+}
+
 .main-banner {
   min-height: 715px;
   width: 100%;
@@ -17,6 +98,7 @@
   margin-top: 294px;
   position: relative;
 }
+
 .main-banner-title {
   width: 450px;
   font-style: normal;
@@ -27,6 +109,7 @@
   text-transform: uppercase;
   color: #FFFFFF;
 }
+
 .main-banner-subtitle {
   font-style: normal;
   font-weight: 800;
@@ -56,31 +139,37 @@
   padding-bottom: 120px;
   position: relative;
 }
+
 .advantages-slider {
   display: flex;
   flex-direction: row;
   position: relative;
 }
+
 .advantages-title {
   font-weight: 800;
   font-size: 32px;
   line-height: 45px;
   margin-bottom: 70px;
 }
+
 .advantages-item {
   width: 267px;
   margin-right: 54px;
 }
+
 .advantages-item-icon {
   font-size: 63px;
   margin-bottom: 35px;
 }
+
 .advantages-item-title {
   font-weight: bold;
   font-size: 16px;
   line-height: 25px;
   text-transform: uppercase;
 }
+
 .advantages-item-title:after {
   display: block;
   content: '';
@@ -89,28 +178,34 @@
   width: 100%;
   background: #131415;
 }
+
 .advantages-item-subtitle {
   font-weight: 500;
   font-size: 14px;
   line-height: 22px;
 }
+
 .tabs {
   width: 100%;
 }
+
 .tab-1,
 .tab-2 {
   height: 507px;
   display: flex;
   flex-direction: row;
 }
+
 .tab-info {
   width: 50%;
   padding-top: 60px;
 }
+
 .tab-img {
   width: 50%;
   position: relative;
 }
+
 .tab-img img {
   width: 100%;
   height: 100%;
@@ -176,6 +271,7 @@
   letter-spacing: 1.17px;
   margin-right: 72px;
 }
+
 .tab-1 {
   background-color: #131415;
 }
@@ -185,6 +281,7 @@
   padding-right: 116px;
   color: #131415;
 }
+
 .tab-2 .path1:before,
 .tab-2 .path2:before,
 .tab-2 .tab-info-title,
@@ -192,11 +289,13 @@
 .tab-2 .tab-info-text {
   color: #131415;
 }
+
 .tab-2 .tab-info-icons {
   border-top: 1px dashed #131415;
   border-bottom: 1px dashed #131415;
   color: #131415;
 }
+
 .tab-2 .tab-info-block {
   width: 514px;
   float: right;
@@ -213,10 +312,12 @@
   text-align: center;
   cursor: pointer;
 }
+
 .btn-black {
   border: 1px solid #131415;
   color: #131415;
 }
+
 .btn-blue {
   background-color: #96C5BD;
   border: none;
@@ -228,6 +329,7 @@
   padding-top: 110px;
   padding-bottom: 121px;
 }
+
 .travel-block {
   display: flex;
   flex-direction: row;
@@ -250,12 +352,14 @@
   line-height: 44px;
   margin-bottom: 25px;
 }
+
 .travel-text {
   font-weight: 500;
   font-size: 16px;
   line-height: 29px;
   margin-bottom: 35px;
 }
+
 .travel-text p {
   margin: 0 0 24px;
 }
@@ -268,6 +372,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .play {
   font-weight: bold;
   font-size: 18px;
@@ -282,12 +387,14 @@
   margin-bottom: -35px;
   transition: opacity 0.3s;
 }
+
 .play img {
   width: 70px;
   height: 70px;
   margin-bottom: 32px;
   cursor: pointer;
 }
+
 .video video {
   position: absolute;
   width: 100%;
@@ -296,6 +403,7 @@
   top: 0;
   background-color: #000;
 }
+
 .video.show .bg-img {
   transition: opacity 0.3s;
 }
@@ -328,6 +436,7 @@
   margin-top: 17px;
   position: relative;
 }
+
 .schedule-img img {
   width: 100%;
   height: 100%;
@@ -382,6 +491,7 @@
   flex-direction: column;
   width: 100%;
 }
+
 .tab-price-1 {
   width: 50%;
   background-color: #131415;
@@ -389,15 +499,18 @@
   justify-content: flex-end;
   color: #fff;
 }
+
 .tab-price-2 {
   width: 50%;
   background-color: #fff;
 }
+
 .tab-price-block {
   padding-top: 70px;
   padding-bottom: 84px;
   width: 500px;
 }
+
 .tab-price-1 .tab-price-block {
   padding-right: 135px;
 }
@@ -414,6 +527,7 @@
   margin-bottom: 49px;
   position: relative;
 }
+
 .tab-price-title:before {
   content: '';
   display: block;
@@ -423,9 +537,11 @@
   top: 10px;
   bottom: 10px;
 }
+
 .tab-price-1 .tab-price-title:before {
   background: #96C5BD;
 }
+
 .tab-price-2 .tab-price-title:before {
   background: #BE97C6;
 }
@@ -433,6 +549,7 @@
 .tab-price-item:last-child {
   border-bottom: 1px dashed #131415;
 }
+
 .tab-price-item {
   border-top: 1px dashed #131415;
   font-weight: bold;
@@ -441,6 +558,7 @@
   letter-spacing: 0.005px;
 
 }
+
 .tab-price-item span {
   float: right;
 }
@@ -448,6 +566,7 @@
 .tab-price-1 .tab-price-item:last-child {
   border-bottom: 1px dashed #fff;
 }
+
 .tab-price-1 .tab-price-item {
   border-top: 1px dashed #fff;
 }
@@ -457,6 +576,7 @@
   padding-top: 100px;
   padding-bottom: 100px;
 }
+
 .last-trips .container {
   position: relative;
 }
@@ -481,6 +601,7 @@
   height: 466px;
   margin-bottom: 13px;
 }
+
 .slide-item:last-child {
   width: 406px;
 }
@@ -492,6 +613,7 @@
   letter-spacing: 0.004px;
   text-transform: uppercase;
 }
+
 .slide-info b {
   font-weight: 800;
   font-size: 22px;
@@ -506,6 +628,7 @@
   padding-bottom: 100px;
   position: relative;
 }
+
 .skateparks .container {
   position: relative;
 }
@@ -558,11 +681,13 @@
   padding-top: 132px;
   padding-bottom: 132px;
 }
+
 .about .container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 .about-title {
   font-weight: 800;
   font-size: 32px;
@@ -570,15 +695,18 @@
   letter-spacing: -0.666667px;
   margin-bottom: 25px;
 }
+
 .about-text {
   font-weight: 500;
   font-size: 16px;
   line-height: 29px;
   margin-bottom: 33px;
 }
+
 .about-block {
   width: 525px;
 }
+
 .about-logo {
   float: right;
   font-size: 29px;
@@ -596,6 +724,7 @@
   height: 373px;
   z-index: 2;
 }
+
 .about-img-block .img2 {
   position: absolute;
   transform: translate(130px, -50px);
@@ -603,6 +732,7 @@
   height: 358px;
   z-index: 1;
 }
+
 .about-img-block .img3 {
   position: absolute;
   width: 301px;
@@ -673,126 +803,24 @@
 .tabs .tabs-title {
   display: none;
 }
+
 .tabs-price .tabs-controls,
 .tabs .tabs-controls {
   display: none;
 }
+
 .tab-price-wrapper,
 .tabs-wrapper {
   overflow: hidden;
 }
-@media (max-width: 1299px) {
-  .skateparks .container,
-  .last-trips .container {
-    padding: 0;
-  }
-  .skateparks .slider-title,
-  .last-trips .slider-title {
-    padding-left: 20px;
-  }
-  .slide-item {
-    padding-left: 20px;
-    width: 426px;
-  }
-  .slide-item:last-child {
-    width: 446px;
-    padding-right: 20px;
-  }
-  .tab-1, .tab-2 {
-    /*flex-direction: column;*/
-    height: auto;
-    display: block;
-    position: relative;
-  }
-  .tab-1 .tab-info,
-  .tab-info {
-    width: 50%;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 70px;
-    box-sizing: border-box;
-  }
-  .tab-img {
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-  .tab-2 .tab-info-block {
-    padding-right: 0;
-    width: auto;
-    float: none;
-  }
-  .tab-info-icons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .tab-info-icons span {
-    margin-right: 0;
-  }
 
-  .travel-img {
-    width: 50%;
-    height: 100%;
-    margin-right: 0;
-  }
-  .travel-text-wrapper {
-    width: 50%;
-    padding-left: 50px;
-    padding-right: 20px;
-    box-sizing: border-box;
-  }
-  .travel-text {
-    width: 100%;
-  }
-  .tab-price-1,
-  .tab-price-2 {
-    width: 50%;
-  }
-  .tab-price-1 .tab-price-block,
-  .tab-price-2 .tab-price-block {
-    width: 100%;
-    padding: 70px 20px 84px;
-    box-sizing: border-box;
-  }
-  .slider {
-    /*overflow: auto;*/
-    /*width: calc(100% + 40px);*/
-    /*margin-left: -20px;*/
-    /*padding-left: 20px;*/
-    /*justify-content: left;*/
-    /*box-sizing: border-box;*/
-  }
-  .slide-item {
-    /*margin-right: 20px;*/
-  }
-  .about {
-    overflow: hidden;
-
-    display: table;
-  }
-  .about .container {
-    width: 100%;
-  }
-
-  .about-block {
-    position: relative;
-    z-index: 1;
-  }
-  .about-img-block {
-    width: 46%;
-    position: relative;
-    z-index: 0;
-  }
-}
 .tns-nav {
   position: absolute;
   left: 50%;
   bottom: 50px;
   transform: translateX(-50%);
 }
+
 .tns-nav button {
   width: 8px;
   height: 8px;
@@ -802,13 +830,16 @@
   padding: 0;
   background-color: rgba(0, 0, 0, 0.7);
 }
+
 .tns-nav .tns-nav-active {
   background-color: #181127;
 }
+
 .tab-price-wrapper {
   display: flex;
   width: 100%;
 }
+
 .defaultSlider .tns-controls,
 .defaultSlider .tns-controls {
   position: absolute;
@@ -817,6 +848,7 @@
   display: flex;
   flex-direction: row;
 }
+
 .defaultSlider [data-controls="next"],
 .defaultSlider [data-controls="prev"] {
   font-size: 0;
@@ -831,9 +863,11 @@
   margin-right: 0;
   margin-left: 10px;
 }
+
 .defaultSlider [data-controls="prev"] {
   transform: rotate(180deg);
 }
+
 .defaultSlider [data-controls="next"]:after,
 .defaultSlider [data-controls="prev"]:after {
   font-family: 'icomoon' !important;
@@ -845,54 +879,216 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
 .defaultSlider [data-controls]:disabled {
   pointer-events: none;
 }
+
 .defaultSlider [data-controls="next"]:disabled:after,
 .defaultSlider [data-controls="prev"]:disabled:after {
   font-family: 'icomoon' !important;
   content: '\e902'
 }
+
+.mobile-contacts {
+  display: none;
+}
+
+@media (max-width: 1299px) {
+  .skateparks .container,
+  .last-trips .container {
+    padding: 0;
+  }
+
+  .skateparks .slider-title,
+  .last-trips .slider-title {
+    padding-left: 20px;
+  }
+
+  .slide-item {
+    padding-left: 20px;
+    width: 426px;
+  }
+
+  .slide-item:last-child {
+    width: 446px;
+    padding-right: 20px;
+  }
+
+  .tab-1, .tab-2 {
+    /*flex-direction: column;*/
+    height: auto;
+    display: block;
+    position: relative;
+  }
+
+  .tab-1 .tab-info,
+  .tab-info {
+    width: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 70px;
+    box-sizing: border-box;
+  }
+
+  .tab-img {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .tab-2 .tab-info-block {
+    padding-right: 0;
+    width: auto;
+    float: none;
+  }
+
+  .tab-info-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .tab-info-icons span {
+    margin-right: 0;
+  }
+
+  .travel-img {
+    width: 50%;
+    height: 100%;
+    margin-right: 0;
+  }
+
+  .travel-text-wrapper {
+    width: 50%;
+    padding-left: 50px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+
+  .travel-text {
+    width: 100%;
+  }
+
+  .tab-price-1,
+  .tab-price-2 {
+    width: 50%;
+  }
+
+  .tab-price-1 .tab-price-block,
+  .tab-price-2 .tab-price-block {
+    width: 100%;
+    padding: 70px 20px 84px;
+    box-sizing: border-box;
+  }
+
+  .about {
+    overflow: hidden;
+
+    display: table;
+  }
+
+  .about .container {
+    width: 100%;
+  }
+
+  .about-block {
+    position: relative;
+    z-index: 1;
+  }
+
+  .about-img-block {
+    width: 46%;
+    position: relative;
+    z-index: 0;
+  }
+}
+
+@media (max-width: 1130px) {
+  .footer .menu-nav li {
+    font-size: 13px;
+    margin: 0 8px;
+  }
+
+  .footer .social .icon {
+    margin-left: 10px;
+  }
+}
+
 @media (min-width: 1024px) {
   .tns-normal, .tns-fadeOut {
     opacity: 1;
   }
 }
+
 @media (max-width: 1024px) {
+
+  .menu-open {
+    position: fixed;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 3;
+  }
+
+  .mobile-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 55px;
+    min-height: 55px;
+    background-color: #fff;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
   .skateparks .tns-controls,
   .last-trips .tns-controls {
     display: none;
   }
+
   .tns-normal:not(.tns-slide-active) {
     display: none;
   }
+
   .video {
     display: none;
   }
+
   .main-banner {
     min-height: 436px;
     overflow: hidden;
   }
+
   .main-banner .bg-img {
     object-position: 30% 100%;
     height: 130%;
     bottom: 0;
   }
+
   .main-banner-text {
     margin-top: 78px;
   }
+
   .main-banner-subtitle {
     font-size: 12px;
     line-height: 55px;
     letter-spacing: 10px;
     margin-bottom: -10px;
   }
+
   .main-banner-title {
     font-size: 28px;
     line-height: 36px;
     letter-spacing: -1px;
     margin-bottom: 24px;
   }
+
   .main-banner-info {
     font-size: 12px;
     line-height: 34px;
@@ -900,36 +1096,44 @@
     margin-top: 0;
     padding: 0 15px;
   }
+
   .advantages {
     padding-top: 40px;
     padding-bottom: 93px;
   }
+
   .advantages .container {
     padding: 0;
   }
+
   .advantages-title {
     font-size: 22px;
     line-height: 34px;
     margin-bottom: 35px;
     padding: 0 20px;
   }
+
   .advantages-slider {
     display: block;
   }
+
   .advantages-item {
     width: 100%;
     margin-bottom: 0;
     margin-right: 0;
     padding: 0 20px;
   }
+
   .advantages-item-icon {
     margin-bottom: 0;
     font-size: 58px;
   }
+
   .advantages-item-title {
     font-size: 14px;
     line-height: 22px;
   }
+
   .advantages-item-subtitle {
     font-size: 14px;
     line-height: 22px;
@@ -938,12 +1142,14 @@
   .tabs {
     background-color: #fff;
   }
+
   .tabs-price {
     background-color: #131415;
     display: flex;
     flex-direction: column;
     padding-bottom: 50px;
   }
+
   .tabs-price .tabs-title,
   .tabs .tabs-title {
     display: block;
@@ -954,15 +1160,18 @@
     padding: 0 20px;
     margin-bottom: 17px;
   }
+
   .tabs-price .tabs-title,
   .tabs-price .tabs-controls {
     color: #fff;
   }
+
   .tabs-price .tabs-controls,
   .tabs .tabs-controls {
     display: block;
 
   }
+
   .tabs-price .tabs-controls,
   .tabs .tabs-controls {
     display: flex;
@@ -970,6 +1179,7 @@
     padding: 0 20px;
     margin-bottom: 30px;
   }
+
   .tabs-price .tabs-controls div,
   .tabs .tabs-controls div {
     display: block;
@@ -981,34 +1191,43 @@
     margin-right: 23px;
     cursor: pointer;
   }
+
   .tabs-price .tabs-controls .active,
   .tabs .tabs-controls .active {
     background-color: #96C5BD;
     pointer-events: none;
   }
+
   .tabs-price .tabs-controls .active {
     color: #131415;
   }
+
   .tab-price-title {
     display: none;
   }
+
   .tab-price-1 .tab-price-block, .tab-price-2 .tab-price-block {
     padding: 0 20px;
     margin-top: 20px;
   }
+
   .tab-price-1, .tab-price-2 {
     max-width: 100%;
     width: 500px;
   }
+
   .tab-price-2 {
     background-color: #131415;
   }
+
   .tab-price-2 .tab-price-block {
     color: #fff;
   }
+
   .tab-price-item {
     border-top: 1px dashed #fff;
   }
+
   .tab-price-item:last-child {
     border-bottom: 1px dashed #fff;
   }
@@ -1021,6 +1240,7 @@
     width: 100%;
     height: 0;
   }
+
   .tab-2 {
     display: flex !important;
     flex-direction: column-reverse;
@@ -1030,6 +1250,7 @@
     width: 100%;
     padding: 40px 20px 50px;
   }
+
   .tab-info-title {
     font-weight: 800;
     font-size: 24px;
@@ -1040,9 +1261,11 @@
   .tab-info-text {
     margin-bottom: 32px;
   }
+
   .tab-2 .tab-info-icons {
     border-bottom: none;
   }
+
   .tab-info-icons {
     border-bottom: none;
     flex-direction: column;
@@ -1050,6 +1273,7 @@
     padding-bottom: 0;
     margin-bottom: 25px;
   }
+
   .tab-info-icons > span {
     margin-bottom: 15px;
     font-size: 14px;
@@ -1059,37 +1283,47 @@
 
   .travel-img {
     width: 370px;
-    height: 345.34px;
-    margin:  0 auto 58px;
+    height: auto;
+    max-width: 100%;
+
+    margin: 0 auto 58px;
   }
+
   .travel-text-wrapper {
     width: 100%;
     padding-left: 0;
     padding-right: 0;
     box-sizing: border-box;
   }
+
   .travel-text {
     margin-bottom: 30px;
   }
+
   .travel {
     padding-top: 30px;
     padding-bottom: 50px;
   }
+
   .travel-block {
     flex-direction: column;
   }
+
   .travel-title {
     font-size: 24px;
     line-height: 32px;
     margin-bottom: 22px;
   }
+
   .travel-text {
     font-size: 16px;
     line-height: 29px;
   }
+
   .travel-text p {
     margin-bottom: 3px;
   }
+
   .video {
     height: 0;
     min-height: 0;
@@ -1100,12 +1334,15 @@
     padding-top: 40px;
     padding-bottom: 0;
   }
+
   .schedule .container {
     flex-direction: column;
   }
+
   .schedule-block {
     width: 100%;
   }
+
   .schedule-img {
     margin-top: 40px;
     margin-left: -20px;
@@ -1114,9 +1351,11 @@
     height: 0;
     padding-bottom: 69%;
   }
+
   .schedule-img img {
     object-position: 0 30%;
   }
+
   .schedule-title {
     font-size: 24px;
     line-height: 32px;
@@ -1126,6 +1365,7 @@
   .schedule-item {
     font-size: 18px;
   }
+
   .schedule-more {
     font-size: 14px;
     line-height: 24px;
@@ -1138,6 +1378,7 @@
     padding-top: 40px;
     padding-bottom: 50px;
   }
+
   .slider-title {
     font-size: 24px;
     line-height: 32px;
@@ -1147,6 +1388,7 @@
   .last-trips .slide-item {
     width: 234px;
   }
+
   .last-trips .slide-item img {
     width: 214px;
     height: 246px;
@@ -1160,6 +1402,7 @@
     width: 214px;
     height: auto;
   }
+
   .skateparks .slide-item:last-child,
   .last-trips .slide-item:last-child {
     width: 254px;
@@ -1170,43 +1413,55 @@
     font-size: 12px;
     line-height: 29px;
   }
+
   .slide-info b {
     font-size: 18px;
   }
-  /*.slider {*/
-  /*  overflow: auto;*/
-  /*  width: calc(100% + 40px);*/
-  /*  margin-left: -20px;*/
-  /*  padding-left: 20px;*/
-  /*  justify-content: left;*/
-  /*}*/
+
+  .btn {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 335px;
+    max-width: 100%;
+    box-sizing: border-box;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+  }
 
   .about {
     padding-top: 50px;
     padding-bottom: 35px;
   }
+
   .about .container {
     flex-direction: column;
   }
+
   .about-block {
     width: 100%;
     margin-bottom: 42px;
   }
+
   .about-img-block {
     height: 328px;
-    width: 360px;
+    width: 280px;
     max-width: 100%;
     margin: 0 auto;
+    left: -20px;
   }
+
   .about-title {
     font-size: 28px;
     line-height: 40px;
     margin-bottom: 25px;
   }
+
   .about-text {
     font-size: 16px;
     line-height: 29px;
   }
+
   .about-img-block .img1 {
     transform: translate(10px, 60px) rotate(
       -23deg
@@ -1214,11 +1469,13 @@
     width: 194px;
     height: 231px;
   }
+
   .about-img-block .img2 {
     transform: translate(103px, 0);;
     width: 187px;
     height: 222px;
   }
+
   .about-img-block .img3 {
     width: 187px;
     height: 222px;
@@ -1226,15 +1483,19 @@
       16deg
     );
   }
+
   .shop-banner {
     min-height: auto;
   }
+
   .shop-banner .bg-img {
     object-position: 70% 100%;
   }
+
   .shop-banner-text {
     display: none;
   }
+
   .shop-banner-title {
     margin-top: 315px;
     font-size: 28px;
@@ -1243,6 +1504,7 @@
     margin-bottom: 40px;
     max-width: 100%;
   }
+
   .shop-banner-btn {
     background: none;
     color: #fff;
@@ -1260,6 +1522,7 @@
     font-size: 32px;
     line-height: 45px;
   }
+
   .go-skate-text {
     font-size: 14px;
     line-height: 24px;
@@ -1272,15 +1535,23 @@
     align-items: center;
     margin-bottom: 60px;
   }
+
   .inputLabel {
     width: 335px;
     max-width: 100%;
     margin-bottom: 30px;
     margin-right: 0;
   }
+
   .go-skate .btn {
     width: 335px;
     max-width: 100%;
+    left: 0;
+    transform: none;
+  }
+  .menu-open .btn {
+    left: 0;
+    transform: none;
   }
 
   .footer {
@@ -1288,32 +1559,38 @@
     padding-top: 103px;
     position: relative;
   }
+
   .footer .menu-nav {
     padding-left: 0;
     flex-direction: column;
     margin-top: 0;
     margin-bottom: 32px;
   }
+
   .footer .menu-nav li {
     margin: 20px 0 0;
     font-size: 12px;
     line-height: 15px;
     letter-spacing: 1px;
   }
+
   .footer .menu-nav li:first-child {
     margin-top: 0;
   }
+
   .footer-menu {
     flex-direction: column;
     height: auto;
     align-items: normal;
   }
+
   .footer .logo {
     position: absolute;
     left: 20px;
     bottom: 25px;
     font-size: 26px;
   }
+
   .footer .tel-number {
     position: absolute;
     left: 20px;
@@ -1322,6 +1599,7 @@
     line-height: 27px;
     letter-spacing: 3px;
   }
+
   .footer .social {
     height: 73px;
     display: flex;
@@ -1329,11 +1607,14 @@
     border-top: 1px solid #FFFFFF;
     align-items: center;
   }
+
   .footer .social a {
   }
+
   .footer .icon {
     font-size: 28px;
   }
+
   .footer .icon span {
     font-size: 28px;
   }
@@ -1341,16 +1622,104 @@
   .menu .menu-nav {
     display: none;
   }
+
+  .menu-open .menu-nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 64px;
+  }
+
+  .menu .menu-nav li {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+  }
+
+  .menu .menu-nav li:before {
+    height: 14px;
+    top: 9px;
+  }
+
+  .menu .menu-nav a {
+    color: #fff;
+  }
+
+  .menu-open .mobile-contacts {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    color: #fff;
+  }
+  .mobile-contacts .tel-number {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: -0.241714px;
+    color: #FFFFFF;
+  }
+  .mobile-contacts .btn {
+    margin-bottom: 40px;
+  }
+  .mobile-contacts-text {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 40px;
+  }
   .menu .menu-block {
     height: 55px;
+    padding: 0;
   }
-  .menu {
-    background: #fff;
+
+  .menu-open .menu-block {
+    height: 100%;
+    flex-direction: column;
+    justify-content: start;
+    align-items: normal;
   }
+
   .menu .social {
     display: none;
   }
+
+  .menu-open .social {
+    display: flex;
+    padding: 0 20px 30px;
+  }
+  .menu .icon {
+    font-size: 43px;
+    margin-right: 30px;
+    margin-left: 0;
+  }
+
+  .menu .icon:before,
+  .menu .icon span:before {
+    color: #fff;
+  }
+
   .menu .logo {
     font-size: 30px;
+  }
+
+  .hamburger {
+    display: inline-block;
+  }
+  .menu-open .btn {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 360px) {
+  .tabs-price .tabs-controls div, .tabs .tabs-controls div {
+    font-size: 12px;
+    padding: 0 5px;
+    line-height: 25px;
+    margin-right: 15px;
   }
 }

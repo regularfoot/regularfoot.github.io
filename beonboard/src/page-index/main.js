@@ -119,3 +119,14 @@ const defaultSlider2 = tns({
   loop: false,
   nav: false,
 });
+
+const hamburger = document.querySelector('.hamburger');
+const menu = document.querySelector('.menu');
+
+hamburger.addEventListener('click', (item) => {
+  if (menu.classList.contains('menu-open')) {
+    menu.classList.remove('menu-open');
+  } else {
+    menu.classList.add('menu-open');
+  }
+})
