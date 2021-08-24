@@ -167,10 +167,10 @@
 
 <div class="travel">
   <div class="travel-block container">
-    <img class="travel-img" src="<%= require('../img/img-3.png') %>">
-    <div class="travel-text-wrapper">
-      <div class="travel-title">Лагеря и выезды</div>
-      <div class="travel-text">
+    <img class="travel-img travel-block-item gs_reveal gs_reveal_fromLeft" src="<%= require('../img/img-3.png') %>">
+    <div class="travel-text-wrapper travel-block-item">
+      <div class="travel-title gs_reveal">Лагеря и выезды</div>
+      <div class="travel-text gs_reveal">
         <p>
           С 2016 году проводим и организовываем детские спортивные лагеря, за нашими плечами сноуборд лагеря в Кировске,
           сноуборд-скейтборд лагеря в Сочи, скейт лагеря в Сочи, серф скейт лагерь в Португалии.
@@ -180,7 +180,7 @@
           друга в трудные моменты и радоваться друг за друга в счастливые моменты.
           Присоединитесь и вы!</p>
       </div>
-      <div class="btn btn-black">Подробнее</div>
+      <div class="btn btn-black gs_reveal">Подробнее</div>
     </div>
   </div>
 </div>
@@ -197,9 +197,9 @@
   </div>
 </div>
 
-<div class="schedule">
+<div id="price" class="schedule">
   <div class="container">
-    <div class="schedule-block">
+    <div class="schedule-block gs_reveal">
       <div class="schedule-title">Расписание <br> групповых занятий</div>
 
       <div class="schedule-item">Вторник и четверг</div>
@@ -209,7 +209,7 @@
       <div class="schedule-more">*Пятница и понедельник по предварительной записи</div>
       <div class="btn btn-black">Записаться</div>
     </div>
-    <div class="schedule-img">
+    <div class="schedule-img gs_reveal gs_reveal_fromRight">
       <img class="img-src-uses-require" src="<%= require('../img/coach.jpg') %>">
     </div>
   </div>
@@ -228,17 +228,27 @@
           Цены на <br>
           индивидуальные занятия
         </div>
-        <div class="tab-price-item">
-          Индивидуальное
-          <span>8 800 ₽</span>
+        <div>
+          <div class="tab-price-item">
+            Первое занятие
+            <span>2 000 ₽</span>
+          </div>
+          <div class="tab-price-item">
+            1 занятие
+            <span>2 500 ₽</span>
+          </div>
+          <div class="tab-price-item">
+            Абонемент на 4 занятия
+            <span>8 800 ₽</span>
+          </div>
+          <div class="tab-price-item">
+            Абонемент на 4 занятия
+            <span>8 800 ₽</span>
+          </div>
         </div>
-        <div class="tab-price-item">
-          Групповое
-          <span>12 000 ₽</span>
-        </div>
-        <div class="tab-price-item">
-          Групповое
-          <span>12 000 ₽</span>
+        <div class="tab-price__subinfo">Срок действия каждого абонемента 3 месяца</div>
+        <div class="tab-price__clock">
+          <span class="icon-clock"></span>Длительность занятия 1.5 часа, но если остаются силы, то занимаемся дольше
         </div>
       </div>
     </div>
@@ -248,56 +258,66 @@
         Цены на <br>
         групповые занятия
       </div>
-      <div class="tab-price-item">
-        Индивидуальное
-        <span>8 800 ₽</span>
+      <div>
+        <div class="tab-price-item">
+          Первое занятие
+          <span>1 000 ₽</span>
+        </div>
+        <div class="tab-price-item">
+          1 занятие
+          <span>1 200 ₽</span>
+        </div>
+        <div class="tab-price-item">
+          Абонемент на 4 занятия
+          <span>4 400 ₽</span>
+        </div>
+        <div class="tab-price-item">
+          Абонемент на 8 занятия
+          <span>8 000 ₽</span>
+        </div>
       </div>
-      <div class="tab-price-item">
-        Групповое
-        <span>12 000 ₽</span>
-      </div>
-      <div class="tab-price-item">
-        Групповое
-        <span>12 000 ₽</span>
+      <div class="tab-price__subinfo">Срок действия каждого абонемента 3 месяца</div>
+      <div class="tab-price__clock">
+        <span class="icon-clock"></span>Длительность занятия 1.5 часа, но если остаются силы, то занимаемся дольше
       </div>
     </div>
   </div>
   </div>
 </div>
 
-<div class="last-trips defaultSlider">
+<div id="travel" class="last-trips defaultSlider">
   <div class="container">
     <div class="slider-title">Прошедшие поездки</div>
     <div class="slider">
-      <div class="slide-item">
+      <div class="slide-item last-trips-item">
         <img src="<%= require('../img/slide-1.jpg') %>">
         <div class="slide-info">
           <b>Сочи</b>
           Июнь, 2020
         </div>
       </div>
-      <div class="slide-item">
+      <div class="slide-item last-trips-item">
         <img src="<%= require('../img/slide-1.jpg') %>">
         <div class="slide-info">
           <b>Сочи</b>
           Июнь, 2020
         </div>
       </div>
-      <div class="slide-item">
+      <div class="slide-item last-trips-item">
         <img src="<%= require('../img/slide-1.jpg') %>">
         <div class="slide-info">
           <b>Сочи</b>
           Июнь, 2020
         </div>
       </div>
-      <div class="slide-item">
+      <div class="slide-item last-trips-item">
         <img src="<%= require('../img/slide-1.jpg') %>">
         <div class="slide-info">
           <b>Сочи</b>
           Июнь, 2020
         </div>
       </div>
-      <div class="slide-item">
+      <div class="slide-item last-trips-item">
         <img src="<%= require('../img/slide-1.jpg') %>">
         <div class="slide-info">
           <b>Сочи</b>
@@ -308,19 +328,19 @@
   </div>
 </div>
 
-<div class="about">
+<div id="about" class="about">
   <div class="container">
     <div class="about-block">
-      <div class="about-title">
+      <div class="about-title gs_reveal">
         Привет, рад представить тебе <br> нашу школу скейтборднига
       </div>
-      <div class="about-text">
+      <div class="about-text gs_reveal">
         С 2013 года мы проводим тренировки для детей и взрослых, неимоверное количество довольных детей и взрослых,
         проводим занятия для детей с 4 лет.
         Наши занятия проходят в разных скейт парках Москвы, ведь меняя места катания, мы выходим из зоны комфорта тем
         самым расширяя свои горизонты, а благодаря крытым скейт паркам мы можем заниматься круглый год.
       </div>
-      <span class="about-logo icon-Be-On-Board"></span>
+      <span class="about-logo icon-Be-On-Board gs_reveal"></span>
     </div>
     <div class="about-img-block">
       <img class="img1" src="<%= require('../img/pic-1.png') %>">
@@ -330,40 +350,40 @@
   </div>
 </div>
 
-<div class="shop-banner">
+<div id="shop" class="shop-banner">
   <img class="bg-img" src="<%= require('../img/banner-1.jpg') %>">
   <div class="container">
-    <div class="shop-banner-title">
+    <div class="shop-banner-title gs_reveal">
       Нравится шапка? <br>
       Закажи себе такую же
     </div>
-    <div class="shop-banner-text">
+    <div class="shop-banner-text gs_reveal">
       Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют
       потому, что тот обеспечивает более или менее
     </div>
-    <div class="shop-banner-btn btn btn-blue">В магазин</div>
+    <div class="shop-banner-btn btn btn-blue gs_reveal">В магазин</div>
   </div>
 </div>
 
-<div class="skateparks defaultSlider">
+<div id="skateparks" class="skateparks defaultSlider">
   <div class="container">
     <div class="slider-title">Скейтпарки Москвы</div>
     <div class="skateparks-slider">
-      <div class="slide-item">
+      <div class="slide-item skateparks-item">
         <img src="<%= require('../img/park-1.jpg') %>">
         <div class="slide-info">
           <b>Садовники</b>
           м. Коломенское
         </div>
       </div>
-      <div class="slide-item">
+      <div class="slide-item skateparks-item">
         <img src="<%= require('../img/park-2.jpg') %>">
         <div class="slide-info">
           <b>Реддек</b>
           м. Нагорная
         </div>
       </div>
-      <div class="slide-item">
+      <div class="slide-item skateparks-item">
         <img src="<%= require('../img/park-3.jpg') %>">
         <div class="slide-info">
           <b>Динамо</b>
@@ -376,13 +396,13 @@
 
 <div class="go-skate">
   <div class="container">
-    <div class="go-skate-title">
+    <div class="go-skate-title gs_reveal">
       Погнали катать!
     </div>
-    <div class="go-skate-text">
+    <div class="go-skate-text gs_reveal">
       Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.
     </div>
-    <form action="" class="form">
+    <form action="" class="form gs_reveal">
       <div class="inputLabel">
         Имя
         <input type="text" placeholder="Иван Семенов">

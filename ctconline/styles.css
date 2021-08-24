@@ -117,6 +117,22 @@
 /*}*/
 
 /*! SCSS version of normalize.css v4.2.0 | MIT License | github.com/necolas/normalize.css */
+:-webkit-direct-focus,
+:focus {
+    outline: 0 !important;
+}
+:focus:not(:focus-visible) {
+    outline: 0;
+}
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus {
+    outline: none;
+}
+.noFocus:focus {
+    outline: none;
+}
 html {
     font-family: sans-serif;
     line-height: 1.15;

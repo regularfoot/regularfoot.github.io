@@ -311,11 +311,18 @@
   color: #fff;
   text-align: center;
   cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .btn-black {
   border: 1px solid #131415;
   color: #131415;
+}
+
+.btn:hover,
+.btn-black:hover {
+  border-color: #96C5BD;
+  background-color: #96C5BD;
 }
 
 .btn-blue {
@@ -532,10 +539,10 @@
   content: '';
   display: block;
   position: absolute;
-  width: 7px;
+  width: 3px;
   left: 0;
-  top: 10px;
-  bottom: 10px;
+  top: 8px;
+  bottom: 8px;
 }
 
 .tab-price-1 .tab-price-title:before {
@@ -548,6 +555,9 @@
 
 .tab-price-item:last-child {
   border-bottom: 1px dashed #131415;
+}
+.tab-price-1 .tab-price-item:last-child {
+  border-bottom: 1px dashed #fff;
 }
 
 .tab-price-item {
@@ -563,16 +573,12 @@
   float: right;
 }
 
-.tab-price-1 .tab-price-item:last-child {
-  border-bottom: 1px dashed #fff;
-}
-
 .tab-price-1 .tab-price-item {
   border-top: 1px dashed #fff;
 }
 
 .last-trips {
-  background-color: #96C5BD;
+  background-color: #e0e0e0;
   padding-top: 100px;
   padding-bottom: 100px;
 }
@@ -678,8 +684,8 @@
 
 .about {
   background-color: #fff;
-  padding-top: 132px;
-  padding-bottom: 132px;
+  padding-top: 189px;
+  padding-bottom: 189px;
 }
 
 .about .container {
@@ -698,8 +704,8 @@
 
 .about-text {
   font-weight: 500;
-  font-size: 16px;
-  line-height: 29px;
+  font-size: 20px;
+  line-height: 38px;
   margin-bottom: 33px;
 }
 
@@ -715,6 +721,7 @@
 .about-img-block {
   width: 584px;
   position: relative;
+  margin-top: -100px;
 }
 
 .about-img-block .img1 {
@@ -814,6 +821,26 @@
   overflow: hidden;
 }
 
+.tab-price__subinfo {
+  font-size: 14px;
+  line-height: 29px;
+  margin-bottom: 45px;
+  margin-top: 21px;
+}
+
+.tab-price__clock {
+  font-size: 16px;
+  line-height: 29px;
+  padding-left: 40px;
+  position: relative;
+}
+.tab-price__clock span {
+  position: absolute;
+  left: 0;
+  font-size: 17px;
+  top: 6px;
+}
+
 .tns-nav {
   position: absolute;
   left: 50%;
@@ -864,6 +891,15 @@
   margin-left: 10px;
 }
 
+
+.last-trips.defaultSlider [data-controls="next"],
+.last-trips.defaultSlider [data-controls="prev"] {
+  border-color: #000;
+}
+.last-trips.defaultSlider [data-controls="next"]:after,
+.last-trips.defaultSlider [data-controls="prev"]:after {
+  color: #000;
+}
 .defaultSlider [data-controls="prev"] {
   transform: rotate(180deg);
 }
@@ -871,7 +907,7 @@
 .defaultSlider [data-controls="next"]:after,
 .defaultSlider [data-controls="prev"]:after {
   font-family: 'icomoon' !important;
-  content: '\e900';
+  content: '\e902';
   color: #fff;
   font-size: 27px;
   position: absolute;
@@ -884,10 +920,10 @@
   pointer-events: none;
 }
 
-.defaultSlider [data-controls="next"]:disabled:after,
-.defaultSlider [data-controls="prev"]:disabled:after {
+.defaultSlider [data-controls="next"]:hover:after,
+.defaultSlider [data-controls="prev"]:hover:after {
   font-family: 'icomoon' !important;
-  content: '\e902'
+  content: '\e900'
 }
 
 .mobile-contacts {
