@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>{{.Title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <script type="text/javascript">
+    var MAP = {
+      SessionType: '{{.SessionType}}',
+      Amount: '{{.Amount}}',
+      Currency: '{{.Currency}}',
+      AllowNewCard: '{{.AllowNewCard}}',
+      Secret: '{{.Secret}}',
+      Error: '{{.Error}}',
+      MerchantOrderID: "{{.OrderID}}",
+      Email: '{{.Email}}',
+      AddCard: '{{.AddCard}}',
+      HasUserCred: '{{.HasUserCred}}',
+      GooglePay: '{{.IsGooglePayEnabled}}',
+      GatewayMerchantID: '{{.GatewayMerchantID}}',
+      Holder: 'Mr Cardholder',
+      ShowOrderId: false,
+      ShowDescription: false,
+      ShowAmount: true,
+      ShowCVV: true,
+      IsSberPay: true,
+      ButtonText: {
+        Pay: '{{index .CustomParams "PayButtonCustomText"}}' || 'Оплатить',
+      },
+    };
+  </script>
+  <script>
+    window.addEventListener('load', function () {
+      window.parent.postMessage({ type: 'event', message: 'create_payment' }, '*');
+    });
+  </script>
+
+  <!--    <link href="https://static-stage.mapcard.pro/static/TemplateMORE/css/main.css?v1.16.3" rel="stylesheet" />-->
+  <link href="./css/main.css" rel="stylesheet" />
+  <style>
+    input:valid ~ .border:before {
+      opacity: 0;
+    }
+
+    input.success ~ .border:before,
+    input.error ~ .border:before,
+    .date.error > .border:before,
+    .date.success > .border:before,
+    .phone.error > .border:before,
+    .phone.success > .border:before {
+      opacity: 1;
+    }
+
+    .button {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .button img {
+      height: 20px;
+    }
+    .button span {
+      padding: 0 10px;
+      color: #000;
+      font-weight: 500;
+    }
+    .button-sber {
+      background: #FFFFFF;
+      box-shadow: 0 0 10px 0 #00000026;
+    }
+    .button-sber__gradient {
+      background: radial-gradient(148.86% 823.3% at 98.92% 93.18%, #00A8F0 0%, rgba(0, 168, 240, 0) 100%), radial-gradient(109.09% 525% at -0.87% 4.55%, #F4EB00 0%, rgba(248, 235, 0, 0) 100%) #04D11E;
+    }
+    .button-sber__gradient:hover {
+      background: linear-gradient(273.23deg, #4BE2B5 -0.84%, #25D626 53.16%, #FAEC32 103.73%);
+    }
+    .button-sberpay {
+      background: #21A038;
+      box-shadow: 0 0 10px 0 #00000026;
+    }
+    .button-sberpay span {
+      color: #fff !important;
+    }
+
+  </style>
+</head>
+
+<body>
+<noscript>
+  <div id="noscript">Для продолжения оплаты необходимо включить поддержку JavaScript в вашем браузере.</div>
+</noscript>
+<div id="app">
+  <div id="wrapper" class="grid center cross-start cross-center-ss">
+    <div id="window" class="grid center hidden">
+      <div id="logo" class="map-logo" :class="setIconResult">MAP</div>
+      <div class="u-16 body grid">
+        <form
+                id="payForm"
+                class="u-16 grid"
+                :class="{hidden: showResult}"
+                novalidate
+                autocomplete="off"
+                method="POST"
+                @submit.prevent="submitPayment"
+                v-if="!IPSqr"
+        >
+          <div class="u-16 text-center paymentInfo">
+            <div id="orderId" v-if="showOrderId">Номер заказа: {{.OrderID}}</div>
+            <div id="description" v-if="showDescription">{{index .CustomParams "Description"}}</div>
+            <div
+                    :class="{errorPan : ValidationStack.PAN.Success == false,
+							errorDate : (ValidationStack.EYear.Success == false || ValidationStack.EMonth.Success == false),
+							errorCVV : ValidationStack.cvv.Success == false,  otherErrorMessage: true
+							}"
+                    v-if="errorMessage"
+            >
+              ${ errorMessage }
+            </div>
+
+            <div class="form-wrapper">
+              <div class="form-content">
+                <div
+                        :class="{errorPan : ValidationStack.PAN.Success == false,
+							errorDate : (ValidationStack.EYear.Success == false || ValidationStack.EMonth.Success == false),
+							errorCVV : ValidationStack.cvv.Success == false,  otherErrorMessage: true, lightThemeError : true
+							}"
+                        v-if="errorMessage"
+                >
+                  ${ errorMessage }
+                </div>
+                <div class="u-16 card">
+                  <div class="value inputWrapper">
+                    <span class="title" v-show="!showPanInput" @click="displayCardList"></span>
+                    <input
+                            id="cardname"
+                            v-model="PAN"
+                            v-focus
+                            type="tel"
+                            v-show="showPanInput"
+                            ref="pan"
+                            name="PAN"
+                            :maxlength="panMaxLength"
+                            class="pan"
+                            :class="{error : ValidationStack.PAN.ShowError, success:
+                              ValidationStack.PAN.Success}"
+                            placeholder=""
+                            :next="next.PAN"
+                            @keypress="checkInput"
+                            @keyup="keyupfunc"
+                            @blur="onBlurElement"
+                            required
+                    />
+                    <label class="inputLabel" for="cardname">Номер карты</label>
+                    <div class="border"></div>
+                    <div :class="{error : ValidationStack.PAN.ShowError, errorMessage : true, rightSide : true}">
+                      ${ ValidationStack.PAN.ErrorMessage }
+                    </div>
+                    <span class="mps" :class="mpsClass"></span>
+                  </div>
+                  <div class="cardList" v-show="showCardList">
+                    {{ range $uid, $pan := .CardsPANs}}
+                    <label
+                    ><input type="radio" v-model="carduid" name="carduid" value="{{ $uid }}" id="{{ $uid }}" @change="onSelectCard" /><span
+                            class="name"
+                    >{{ $pan }}</span
+                    ></label
+                    >
+                    {{end}}
+                    <label
+                    ><input type="radio" v-model="carduid" name="carduid" value="free" id="free" @change="onSelectCard" /><span class="title"
+                    >Новая карта</span
+                    ></label
+                    >
+                  </div>
+
+                  <a v-if="selectCard" class="selectCard" @click="displayCardList">
+                    <i></i>
+                  </a>
+                  <div v-if="showClear" class="clear" @click="clearPANInput"></div>
+                </div>
+                <div class="u-16 grid between">
+                  <div
+                          class="text half left date inputWrapper"
+                          :class="{error : ValidationStack.EYear.ShowError || ValidationStack.EMonth.ShowError, success:
+                            ValidationStack.EYear.Success || ValidationStack.EMonth.Success, 'onlyDate' :
+                            !options.ShowCVV}"
+                  >
+                    <input
+                            v-model="EMonth"
+                            ref="month"
+                            name="EMonth"
+                            type="tel"
+                            maxlength="2"
+                            novalidate
+                            class="number month"
+                            placeholder=""
+                            prev="PAN"
+                            :next="next.EYear"
+                            @keypress="checkInput"
+                            @keyup="keyupfunc"
+                            @blur="onBlurElement"
+                            :disabled="!showPanInput"
+                            required
+                    />
+
+                    <input
+                            v-model="EYear"
+                            ref="year"
+                            name="EYear"
+                            type="tel"
+                            maxlength="2"
+                            novalidate
+                            class="number year"
+                            placeholder=""
+                            prev="month"
+                            :next="next.cvv"
+                            @keypress="checkInput"
+                            @keyup="keyupfunc"
+                            @blur="onBlurElement"
+                            :disabled="!showPanInput"
+                            required
+                    />
+                    <span class="slash">/</span>
+                    <div class="inputLabel">ММ/ГГ</div>
+                    <div class="border"></div>
+                    <div
+                            :class="{error : ValidationStack.EYear.ShowError || ValidationStack.EMonth.ShowError, errorMessage : true, leftSide : true}"
+                    >
+                      ${ ValidationStack.EYear.ErrorMessage }
+                    </div>
+                  </div>
+                  <div class="inputWrapper cvvWrapper">
+                    <input
+                            id="CVV"
+                            v-model="cvv"
+                            v-if="options.ShowCVV"
+                            :maxlength="cvvMaxLenght"
+                            ref="cvv"
+                            name="cvv"
+                            type="tel"
+                            value="12"
+                            novalidate
+                            class="half right cvv number text password"
+                            :class="{error : ValidationStack.cvv.ShowError, success: ValidationStack.cvv.Success}"
+                            placeholder=""
+                            prev="EDate"
+                            :next="next.holder"
+                            @keypress="checkInput"
+                            @keyup="keyupfunc"
+                            @blur="onBlurElement"
+                            required
+                    />
+                    <label class="inputLabel" for="CVV">CVС</label>
+                    <div class="border"></div>
+                    <img class="cvvHintIcon" src="https://static-stage.mapcard.pro/static/TemplateMORE/img/question.svg" />
+                    <div :class="{cvvHintBalloon : true, rightSide : true, hide : ValidationStack.cvv.ShowError}">
+                      Три&nbsp;цифры&nbsp;с&nbsp;оборотной стороны карты
+                    </div>
+                    <div :class="{error : ValidationStack.cvv.ShowError, errorMessage : true, rightSide : true}">
+                      ${ ValidationStack.cvv.ErrorMessage }
+                    </div>
+                  </div>
+                  <div class="u-16" v-if="showHolder">
+                    <input
+                            v-model.trim="holder"
+                            ref="holder"
+                            name="holder"
+                            type="text"
+                            class="holder latin text"
+                            :class="{error : ValidationStack.holder.Success == false}"
+                            placeholder="ДЕРЖАТЕЛЬ КАРТЫ"
+                            prev="cvv"
+                            @keypress="checkInput"
+                            @input="checkInputHolder"
+                            @blur="onBlurElement"
+                            :disabled="!showPanInput"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" :disabled="disabledSubmit" :class="[isLoad ? 'loading' : '', currencyClass]">
+                <span>${ setButtonText }</span>
+              </button>
+
+              <!--                  CUSTOM SBERPAY BTN-->
+              <div class="u-16" v-if="IsSberPay">
+                <div id="sberPhoneHide" class="sberPhoneHide"></div>
+                <button
+                        class="button button-sberpay"
+                        @click.prevent="
+                        phone != null && phone.length > 10 ?
+                        [IPSqr = true,IsSberPaySelect = true,getQrCode('2')] :
+                        [onValidateFiled('phone', true)]"
+                >
+                  <span>Оплатить</span>
+                  <img src="https://static-stage.mapcard.pro/static/defaultNew/img/sberpay.svg" alt="">
+                </button>
+              </div>
+
+              <!--                  END CUSTOM SBERPAY BTN-->
+
+              <!--                  PHONE FIELD FOR SBERPAY-->
+
+              <div class="phoneWrapper">
+                <div v-if="IsSberPay" class="u-16 inputWrapper phone"
+                     :class="{error : ValidationStack.phone.ShowError, success:
+                              ValidationStack.phone.Success}"
+                >
+                  <input v-model="phone" ref="phone" name="phone" type="tel" class="phone text" id="phone"
+                         :class="{error : ValidationStack.phone.ShowError}"
+                         novalidate
+                         @keypress="checkInput" @keyup="keyupfunc" @blur="onBlurElement" @paste="onPaste"/>
+                  <label class="inputLabel" for="phone">Телефон</label>
+                  <div class="border"></div>
+                  <img class="cvvHintIcon" src="https://static-stage.mapcard.pro/static/TemplateMORE/img/question.svg" />
+                  <div :class="{cvvHintBalloon : true, rightSide : true, hide : ValidationStack.cvv.ShowError}">
+                    Введите номер телефона для оплаты с помощью Сбер Pay
+                  </div>
+                  <div v-if="ValidationStack.phone.ShowError" class="error errorMessage rightSide">
+                    ${ ValidationStack.phone.ErrorMessage }
+                  </div>
+                </div>
+              </div>
+              <!--                  END PHONE FIELD FOR SBERPAY-->
+
+              <div class="u-16 grid between cross-center secure-logo">
+                <div>
+                  <img src="https://static-evo.mapcard.pro/static/defaultNew/img/visa.png" />
+                </div>
+                <div>
+                  <img src="https://static-evo.mapcard.pro/static/defaultNew/img/mc-securecode.png" />
+                </div>
+                <div>
+                  <img src="https://static-evo.mapcard.pro/static/defaultNew/img/mir-accept.png" />
+                </div>
+                <div>
+                  <img src="https://static-evo.mapcard.pro/static/defaultNew/img/pci.png" />
+                </div>
+              </div>
+              <div class="u-16 grid center cross-center footer">
+                <img src="https://static-evo.mapcard.pro/static/defaultNew/img/security.svg" />
+                <div>
+                  Безопасная оплата обеспечивается
+                  <span class="themap">theMAP</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <google-pay></google-pay>
+        </form>
+        <div id="ips-panel" v-if="IPSqr" class="grid u-16">
+
+          <div class="form-wrapper text-center">
+            <div id="qr-code" v-if="qrImg !== '' && !options.IsMobile" class="u-16 text-center">
+              <img :src="qrImg" alt="qr-code">
+            </div>
+            <img v-show="!options.IsMobile" v-else-if="qrImg === '' && !IsSberPay" src="https://static-evo.mapcard.pro/static/defaultNew/img/qr-sbp.jpg">
+            <div class="u-16 smsMessage" v-if="IsSberPay">
+              Ожидайте СМС-сообщения на указанный номер
+            </div>
+            <button v-if="!isQrPaymentSuccess" class="u-16 cancel"
+                    @click="cancelIPS">
+              <span>Попробовать снова</span>
+            </button>
+            <button
+                    :disabled="disableQRBtn"
+                    class="u-16"
+                    :class="[isLoad ? 'loading' : '', currencyClass]"
+                    @click="getQrCode"
+                    v-if="!IsSberPay"
+            >
+              <span>Оплатить</span>
+              <span>${ setAmount }</span>
+            </button>
+            <button
+                    v-if="isQrReady && !isQrPaymentSuccess"
+                    class="u-16 mt15"
+                    :class="IsSberPay ? 'button-sber__gradient' : ''"
+                    @click="checkQrCodePayment">
+              <span>Проверить оплату</span>
+            </button>
+
+            <div class="phoneWrapper show">
+              <div class="u-16 inputWrapper phone">
+                <input v-model="phone" name="phone" type="tel" class="phone text success noEvent disabled"
+                       :class="{error : ValidationStack.phone.ShowError}"
+                       novalidate
+                       @keypress="checkInput" @keyup="keyupfunc" @blur="onBlurElement" @paste="onPaste"/>
+                <label class="inputLabel" for="phone">Телефон</label>
+                <div class="border"></div>
+              </div>
+            </div>
+
+            <div class="u-16 error-message" v-show="errorQRMessage">${ errorQRMessage }</div>
+          </div>
+
+        </div>
+      </div>
+      <div v-show="showBack" class="back" @click="clickOnBack"></div>
+    </div>
+  </div>
+  <form ref="submitIPSForm" v-show="false" method="POST" action="/submitPayment">
+    <input type="hidden" id="secret-input" value="" name="secret">
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function(event) {
+    const showBtn = window.document.getElementById('sberPhoneHide');
+    showBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      showBtn.classList.add('hide');
+      window.document.querySelector('.phoneWrapper').classList.add('show');
+      window.document.getElementById('phone').focus();
+    });
+  });
+
+  window.addEventListener('message', (e) => {
+    if (e.data.event === 'set_group') {
+      const group = e.data.payload;
+
+      const EXP_CLASS_MAP = {
+        test1: 'experiment',
+        test2: 'experiment',
+        test3: 'light-theme-experiment',
+        test4: 'light-theme-experiment',
+      };
+
+      if (group && EXP_CLASS_MAP[group]) {
+        window.document.body.classList.add(EXP_CLASS_MAP[group]);
+      }
+    }
+  });
+
+  window.parent.postMessage({ event: 'get_group' }, '*');
+</script>
+<script>
+  window.addEventListener('message', (e) => {
+    if (e.data.event === 'add_card') {
+      window.document.body.classList.add('add-card-form');
+    }
+  });
+
+  window.parent.postMessage({ event: 'get_add_card' }, '*');
+</script>
+
+<!--    "version": "1.15.8"-->
+<script src="https://static-evo.mapcard.pro/static/defaultNew/js/browserdata-collector.js"></script>
+<script src="https://static-stage.mapcard.pro/static/defaultNew/js/main.043d9a34.js"></script></body>
+</body>
+</html>
